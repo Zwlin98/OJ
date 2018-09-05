@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form class="form" action="{% url 'users:login' %}" method="post">
+  {% csrf_token %}
+    <label>用户名</label>
+    <input type="text" name="username">
+    <label>密码</label>
+    <input type="password" name="password">
+  <button type="submit">登录</button>
+</form>
+</body>
+</html>
