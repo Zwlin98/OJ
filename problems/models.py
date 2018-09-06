@@ -8,7 +8,7 @@ class Problem(models.Model):
     '''
     基本题目对象
     '''
-    id = models.CharField(max_length=20,unique=True)
+    idd = models.CharField(max_length=20,unique=True)
     time_limit_C = models.IntegerField(default=1000)
     time_limit_other = models.IntegerField(default=2000)
     memory_limit = models.IntegerField(default=65536)
