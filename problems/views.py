@@ -5,7 +5,7 @@ from .models import Problem
 
 def get_problem(request,id):
     try:
-        problem = Problem.objects.get(problem_id=id)
+        problem = Problem.objects.get(idd__exact=id)
         return render(request,'problems/problem.html',{'problem':problem})
     except Exception:
         raise Http404

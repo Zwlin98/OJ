@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import RegisterForm
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponse
+from django.views.generic.base import View
 # Create your views here.
 
 def register(request):
@@ -14,18 +15,19 @@ def register(request):
         form = RegisterForm()
     return render(request, 'users/register.html', context={'form': form})
 
-def vlogin(request):
-    if(request.method=='POST'):
+
+class LoginView(View):
+    def get(self,request):
+        return render(request, 'users/login.html')
+    def post(self,request):
         username = request.POST['username']
         password = request.POST['password']
-        user =  authenticate(request,username=username,password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request,user)
+            login(request, user)
             return redirect('users:profile')
         else:
             return redirect('admin')
-    else:
-        return render(request,'users/login.html')
 
 def success(requset):
     return HttpResponse("login success")

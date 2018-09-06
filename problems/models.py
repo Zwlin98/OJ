@@ -23,4 +23,4 @@ class Problem(models.Model):
     add_time = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
-        return self.problem_id
+        return self.idd
