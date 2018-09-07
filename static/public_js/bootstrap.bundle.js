@@ -53,7 +53,7 @@ function _inheritsLoose(subClass, superClass) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): util.js
+ * Bootstrap (v4.0.0): util.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -193,7 +193,7 @@ var Util = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): alert.js
+ * Bootstrap (v4.0.0): alert.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -365,7 +365,7 @@ var Alert = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): button.js
+ * Bootstrap (v4.0.0): button.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -528,7 +528,7 @@ var Button = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): carousel.js
+ * Bootstrap (v4.0.0): carousel.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -1027,7 +1027,7 @@ var Carousel = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): collapse.js
+ * Bootstrap (v4.0.0): collapse.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -2518,7 +2518,7 @@ function applyStyle(data) {
  * @memberof Popper.modifiers
  * @param {HTMLElement} reference - The reference element used to position the popper
  * @param {HTMLElement} popper - The HTML element used as popper.
- * @param {Object} options - Popper.js options
+ * @param {Object} options - Popper.public_js options
  */
 function applyStyleOnLoad(reference, popper, options, modifierOptions, state) {
   // compute reference element offsets
@@ -2550,13 +2550,13 @@ function computeStyle(data, options) {
       y = options.y;
   var popper = data.offsets.popper;
 
-  // Remove this legacy support in Popper.js v2
+  // Remove this legacy support in Popper.public_js v2
 
   var legacyGpuAccelerationOption = find(data.instance.modifiers, function (modifier) {
     return modifier.name === 'applyStyle';
   }).gpuAcceleration;
   if (legacyGpuAccelerationOption !== undefined) {
-    console.warn('WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!');
+    console.warn('WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.public_js!');
   }
   var gpuAcceleration = legacyGpuAccelerationOption !== undefined ? legacyGpuAccelerationOption : options.gpuAcceleration;
 
@@ -3273,7 +3273,7 @@ function inner(data) {
 
 /**
  * Modifiers are plugins used to alter the behavior of your poppers.<br />
- * Popper.js uses a set of 9 modifiers to provide all the basic functionalities
+ * Popper.public_js uses a set of 9 modifiers to provide all the basic functionalities
  * needed by the library.
  *
  * Usually you don't want to override the `order`, `fn` and `onLoad` props.
@@ -3516,7 +3516,7 @@ var modifiers = {
    * in case you need to replace `applyStyle` with a custom implementation.
    *
    * This modifier has `850` as `order` value to maintain backward compatibility
-   * with previous versions of Popper.js. Expect the modifiers ordering method
+   * with previous versions of Popper.public_js. Expect the modifiers ordering method
    * to change in future major versions of the library.
    *
    * @memberof modifiers
@@ -3553,11 +3553,11 @@ var modifiers = {
    * Applies the computed styles to the popper element.
    *
    * All the DOM manipulations are limited to this modifier. This is useful in case
-   * you want to integrate Popper.js inside a framework or view library and you
+   * you want to integrate Popper.public_js inside a framework or view library and you
    * want to delegate all the DOM manipulations to it.
    *
    * Note that if you disable this modifier, you must make sure the popper element
-   * has its position set to `absolute` before Popper.js can do its work!
+   * has its position set to `absolute` before Popper.public_js can do its work!
    *
    * Just disable this modifier and define you own to achieve the desired effect.
    *
@@ -3584,10 +3584,10 @@ var modifiers = {
 };
 
 /**
- * The `dataObject` is an object containing all the informations used by Popper.js
+ * The `dataObject` is an object containing all the informations used by Popper.public_js
  * this object get passed to modifiers and to the `onCreate` and `onUpdate` callbacks.
  * @name dataObject
- * @property {Object} data.instance The Popper.js instance
+ * @property {Object} data.instance The Popper.public_js instance
  * @property {String} data.placement Placement applied to popper
  * @property {String} data.originalPlacement Placement originally defined on init
  * @property {Boolean} data.flipped True if popper has been flipped by flip modifier
@@ -3603,8 +3603,8 @@ var modifiers = {
  */
 
 /**
- * Default options provided to Popper.js constructor.<br />
- * These can be overriden using the `options` argument of Popper.js.<br />
+ * Default options provided to Popper.public_js constructor.<br />
+ * These can be overriden using the `options` argument of Popper.public_js.<br />
  * To override an option, simply pass as 3rd argument an object with the same
  * structure of this object, example:
  * ```
@@ -3641,7 +3641,7 @@ var Defaults = {
   /**
    * Callback called when the popper is created.<br />
    * By default, is set to no-op.<br />
-   * Access Popper.js instance with `data.instance`.
+   * Access Popper.public_js instance with `data.instance`.
    * @prop {onCreate}
    */
   onCreate: function onCreate() {},
@@ -3651,14 +3651,14 @@ var Defaults = {
    * on the initialization/creation of the popper, but only on subsequent
    * updates.<br />
    * By default, is set to no-op.<br />
-   * Access Popper.js instance with `data.instance`.
+   * Access Popper.public_js instance with `data.instance`.
    * @prop {onUpdate}
    */
   onUpdate: function onUpdate() {},
 
   /**
    * List of modifiers used to modify the offsets before they are applied to the popper.
-   * They provide most of the functionalities of Popper.js
+   * They provide most of the functionalities of Popper.public_js
    * @prop {modifiers}
    */
   modifiers: modifiers
@@ -3678,12 +3678,12 @@ var Defaults = {
 // Methods
 var Popper = function () {
   /**
-   * Create a new Popper.js instance
+   * Create a new Popper.public_js instance
    * @class Popper
    * @param {HTMLElement|referenceObject} reference - The reference element used to position the popper
    * @param {HTMLElement} popper - The HTML element used as popper.
    * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
-   * @return {Object} instance - The generated Popper.js instance
+   * @return {Object} instance - The generated Popper.public_js instance
    */
   function Popper(reference, popper) {
     var _this = this;
@@ -3729,7 +3729,7 @@ var Popper = function () {
       return a.order - b.order;
     });
 
-    // modifiers have the ability to execute arbitrary code when Popper.js get inited
+    // modifiers have the ability to execute arbitrary code when Popper.public_js get inited
     // such code is executed in the same order of its modifier
     // they could add new properties to their options configuration
     // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
@@ -3786,7 +3786,7 @@ var Popper = function () {
     /**
      * Collection of utilities useful when writing custom modifiers.
      * Starting from version 1.7, this method is available only if you
-     * include `popper-utils.js` before `popper.js`.
+     * include `popper-utils.public_js` before `popper.public_js`.
      *
      * **DEPRECATION**: This way to access PopperUtils is deprecated
      * and will be removed in v2! Use the PopperUtils module directly instead.
@@ -3805,7 +3805,7 @@ var Popper = function () {
 }();
 
 /**
- * The `referenceObject` is an object that provides an interface compatible with Popper.js
+ * The `referenceObject` is an object that provides an interface compatible with Popper.public_js
  * and lets you use it as replacement of a real DOM node.<br />
  * You can use this method to position a popper relatively to a set of coordinates
  * in case you don't have a DOM node to use as reference.
@@ -3831,7 +3831,7 @@ Popper.Defaults = Defaults;
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): dropdown.js
+ * Bootstrap (v4.0.0): dropdown.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -3955,7 +3955,7 @@ var Dropdown = function ($$$1) {
 
       if (showEvent.isDefaultPrevented()) {
         return;
-      } // Disable totally Popper.js for Dropdown in Navbar
+      } // Disable totally Popper.public_js for Dropdown in Navbar
 
 
       if (!this._inNavbar) {
@@ -3964,7 +3964,7 @@ var Dropdown = function ($$$1) {
          * Popper - https://popper.js.org
          */
         if (typeof Popper === 'undefined') {
-          throw new TypeError('Bootstrap dropdown require Popper.js (https://popper.js.org)');
+          throw new TypeError('Bootstrap dropdown require Popper.public_js (https://popper.public_js.org)');
         }
 
         var element = this._element; // For dropup with alignment we use the parent as popper container
@@ -4296,7 +4296,7 @@ var Dropdown = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): modal.js
+ * Bootstrap (v4.0.0): modal.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -4685,7 +4685,7 @@ var Modal = function ($$$1) {
       }
     }; // ----------------------------------------------------------------------
     // the following methods are used to handle overflowing modals
-    // todo (fat): these should probably be refactored out of modal.js
+    // todo (fat): these should probably be refactored out of modal.public_js
     // ----------------------------------------------------------------------
 
 
@@ -4717,7 +4717,7 @@ var Modal = function ($$$1) {
 
       if (this._isBodyOverflowing) {
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
-        //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
+        //   while $(DOMNode).public_css('padding-right') returns the calculated value or 0 if not set
         // Adjust fixed content padding
         $$$1(Selector.FIXED_CONTENT).each(function (index, element) {
           var actualPadding = $$$1(element)[0].style.paddingRight;
@@ -4872,7 +4872,7 @@ var Modal = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): tooltip.js
+ * Bootstrap (v4.0.0): tooltip.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -4973,7 +4973,7 @@ var Tooltip = function ($$$1) {
        * Popper - https://popper.js.org
        */
       if (typeof Popper === 'undefined') {
-        throw new TypeError('Bootstrap tooltips require Popper.js (https://popper.js.org)');
+        throw new TypeError('Bootstrap tooltips require Popper.public_js (https://popper.public_js.org)');
       } // private
 
 
@@ -5537,7 +5537,7 @@ var Tooltip = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): popover.js
+ * Bootstrap (v4.0.0): popover.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -5617,7 +5617,7 @@ var Popover = function ($$$1) {
     };
 
     _proto.setContent = function setContent() {
-      var $tip = $$$1(this.getTipElement()); // We use append for html objects to maintain js events
+      var $tip = $$$1(this.getTipElement()); // We use append for html objects to maintain public_js events
 
       this.setElementContent($tip.find(Selector.TITLE), this.getTitle());
 
@@ -5730,7 +5730,7 @@ var Popover = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): scrollspy.js
+ * Bootstrap (v4.0.0): scrollspy.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -6041,7 +6041,7 @@ var ScrollSpy = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): tab.js
+ * Bootstrap (v4.0.0): tab.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -6288,7 +6288,7 @@ var Tab = function ($$$1) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.6): index.js
+ * Bootstrap (v4.0.0-alpha.6): index.public_js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -6325,4 +6325,4 @@ exports.Tooltip = Tooltip;
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=bootstrap.bundle.js.map
+//# sourceMappingURL=bootstrap.bundle.public_js.map

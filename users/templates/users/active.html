@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} 激活账号 {% endblock %}
+
+{% load static %}
+{% block private_css %}
+    <link rel="stylesheet" href="{% static 'users/active.css' %}">
+{% endblock %}
+
+{% block private_work %}
+    {% if from_active %}
+        <div class="alert alert-success" role="alert">
+            {{ msg }}
+        </div>
+    {% endif %}
+    <form class="form-active" method="post">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="inputemail" class="col-3">您的邮箱</label>
+            <div class="col-9">
+                <input type="email" class="form-control" id="inputemail" placeholder="Email address" required
+                       name="email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputcode" class="col-3">您的验证码</label>
+            <div class="col-9">
+                <input type="text" class="form-control" id="inputcode" placeholder="Verify code" required
+                       name="verifycode">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-9">
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endif %}
+                {% if actived %}
+                    <div class="alert alert-success" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endif %}
+                <div class="btn-group help-button">
+                    <button class="btn btn-primary" type="submit"> 提交</button>
+                    <a href="{% url 'users:login' %}" class="btn btn-info ">登录</a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

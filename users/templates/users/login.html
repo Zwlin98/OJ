@@ -1,18 +1,32 @@
-<!DOCTYPE html>
-<html lang="zh_cn">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-<form class="form" action="{% url 'users:login' %}" method="post">
-  {% csrf_token %}
-    <label>用户名</label>
-    <input type="text" name="username">
-    <label>密码</label>
-    <input type="password" name="password">
-  <button type="submit">登录</button>
-</form>
-<a href="{% url 'index' %}">返回主页</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} 用户登录 {% endblock %}
+
+{% block private_css %}
+    <link rel="stylesheet" href="{% static 'users/login.css' %}">
+{% endblock %}
+
+{% block private_work %}
+    <form class="form-signin" method="post">
+        <h2 class="form-signin-heading">请登录</h2>
+        <label for="inputusername" class="sr-only">Email address</label>
+        <input type="text" id="inputusername" class="form-control" placeholder="Email address or username" required
+               autofocus name="username">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+               name="password">
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ msg }}
+            </div>
+        {% endif %}
+        <div class="btn-group help-button">
+            <button class="btn btn-success " type="submit">登录</button>
+            <a href="{% url 'users:register' %}" class="btn btn-primary ">注册</a>
+            <a href="#" class="btn btn-info ">找回密码</a>
+        </div>
+        {% csrf_token %}
+    </form>
+{% endblock %}

@@ -1,43 +1,151 @@
-from django.shortcuts import render,redirect
-from .forms import RegisterForm
-from django.contrib.auth import authenticate,login,logout
+from random import Random
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.backends import ModelBackend
 from django.http import HttpResponse
 from django.views.generic.base import View
-# Create your views here.
+from django.db.models import Q
+from django.contrib.auth.hashers import make_password
+from django.core.mail import send_mail
 
-def register(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('users:login')
-    else:
-        form = RegisterForm()
-    return render(request, 'users/register.html', context={'form': form})
+from .forms import RegisterForm, LoginForm, ActiveForm
+from .models import User
+from users.models import Verifycode
+from OJ.settings import DEFAULT_FROM_EMAIL
 
 
+# 重定向
+def users(request):
+    return redirect('users:profile')
+
+
+# 用户认证模块
+class CustomBackend(ModelBackend):
+    def authenticate(self, request, username=None, password=None, **kwargs):
+        try:
+            user = User.objects.get(Q(email=username) | Q(username=username))
+            if user.check_password(password):
+                return user
+        except Exception as e:
+            return None
+
+
+# 登录模块
 class LoginView(View):
-    def get(self,request):
+    def get(self, request):
         return render(request, 'users/login.html')
-    def post(self,request):
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('users:profile')
+
+    def post(self, request):
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user = authenticate(request, username=form.cleaned_data['username'], password=form.cleaned_data['password'])
+            if user is not None:
+                if user.is_active == False:
+                    return render(request, 'users/login.html', {'msg': "该账号未激活", 'error': True})
+                else:
+                    login(request, user)
+                    return redirect('index')
+            else:
+                return render(request, 'users/login.html', {'msg': "用户名或密码错误", 'error': True})
         else:
-            return redirect('admin')
+            return render(request, 'users/login.html', {'msg': "用户名或密码非法", 'error': True})
+
+
+# 注册模块
+class RegisterView(View):
+
+    def get(self, request):
+        return render(request, 'users/register.html')
+
+    def post(self, request):
+        register_form = RegisterForm(request.POST)
+        if register_form.is_valid():
+            email = register_form.cleaned_data['email']
+            username = register_form.cleaned_data['username']
+            if not User.objects.filter(Q(email=email) | Q(username=username)).exists():
+                password_first = register_form.cleaned_data['password_first']
+                password_second = register_form.cleaned_data['password_second']
+                if password_first == password_second:
+                    user = User(username=username, email=email)
+                    user.set_password(password_first)
+                    user.is_active = False
+                    mailSend = Email(email, 'active')
+                    user.save()
+                    return render(request,'users/active.html',{'msg':'注册成功，请在您的邮箱获取验证码来激活您的账号','from_active':True})
+                else:
+                    return render(request, 'users/register.html', {'msg': '两次密码不一致', 'error': True})
+            else:
+                return render(request, 'users/register.html', {'msg': '该用户名或邮箱已存在', 'error': True})
+        else:
+            return render(request, 'users/register.html', {'msg': "输入的用户名或密码非法", 'error': True})
+
+
+# 激活模块
+# TODO:编写
+class activeView(View):
+    def get(self, request):
+        return render(request, 'users/active.html')
+
+    def post(self, request):
+        active_form = ActiveForm(request.POST)
+        if active_form.is_valid():
+            email = active_form.cleaned_data['email']
+            verifycode = active_form.cleaned_data['verifycode']
+            verify = Verifycode.objects.filter(email=email)
+            if verify.filter(code=verifycode).exists():
+                user = User.objects.get(email=email)
+                user.is_active = True
+                user.save()
+                Verifycode.objects.filter(email=email).delete()
+                return render(request, 'users/active.html', {'msg': '账号已激活', 'actived': True})
+            else:
+                return render(request, 'users/active.html', {'msg': '验证码和邮箱不匹配，请重试', 'error': True})
+        else:
+            return render(request, 'users/active.html', {'msg': '验证码或邮箱格式错误，请重试', 'error': True})
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect('index')
+
 
 def success(requset):
-    return HttpResponse("login success")
+    return HttpResponse("success")
 
-def vlogout(request):
-    logout(request)
-    return redirect('users:login')
 
 def profile(request):
     if request.user.is_authenticated:
-        return render(request,'users/profile.html',{'user': request.user })
+        return render(request, 'users/profile.html', {'user': request.user})
     else:
         return redirect('users:login')
+
+
+class Email:
+
+    def __init__(self, email_address, send_type):
+        self.email_addrss = email_address
+        if send_type == 'active':
+            self.subject = '激活你的账号'
+            self.code = self.get_code(email_address)
+            self.message = '请在网站激活页提交激活码 ' + self.code + ' 来激活您的账号'
+            send_mail(self.subject, self.message, DEFAULT_FROM_EMAIL, [email_address])
+
+    def generate_random_code(self, strlength=6):
+        result = ''
+        origin = 'QAZWSXEDCRFVTGBYHNUJMIKOPqazxswedcvfrtgbnhyujikopl1234567890'
+        length = len(origin) - 1
+        random = Random()
+        for i in range(strlength):
+            result += origin[random.randint(0, length)]
+        return result
+
+    def get_code(self, email, send_type='active'):
+        email_Verify_code = Verifycode()
+        random_code = self.generate_random_code(16)
+        email_Verify_code.email = email
+        email_Verify_code.code = random_code
+        email_Verify_code.send_type = send_type
+        email_Verify_code.save()
+        return random_code
