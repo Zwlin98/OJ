@@ -26,9 +26,9 @@ class User(AbstractUser):
 class Verifycode(models.Model):
     type_choice = (
         ('active', 'active'),
-        ('find', 'find')
+        ('reset', 'reset')
     )
-    code = models.CharField(max_length=20, verbose_name='验证码')
+    code = models.CharField(max_length=50, verbose_name='验证码')
     email = models.EmailField(verbose_name='邮箱')
     send_type = models.CharField(max_length=10,verbose_name='验证码类型', choices=type_choice)
     send_time = models.DateTimeField(verbose_name='生成时间', default=datetime.now)

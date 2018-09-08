@@ -19,3 +19,8 @@ class LoginForm(forms.Form):
 class ActiveForm(forms.Form):
     email = forms.EmailField()
     verifycode = forms.CharField(min_length=16, max_length=16)
+
+
+class FindForm(forms.Form):
+    email = forms.EmailField()
+    username = forms.CharField(max_length=20, min_length=6)

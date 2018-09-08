@@ -3,13 +3,13 @@ from random import Random
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.views.generic.base import View
 from django.db.models import Q
 from django.contrib.auth.hashers import make_password
 from django.core.mail import send_mail
 
-from .forms import RegisterForm, LoginForm, ActiveForm
+from .forms import RegisterForm, LoginForm, ActiveForm, FindForm
 from .models import User
 from users.models import Verifycode
 from OJ.settings import DEFAULT_FROM_EMAIL
@@ -70,9 +70,9 @@ class RegisterView(View):
                     user = User(username=username, email=email)
                     user.set_password(password_first)
                     user.is_active = False
-                    mailSend = Email(email, 'active')
+                    Email(email, 'active')
                     user.save()
-                    return render(request,'users/active.html',{'msg':'注册成功，请在您的邮箱获取验证码来激活您的账号','from_active':True})
+                    return render(request, 'users/active.html', {'msg': '注册成功，请在您的邮箱点击链接来激活您的账号', 'from_active': True})
                 else:
                     return render(request, 'users/register.html', {'msg': '两次密码不一致', 'error': True})
             else:
@@ -82,27 +82,20 @@ class RegisterView(View):
 
 
 # 激活模块
-# TODO:编写
 class activeView(View):
-    def get(self, request):
-        return render(request, 'users/active.html')
-
-    def post(self, request):
-        active_form = ActiveForm(request.POST)
-        if active_form.is_valid():
-            email = active_form.cleaned_data['email']
-            verifycode = active_form.cleaned_data['verifycode']
-            verify = Verifycode.objects.filter(email=email)
-            if verify.filter(code=verifycode).exists():
-                user = User.objects.get(email=email)
+    def get(self, request, verify_code=''):
+        if len(verify_code) == 48:
+            if Verifycode.objects.filter(code=verify_code).exists():
+                destemail = Verifycode.objects.get(code=verify_code)
+                user = User.objects.get(email=destemail.email)
                 user.is_active = True
                 user.save()
-                Verifycode.objects.filter(email=email).delete()
+                destemail.delete()
                 return render(request, 'users/active.html', {'msg': '账号已激活', 'actived': True})
             else:
-                return render(request, 'users/active.html', {'msg': '验证码和邮箱不匹配，请重试', 'error': True})
+                raise Http404
         else:
-            return render(request, 'users/active.html', {'msg': '验证码或邮箱格式错误，请重试', 'error': True})
+            raise Http404
 
 
 class LogoutView(View):
@@ -111,8 +104,25 @@ class LogoutView(View):
         return redirect('index')
 
 
-def success(requset):
-    return HttpResponse("success")
+# TODO:完成找回密码模块
+class resetpasswordView(View):
+    def get(self, request,vrify_code=''):
+
+        return render(request, 'users/reset.html')
+
+    def post(self, request):
+        find_form = FindForm(request.POST)
+        if find_form.is_valid():
+            query = User.objects.filter(username=find_form.cleaned_data['username'])
+            if query.filter(email=find_form.cleaned_data['email']).exists():
+                Email(find_form.cleaned_data['email'], 'find')
+                return render(request,'users/reset.html',{'msg':'请前往您的邮箱点击链接来'})
+
+
+
+# TODO:完成个人中心页面
+class ProfileView(View):
+    pass
 
 
 def profile(request):
@@ -122,14 +132,22 @@ def profile(request):
         return redirect('users:login')
 
 
+# 发送邮件
 class Email:
+    HOST = 'http://127.0.0.1:8000/'
 
     def __init__(self, email_address, send_type):
         self.email_addrss = email_address
         if send_type == 'active':
             self.subject = '激活你的账号'
             self.code = self.get_code(email_address)
-            self.message = '请在网站激活页提交激活码 ' + self.code + ' 来激活您的账号'
+            active_link = self.HOST + 'users/active/' + self.code
+            self.message = '请点击下面的链接 ' + active_link + ' 来激活您的账号'
+            send_mail(self.subject, self.message, DEFAULT_FROM_EMAIL, [email_address])
+        if send_type == 'find':
+            self.subject = '修改你的账号的密码'
+            self.code = self.get_code(email_address, 'reset')
+            self.message = '请点击下面的链接 ' + self.code + ' 来修改您的账号密码'
             send_mail(self.subject, self.message, DEFAULT_FROM_EMAIL, [email_address])
 
     def generate_random_code(self, strlength=6):
@@ -143,7 +161,7 @@ class Email:
 
     def get_code(self, email, send_type='active'):
         email_Verify_code = Verifycode()
-        random_code = self.generate_random_code(16)
+        random_code = self.generate_random_code(48)
         email_Verify_code.email = email
         email_Verify_code.code = random_code
         email_Verify_code.send_type = send_type

@@ -15,7 +15,7 @@
 <div class="all_things container">
     {% block navbar %}
         <nav class="navbar navbar-expand navbar-light bg-light">
-            <a class="navbar-brand" href="{% url 'index' %}">OJ</a>
+            <a class="navbar-brand" href="{% url 'index' %}">Geeking</a>
             <div class="collapse navbar-collapse" id="navbarsExample09">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -55,19 +55,6 @@
         </nav>
     {% endblock %}
     {% block private_work %}
-        <main role="main">
-            <div class="jumbotron">
-                <div class="col-sm-8 mx-auto">
-                    <h1>欢迎访问我的Online Judge</h1>
-                    <p>
-                        编程是连接理论与实践的纽带，是计算机科学与计算机应用技术相交融的领域。正确的编程学习方法应该是：通过自顶而下的探索与项目实践，获得编程直觉与推动力；从自底向上的打基础过程中，获得最重要的通用方法并巩固编程思想的理解。</p>
-                    <p>也不能矫枉过正，陷入还原论的大坑，初学时便一心试图做宏大的理论，这样不仅有一切流于理论的危险，枯燥和乏味还会让你失去推动力。</p>
-                    <p>
-                        <a class="btn btn-primary btn" href="" role="button">探索题目</a>
-                    </p>
-                </div>
-            </div>
-        </main>
     {% endblock %}
 </div>
 </body>
