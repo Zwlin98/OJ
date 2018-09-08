@@ -6,13 +6,12 @@ from django.contrib.auth.backends import ModelBackend
 from django.http import HttpResponse, Http404
 from django.views.generic.base import View
 from django.db.models import Q
-from django.contrib.auth.hashers import make_password
 from django.core.mail import send_mail
 
-from .forms import RegisterForm, LoginForm, ActiveForm, FindForm
+from .forms import RegisterForm, LoginForm, FindForm, ResetForm
 from .models import User
 from users.models import Verifycode
-from OJ.settings import DEFAULT_FROM_EMAIL
+from OJ.private_settings import DEFAULT_FROM_EMAIL
 
 
 # 重定向
@@ -81,7 +80,48 @@ class RegisterView(View):
             return render(request, 'users/register.html', {'msg': "输入的用户名或密码非法", 'error': True})
 
 
-# 激活模块
+class resetpasswordView(View):
+
+    def get(self, request, verify_code=''):
+        if len(verify_code) == 48:
+            if Verifycode.objects.filter(code=verify_code).exists():
+                return render(request, 'users/reset.html', {'msg': '请重置你的密码', 'authed': True})
+            else:
+                raise Http404
+        else:
+            return render(request, 'users/reset.html')
+
+    def post(self, request, verify_code=''):
+        find_form = FindForm(request.POST)
+        reset_form = ResetForm(request.POST)
+        if find_form.is_valid():
+            query = User.objects.filter(username=find_form.cleaned_data['username'])
+            if query.filter(email=find_form.cleaned_data['email']).exists():
+                Email(find_form.cleaned_data['email'], 'find')
+                return render(request, 'users/reset.html', {'msg': '请前往您的邮箱点击链接来修改您的密码', 'submitted': True})
+            else:
+                return render(request, 'users/reset.html', {'msg': '用户名或邮箱不存在', 'error2': True})
+        elif reset_form.is_valid():
+            email = reset_form.cleaned_data['email']
+            passwordfirst = reset_form.cleaned_data['password_first']
+            passwordsecond = reset_form.cleaned_data['password_second']
+            destemail = Verifycode.objects.filter(email=email)
+            if destemail.filter(code=verify_code).exists():
+                if passwordfirst == passwordsecond:
+                    user = User.objects.get(email=email)
+                    user.set_password(passwordfirst)
+                    user.save()
+                    destemail.delete()
+                    return render(request, 'users/reset.html', {'msg': '重设密码成功', 'success': True, 'authed': True})
+                else:
+                    return render(request, 'users/reset.html', {'msg': '两次密码不一致', 'error1': True, 'authed': True})
+            else:
+                return render(request, 'users/reset.html', {'msg': '邮箱错误', 'error1': True, 'authed': True})
+        else:
+            return render(request, 'users/reset.html', {'msg': '邮箱错误', 'error1': True, 'authed': True})
+
+
+# 激活账号模块
 class activeView(View):
     def get(self, request, verify_code=''):
         if len(verify_code) == 48:
@@ -102,22 +142,6 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect('index')
-
-
-# TODO:完成找回密码模块
-class resetpasswordView(View):
-    def get(self, request,vrify_code=''):
-
-        return render(request, 'users/reset.html')
-
-    def post(self, request):
-        find_form = FindForm(request.POST)
-        if find_form.is_valid():
-            query = User.objects.filter(username=find_form.cleaned_data['username'])
-            if query.filter(email=find_form.cleaned_data['email']).exists():
-                Email(find_form.cleaned_data['email'], 'find')
-                return render(request,'users/reset.html',{'msg':'请前往您的邮箱点击链接来'})
-
 
 
 # TODO:完成个人中心页面
@@ -145,9 +169,10 @@ class Email:
             self.message = '请点击下面的链接 ' + active_link + ' 来激活您的账号'
             send_mail(self.subject, self.message, DEFAULT_FROM_EMAIL, [email_address])
         if send_type == 'find':
-            self.subject = '修改你的账号的密码'
+            self.subject = '重设你的账号的密码'
             self.code = self.get_code(email_address, 'reset')
-            self.message = '请点击下面的链接 ' + self.code + ' 来修改您的账号密码'
+            reset_link = self.HOST + 'users/reset/' + self.code
+            self.message = '请点击下面的链接 ' + reset_link + ' 来重设您的账号密码，如果不是您的操作，请无视这一封邮件'
             send_mail(self.subject, self.message, DEFAULT_FROM_EMAIL, [email_address])
 
     def generate_random_code(self, strlength=6):

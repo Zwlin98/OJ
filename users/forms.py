@@ -16,11 +16,12 @@ class LoginForm(forms.Form):
     password = forms.CharField(max_length=20, required=True, min_length=6)
 
 
-class ActiveForm(forms.Form):
-    email = forms.EmailField()
-    verifycode = forms.CharField(min_length=16, max_length=16)
-
-
 class FindForm(forms.Form):
     email = forms.EmailField()
     username = forms.CharField(max_length=20, min_length=6)
+
+
+class ResetForm(forms.Form):
+    email = forms.EmailField()
+    password_first = forms.CharField(max_length=20, min_length=6)
+    password_second = forms.CharField(max_length=20, min_length=6)
