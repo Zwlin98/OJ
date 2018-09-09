@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    题目列表
+{% endblock %}
+
+{% block private_work %}
+    <div class="container row">
+        <div class="col-9">
+            <h3>探索题目</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Raito(Accept/Submit)</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for problem in problem_list %}
+                    <tr>
+                        <th scope="row">{{ problem.i_d }}</th>
+                        <td><a href="{% url 'problems:problem' problem.i_d %}">{{ problem.title }}</a></td>
+                        <td>{% widthratio problem.accepted problem.submitted 100 %}%</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3">
+            <h4>
+                搜索题目
+            </h4>
+            <form class="form-group" method="get">
+                {% csrf_token %}
+                <div style="margin-bottom: 10px">
+                    <select class="c-select form-control">
+                        <option selected>Search in</option>
+                        <option value="1">ID</option>
+                        <option value="2">Title</option>
+                    </select>
+                </div>
+                <div>
+                    <input class="form-control" type="text" name="key">
+                    <button class="btn btn-primary" type="submit" style="margin-top: 10px">Search</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
