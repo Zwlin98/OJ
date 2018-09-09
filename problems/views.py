@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.http import Http404
 from django.views.generic.base import View
 from django.core.paginator import Paginator
+
 from .models import Problem
+
+
 # Create your views here.
-
-from .models import Problem
-
 
 class ProblemListView(View):
     def get(self, request, page=1):
@@ -15,6 +15,17 @@ class ProblemListView(View):
         paginator = Paginator(problems, limit)
         problem_list = paginator.page(page)
         return render(request, 'problems/problems_list.html', {'problem_list': problem_list})
+
+
+# TODO:编写题目详情
+class ProblemView(View):
+    pass
+
+
+# TODO:搜索题目逻辑
+class SearchProblemView(View):
+    pass
+
 
 
 def get_problem(request, id):
