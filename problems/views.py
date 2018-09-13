@@ -19,7 +19,8 @@ class ProblemListView(View):
 
 # TODO:编写题目详情
 class ProblemView(View):
-    pass
+    def get(self, request):
+        pass
 
 
 # TODO:搜索题目逻辑
@@ -27,10 +28,9 @@ class SearchProblemView(View):
     pass
 
 
-
 def get_problem(request, id):
     try:
-        problem = Problem.objects.get(i_d=id)
+        problem = Problem.objects.get(id=id)
         return render(request, 'problems/problem.html', {'problem': problem})
     except Exception:
         raise Http404

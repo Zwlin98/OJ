@@ -1,0 +1,833 @@
+[
+  {
+    "Title": "A + B Problem",
+    "ProblemDescription": "Calculate  A + B .",
+    "Input": "Each line will contain two integers  A  and  B . Process to end of file.",
+    "Output": "For each case, output  A + B  in one line.",
+    "SampleInput": "1 1",
+    "SampleOutput": "2",
+    "Author": "HDOJ"
+  },
+  {
+    "Title": "Sum Problem",
+    "ProblemDescription": "Hey, welcome to HDOJ(Hangzhou Dianzi University Online Judge). In this problem, your task is to calculate SUM(n) = 1 + 2 + 3 + ... + n.",
+    "Input": "The input will consist of a series of integers n, one integer per line.",
+    "Output": "For each case, output SUM(n) in one line, followed by a blank line. You may assume the result will be in the range of 32-bit signed integer.",
+    "SampleInput": "1\r\n100",
+    "SampleOutput": "1\r\n\r\n5050",
+    "Author": "DOOM III"
+  },
+  {
+    "Title": "A + B Problem II",
+    "ProblemDescription": "I have a very simple problem for you. Given two integers A and B, your job is to calculate the Sum of A + B.",
+    "Input": "The first line of the input contains an integer T(1<=T<=20) which means the number of test cases. Then T lines follow, each line consists of two positive integers, A and B. Notice that the integers are very large, that means you should not process them by using 32-bit integer. You may assume the length of each integer will not exceed 1000.",
+    "Output": "For each test case, you should output two lines. The first line is \"Case #:\", # means the number of the test case. The second line is the an equation \"A + B = Sum\", Sum means the result of A + B. Note there are some spaces int the equation. Output a blank line between two test cases.",
+    "SampleInput": "2\r\n1 2\r\n112233445566778899 998877665544332211",
+    "SampleOutput": "Case 1:\r\n1 + 2 = 3\r\n\r\nCase 2:\r\n112233445566778899 + 998877665544332211 = 1111111111111111110",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Max Sum",
+    "ProblemDescription": "Given a sequence a[1],a[2],a[3]......a[n], your job is to calculate the max sum of a sub-sequence. For example, given (6,-1,5,4,-7), the max sum in this sequence is 6 + (-1) + 5 + 4 = 14.",
+    "Input": "The first line of the input contains an integer T(1<=T<=20) which means the number of test cases. Then T lines follow, each line starts with a number N(1<=N<=100000), then N integers followed(all the integers are between -1000 and 1000).",
+    "Output": "For each test case, you should output two lines. The first line is \"Case #:\", # means the number of the test case. The second line contains three integers, the Max Sum in the sequence, the start position of the sub-sequence, the end position of the sub-sequence. If there are more than one result, output the first one. Output a blank line between two cases.",
+    "SampleInput": "2\r\n5 6 -1 5 4 -7\r\n7 0 6 -1 1 -6 7 -5",
+    "SampleOutput": "Case 1:\r\n14 1 4\r\n\r\nCase 2:\r\n7 1 6",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Let the Balloon Rise",
+    "ProblemDescription": "Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges' favorite time is guessing the most popular problem. When the contest is over, they will count the balloons of each color and find the result. This year, they decide to leave this lovely job to you.",
+    "Input": "Input contains multiple test cases. Each test case starts with a number N (0 < N <= 1000) -- the total number of balloons distributed. The next N lines contain one color each. The color of a balloon is a string of up to 15 lower-case letters. A test case with N = 0 terminates the input and this test case is not to be processed.",
+    "Output": "For each case, print the color of balloon for the most popular problem on a single line. It is guaranteed that there is a unique solution for each test case.",
+    "SampleInput": "5\r\ngreen\r\nred\r\nblue\r\nred\r\nred\r\n3\r\npink\r\norange\r\npink\r\n0",
+    "SampleOutput": "red\r\npink",
+    "Author": "WU, Jiazhi"
+  },
+  {
+    "Title": "Number Sequence",
+    "ProblemDescription": "A number sequence is defined as follows: f(1) = 1, f(2) = 1, f(n) = (A * f(n - 1) + B * f(n - 2)) mod 7. Given A, B, and n, you are to calculate the value of f(n).",
+    "Input": "The input consists of multiple test cases. Each test case contains 3 integers A, B and n on a single line (1 <= A, B <= 1000, 1 <= n <= 100,000,000). Three zeros signal the end of input and this test case is not to be processed.",
+    "Output": "For each test case, print the value of f(n) on a single line.",
+    "SampleInput": "1 1 3\r\n1 2 10\r\n0 0 0",
+    "SampleOutput": "2\r\n5",
+    "Author": "CHEN, Shunbao"
+  },
+  {
+    "Title": "Tick and Tick",
+    "ProblemDescription": "The three hands of the clock are rotating every second and meeting each other many times everyday. Finally, they get bored of this and each of them would like to stay away from the other two. A hand is happy if it is at least D degrees from any of the rest. You are to calculate how much time in a day that all the hands are happy.",
+    "Input": "The input contains many test cases. Each of them has a single line with a real number D between 0 and 120, inclusively. The input is terminated with a D of -1.",
+    "Output": "For each D, print in a single line the percentage of time in a day that all of the hands are happy, accurate up to 3 decimal places.",
+    "SampleInput": "0\r\n120\r\n90\r\n-1",
+    "SampleOutput": "100.000\r\n0.000\r\n6.251",
+    "Author": "PAN, Minghao"
+  },
+  {
+    "Title": "Quoit Design",
+    "ProblemDescription": "Have you ever played quoit in a playground? Quoit is a game in which flat rings are pitched at some toys, with all the toys encircled awarded. In the field of Cyberground, the position of each toy is fixed, and the ring is carefully designed so it can only encircle one toy at a time. On the other hand, to make the game look more attractive, the ring is designed to have the largest radius. Given a configuration of the field, you are supposed to find the radius of such a ring. Assume that all the toys are points on a plane. A point is encircled by the ring if the distance between the point and the center of the ring is strictly less than the radius of the ring. If two toys are placed at the same point, the radius of the ring is considered to be 0.",
+    "Input": "The input consists of several test cases. For each case, the first line contains an integer N (2 <= N <= 100,000), the total number of toys in the field. Then N lines follow, each contains a pair of (x, y) which are the coordinates of a toy. The input is terminated by N = 0.",
+    "Output": "For each test case, print in one line the radius of the ring required by the Cyberground manager, accurate up to 2 decimal places.",
+    "SampleInput": "2\r\n0 0\r\n1 1\r\n2\r\n1 1\r\n1 1\r\n3\r\n-1.5 0\r\n0 0\r\n0 1.5\r\n0",
+    "SampleOutput": "0.71\r\n0.00\r\n0.75",
+    "Author": "CHEN, Yue"
+  },
+  {
+    "Title": "Elevator",
+    "ProblemDescription": "The highest building in our city has only one elevator. A request list is made up with N positive numbers. The numbers denote at which floors the elevator will stop, in specified order. It costs 6 seconds to move the elevator up one floor, and 4 seconds to move down one floor. The elevator will stay for 5 seconds at each stop. For a given request list, you are to compute the total time spent to fulfill the requests on the list. The elevator is on the 0th floor at the beginning and does not have to return to the ground floor when the requests are fulfilled.",
+    "Input": "There are multiple test cases. Each case contains a positive integer N, followed by N positive numbers. All the numbers in the input are less than 100. A test case with N = 0 denotes the end of input. This test case is not to be processed.",
+    "Output": "Print the total time on a single line for each test case.",
+    "SampleInput": "1 2\r\n3 2 3 1\r\n0",
+    "SampleOutput": "17\r\n41",
+    "Author": "ZHENG, Jianqiang"
+  },
+  {
+    "Title": "FatMouse' Trade",
+    "ProblemDescription": "FatMouse prepared M pounds of cat food, ready to trade with the cats guarding the warehouse containing his favorite food, JavaBean. The warehouse has N rooms. The i-th room contains J[i] pounds of JavaBeans and requires F[i] pounds of cat food. FatMouse does not have to trade for all the JavaBeans in the room, instead, he may get J[i]* a% pounds of JavaBeans if he pays F[i]* a% pounds of cat food. Here a is a real number. Now he is assigning this homework to you: tell him the maximum amount of JavaBeans he can obtain.",
+    "Input": "The input consists of multiple test cases. Each test case begins with a line containing two non-negative integers M and N. Then N lines follow, each contains two non-negative integers J[i] and F[i] respectively. The last test case is followed by two -1's. All integers are not greater than 1000.",
+    "Output": "For each test case, print in a single line a real number accurate up to 3 decimal places, which is the maximum amount of JavaBeans that FatMouse can obtain.",
+    "SampleInput": "5 3\r\n7 2\r\n4 3\r\n5 2\r\n20 3\r\n25 18\r\n24 15\r\n15 10\r\n-1 -1",
+    "SampleOutput": "13.333\r\n31.500",
+    "Author": "CHEN, Yue"
+  },
+  {
+    "Title": "Tempter of the Bone",
+    "ProblemDescription": "The doggie found a bone in an ancient maze, which fascinated him a lot. However, when he picked it up, the maze began to shake, and the doggie could feel the ground sinking. He realized that the bone was a trap, and he tried desperately to get out of this maze. The maze was a rectangle with sizes N by M. There was a door in the maze. At the beginning, the door was closed and it would open at the T-th second for a short period of time (less than 1 second). Therefore the doggie had to arrive at the door on exactly the T-th second. In every second, he could move one block to one of the upper, lower, left and right neighboring blocks. Once he entered a block, the ground of this block would start to sink and disappear in the next second. He could not stay at one block for more than one second, nor could he move into a visited block. Can the poor doggie survive? Please help him.",
+    "Input": "The input consists of multiple test cases. The first line of each test case contains three integers N, M, and T (1 < N, M < 7; 0 < T < 50), which denote the sizes of the maze and the time at which the door will open, respectively. The next N lines give the maze layout, with each line containing M characters. A character is one of the following: 'X': a block of wall, which the doggie cannot enter;  'S': the start point of the doggie;  'D': the Door; or '.': an empty block. The input is terminated with three 0's. This test case is not to be processed.",
+    "Output": "For each test case, print in one line \"YES\" if the doggie can survive, or \"NO\" otherwise.",
+    "SampleInput": "4 4 5\r\nS.X.\r\n..X.\r\n..XD\r\n....\r\n3 4 5\r\nS.X.\r\n..X.\r\n...D\r\n0 0 0",
+    "SampleOutput": "NO\r\nYES",
+    "Author": "ZHANG, Zheng"
+  },
+  {
+    "Title": "Starship Troopers",
+    "ProblemDescription": "You, the leader of Starship Troopers, are sent to destroy a base of the bugs. The base is built underground. It is actually a huge cavern, which consists of many rooms connected with tunnels. Each room is occupied by some bugs, and their brains hide in some of the rooms. Scientists have just developed a new weapon and want to experiment it on some brains. Your task is to destroy the whole base, and capture as many brains as possible. To kill all the bugs is always easier than to capture their brains. A map is drawn for you, with all the rooms marked by the amount of bugs inside, and the possibility of containing a brain. The cavern's structure is like a tree in such a way that there is one unique path leading to each room from the entrance. To finish the battle as soon as possible, you do not want to wait for the troopers to clear a room before advancing to the next one, instead you have to leave some troopers at each room passed to fight all the bugs inside. The troopers never re-enter a room where they have visited before. A starship trooper can fight against 20 bugs. Since you do not have enough troopers, you can only take some of the rooms and let the nerve gas do the rest of the job. At the mean time, you should maximize the possibility of capturing a brain. To simplify the problem, just maximize the sum of all the possibilities of containing brains for the taken rooms. Making such a plan is a difficult job. You need the help of a computer.",
+    "Input": "The input contains several test cases. The first line of each test case contains two integers N (0 < N <= 100) and M (0 <= M <= 100), which are the number of rooms in the cavern and the number of starship troopers you have, respectively. The following N lines give the description of the rooms. Each line contains two non-negative integers -- the amount of bugs inside and the possibility of containing a brain, respectively. The next N - 1 lines give the description of tunnels. Each tunnel is described by two integers, which are the indices of the two rooms it connects. Rooms are numbered from 1 and room 1 is the entrance to the cavern. The last test case is followed by two -1's.",
+    "Output": "For each test case, print on a single line the maximum sum of all the possibilities of containing brains for the taken rooms.",
+    "SampleInput": "5 10\r\n50 10\r\n40 10\r\n40 20\r\n65 30\r\n70 30\r\n1 2\r\n1 3\r\n2 4\r\n2 5\r\n1 1\r\n20 7\r\n-1 -1",
+    "SampleOutput": "50\r\n7",
+    "Author": "XU, Chuan"
+  },
+  {
+    "Title": "u Calculate e",
+    "ProblemDescription": "A simple mathematical formula for e is where n is allowed to go to infinity. This can actually yield very accurate approximations of e using relatively small values of n.",
+    "Output": "Output the approximations of e generated by the above formula for the values of n from 0 to 9. The beginning of your output should appear similar to that shown below.",
+    "SampleOutput": "n e\r\n- -----------\r\n0 1\r\n1 2\r\n2 2.5\r\n3 2.666666667\r\n4 2.708333333"
+  },
+  {
+    "Title": "Digital Roots",
+    "ProblemDescription": "The digital root of a positive integer is found by summing the digits of the integer. If the resulting value is a single digit then that digit is the digital root. If the resulting value contains two or more digits, those digits are summed and the process is repeated. This is continued as long as necessary to obtain a single digit. For example, consider the positive integer 24. Adding the 2 and the 4 yields a value of 6. Since 6 is a single digit, 6 is the digital root of 24. Now consider the positive integer 39. Adding the 3 and the 9 yields 12. Since 12 is not a single digit, the process must be repeated. Adding the 1 and the 2 yeilds 3, a single digit and also the digital root of 39.",
+    "Input": "The input file will contain a list of positive integers, one per line. The end of the input will be indicated by an integer value of zero.",
+    "Output": "For each integer in the input, output its digital root on a separate line of the output.",
+    "SampleInput": "24\r\n39\r\n0",
+    "SampleOutput": "6\r\n3"
+  },
+  {
+    "Title": "Uniform Generator",
+    "ProblemDescription": "Computer simulations often require random numbers. One way to generate pseudo-random numbers is via a function of the form seed(x+1) = [seed(x) + STEP] % MOD where '%' is the modulus operator.  Such a function will generate pseudo-random numbers (seed) between 0 and MOD-1. One problem with functions of this form is that they will always generate the same pattern over and over. In order to minimize this effect, selecting the STEP and MOD values carefully can result in a uniform distribution of all values between (and including) 0 and MOD-1.  For example, if STEP = 3 and MOD = 5, the function will generate the series of pseudo-random numbers 0, 3, 1, 4, 2 in a repeating cycle. In this example, all of the numbers between and including 0 and MOD-1 will be generated every MOD iterations of the function. Note that by the nature of the function to generate the same seed(x+1) every time seed(x) occurs means that if a function will generate all the numbers between 0 and MOD-1, it will generate pseudo-random numbers uniformly with every MOD iterations.  If STEP = 15 and MOD = 20, the function generates the series 0, 15, 10, 5 (or any other repeating series if the initial seed is other than 0). This is a poor selection of STEP and MOD because no initial seed will generate all of the numbers from 0 and MOD-1.  Your program will determine if choices of STEP and MOD will generate a uniform distribution of pseudo-random numbers.",
+    "Input": "Each line of input will contain a pair of integers for STEP and MOD in that order (1 <= STEP, MOD <= 100000).",
+    "Output": "For each line of input, your program should print the STEP value right- justified in columns 1 through 10, the MOD value right-justified in columns 11 through 20 and either \"Good Choice\" or \"Bad Choice\" left-justified starting in column 25. The \"Good Choice\" message should be printed when the selection of STEP and MOD will generate all the numbers between and including 0 and MOD-1 when MOD numbers are generated. Otherwise, your program should print the message \"Bad Choice\". After each output test set, your program should print exactly one blank line.",
+    "SampleInput": "3 5\r\n15 20\r\n63923 99999",
+    "SampleOutput": "3         5    Good Choice\r\n\r\n        15        20    Bad Choice\r\n\r\n     63923     99999    Good Choice"
+  },
+  {
+    "Title": "Safecracker",
+    "ProblemDescription": "=== Op tech briefing, 2002/11/02 06:42 CST ===  \"The item is locked in a Klein safe behind a painting in the second-floor library. Klein safes are extremely rare; most of them, along with Klein and his factory, were destroyed in World War II. Fortunately old Brumbaugh from research knew Klein's secrets and wrote them down before he died. A Klein safe has two distinguishing features: a combination lock that uses letters instead of numbers, and an engraved quotation on the door. A Klein quotation always contains between five and twelve distinct uppercase letters, usually at the beginning of sentences, and mentions one or more numbers. Five of the uppercase letters form the combination that opens the safe. By combining the digits from all the numbers in the appropriate way you get a numeric target. (The details of constructing the target number are classified.) To find the combination you must select five letters v, w, x, y, and z that satisfy the following equation, where each letter is replaced by its ordinal position in the alphabet (A=1, B=2, ..., Z=26). The combination is then vwxyz. If there is more than one solution then the combination is the one that is lexicographically greatest, i.e., the one that would appear last in a dictionary.\"  v - w^2 + x^3 - y^4 + z^5 = target  \"For example, given target 1 and letter set ABCDEFGHIJKL, one possible solution is FIECB, since 6 - 9^2 + 5^3 - 3^4 + 2^5 = 1. There are actually several solutions in this case, and the combination turns out to be LKEBA. Klein thought it was safe to encode the combination within the engraving, because it could take months of effort to try all the possibilities even if you knew the secret. But of course computers didn't exist then.\"  === Op tech directive, computer division, 2002/11/02 12:30 CST ===  \"Develop a program to find Klein combinations in preparation for field deployment. Use standard test methodology as per departmental regulations. Input consists of one or more lines containing a positive integer target less than twelve million, a space, then at least five and at most twelve distinct uppercase letters. The last line will contain a target of zero and the letters END; this signals the end of the input. For each line output the Klein combination, break ties with lexicographic order, or 'no solution' if there is no correct combination. Use the exact format shown below.\"",
+    "SampleInput": "1 ABCDEFGHIJKL\r\n11700519 ZAYEXIWOVU\r\n3072997 SOUGHT\r\n1234567 THEQUICKFROG\r\n0 END",
+    "SampleOutput": "LKEBA\r\nYOXUZ\r\nGHOST\r\nno solution"
+  },
+  {
+    "Title": "Prime Ring Problem",
+    "ProblemDescription": "A ring is compose of n circles as shown in diagram. Put natural number 1, 2, ..., n into each circle separately, and the sum of numbers in two adjacent circles should be a prime. Note: the number of first circle should always be 1.",
+    "Input": "n (0 < n < 20).",
+    "Output": "The output format is shown as sample below. Each row represents a series of circle numbers in the ring beginning from 1 clockwisely and anticlockwisely. The order of numbers must satisfy the above requirements. Print solutions in lexicographical order. You are to write a program that completes above process. Print a blank line after each case.",
+    "SampleInput": "6\r\n8",
+    "SampleOutput": "Case 1:\r\n1 4 3 2 5 6\r\n1 6 5 2 3 4\r\n\r\nCase 2:\r\n1 2 3 8 5 6 7 4\r\n1 2 5 8 3 4 7 6\r\n1 4 7 6 5 8 3 2\r\n1 6 7 4 3 8 5 2"
+  },
+  {
+    "Title": "A Mathematical Curiosity",
+    "ProblemDescription": "Given two integers n and m, count the number of pairs of integers (a,b) such that 0 < a < b < n and (a^2+b^2 +m)/(ab) is an integer. This problem contains multiple test cases! The first line of a multiple input is an integer N, then a blank line followed by N input blocks. Each input block is in the format indicated in the problem description. There is a blank line between input blocks. The output format consists of N output blocks. There is a blank line between output blocks.",
+    "Input": "You will be given a number of cases in the input. Each case is specified by a line containing the integers n and m. The end of input is indicated by a case in which n = m = 0. You may assume that 0 < n <= 100.",
+    "Output": "For each case, print the case number as well as the number of pairs (a,b) satisfying the given property. Print the output for each case on one line in the format as shown below.",
+    "SampleInput": "1\r\n\r\n10 1\r\n20 3\r\n30 4\r\n0 0",
+    "SampleOutput": "Case 1: 2\r\nCase 2: 4\r\nCase 3: 5"
+  },
+  {
+    "Title": "Big Number",
+    "ProblemDescription": "In many applications very large integers numbers are required. Some of these applications are using keys for secure transmission of data, encryption, etc. In this problem you are given a number, you have to determine the number of digits in the factorial of the number.",
+    "Input": "Input consists of several lines of integer numbers. The first line contains an integer n, which is the number of cases to be tested, followed by n lines, one integer 1 \u2264 n \u2264 10 7  on each line.",
+    "Output": "The output contains the number of digits in the factorial of the integers appearing in the input.",
+    "SampleInput": "2\r\n10\r\n20",
+    "SampleOutput": "7\r\n19"
+  },
+  {
+    "Title": "Least Common Multiple",
+    "ProblemDescription": "The least common multiple (LCM) of a set of positive integers is the smallest positive integer which is divisible by all the numbers in the set. For example, the LCM of 5, 7 and 15 is 105.",
+    "Input": "Input will consist of multiple problem instances. The first line of the input will contain a single integer indicating the number of problem instances. Each instance will consist of a single line of the form m n1 n2 n3 ... nm where m is the number of integers in the set and n1 ... nm are the integers. All integers will be positive and lie within the range of a 32-bit integer.",
+    "Output": "For each problem instance, output a single line containing the corresponding LCM. All results will lie in the range of a 32-bit integer.",
+    "SampleInput": "2\r\n3 5 7 15\r\n6 4 10296 936 1287 792 1",
+    "SampleOutput": "105\r\n10296"
+  },
+  {
+    "Title": "Encoding",
+    "ProblemDescription": "Given a string containing only 'A' - 'Z', we could encode it using the following method:  1. Each sub-string containing k same characters should be encoded to \"kX\" where \"X\" is the only character in this sub-string. 2. If the length of the sub-string is 1, '1' should be ignored.",
+    "Input": "The first line contains an integer N (1 <= N <= 100) which indicates the number of test cases. The next N lines contain N strings. Each string consists of only 'A' - 'Z' and the length is less than 10000.",
+    "Output": "For each test case, output the encoded string in a line.",
+    "SampleInput": "2\r\nABC\r\nABBCCC",
+    "SampleOutput": "ABC\r\nA2B3C",
+    "Author": "ZHANG Zheng"
+  },
+  {
+    "Title": "Fibonacci Again",
+    "ProblemDescription": "There are another kind of Fibonacci numbers: F(0) = 7, F(1) = 11, F(n) = F(n-1) + F(n-2) (n>=2).",
+    "Input": "Input consists of a sequence of lines, each containing an integer n. (n < 1,000,000).",
+    "Output": "Print the word \"yes\" if 3 divide evenly into F(n). Print the word \"no\" if not.",
+    "SampleInput": "0\r\n1\r\n2\r\n3\r\n4\r\n5",
+    "SampleOutput": "no\r\nno\r\nyes\r\nno\r\nno\r\nno",
+    "Author": "Leojay"
+  },
+  {
+    "Title": "Train Problem I",
+    "ProblemDescription": "As the new term comes, the Ignatius Train Station is very busy nowadays. A lot of student want to get back to school by train(because the trains in the Ignatius Train Station is the fastest all over the world ^v^). But here comes a problem, there is only one railway where all the trains stop. So all the trains come in from one side and get out from the other side. For this problem, if train A gets into the railway first, and then train B gets into the railway before train A leaves, train A can't leave until train B leaves. The pictures below figure out the problem. Now the problem for you is, there are at most 9 trains in the station, all the trains has an ID(numbered from 1 to n), the trains get into the railway in an order O1, your task is to determine whether the trains can get out in an order O2.",
+    "Input": "The input contains several test cases. Each test case consists of an integer, the number of trains, and two strings, the order of the trains come in:O1, and the order of the trains leave:O2. The input is terminated by the end of file. More details in the Sample Input.",
+    "Output": "The output contains a string \"No.\" if you can't exchange O2 to O1, or you should output a line contains \"Yes.\", and then output your way in exchanging the order(you should output \"in\" for a train getting into the railway, and \"out\" for a train getting out of the railway). Print a line contains \"FINISH\" after each test case. More details in the Sample Output.",
+    "SampleInput": "3 123 321\r\n3 123 312",
+    "SampleOutput": "Yes.\r\nin\r\nin\r\nin\r\nout\r\nout\r\nout\r\nFINISH\r\nNo.\r\nFINISH\r\n\r\n Hint Hint   \r\nFor the first Sample Input, we let train 1 get in, then train 2 and train 3.\r\nSo now train 3 is at the top of the railway, so train 3 can leave first, then train 2 and train 1.\r\nIn the second Sample input, we should let train 3 leave first, so we have to let train 1 get in, then train 2 and train 3.\r\nNow we can let train 3 leave.\r\nBut after that we can't let train 1 leave before train 2, because train 2 is at the top of the railway at the moment.\r\nSo we output \"No.\".",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Train Problem II",
+    "ProblemDescription": "As we all know the Train Problem I, the boss of the Ignatius Train Station want to know if all the trains come in strict-increasing order, how many orders that all the trains can get out of the railway.",
+    "Input": "The input contains several test cases. Each test cases consists of a number N(1<=N<=100). The input is terminated by the end of file.",
+    "Output": "For each test case, you should output how many ways that all the trains can get out of the railway.",
+    "SampleInput": "1\r\n2\r\n3\r\n10",
+    "SampleOutput": "1\r\n2\r\n5\r\n16796\r\n\r\n Hint \r\nThe result will be very large, so you may not process it by 32-bit integers.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Max Sum Plus Plus",
+    "ProblemDescription": "Now I think you have got an AC in Ignatius.L's \"Max Sum\" problem. To be a brave ACMer, we always challenge ourselves to more difficult problems. Now you are faced with a more difficult problem. Given a consecutive number sequence S 1 , S 2 , S 3 , S 4  ... S x , ... S n  (1 \u2264 x \u2264 n \u2264 1,000,000, -32768 \u2264 S x  \u2264 32767). We define a function sum(i, j) = S i  + ... + S j  (1 \u2264 i \u2264 j \u2264 n). Now given an integer m (m > 0), your task is to find m pairs of i and j which make sum(i 1 , j 1 ) + sum(i 2 , j 2 ) + sum(i 3 , j 3 ) + ... + sum(i m , j m ) maximal (i x  \u2264 i y  \u2264 j x  or i x  \u2264 j y  \u2264 j x  is not allowed). But I`m lazy, I don't want to write a special-judge module, so you don't have to output m pairs of i and j, just output the maximal summation of sum(i x , j x )(1 \u2264 x \u2264 m) instead. ^_^",
+    "Input": "Each test case will begin with two integers m and n, followed by n integers S 1 , S 2 , S 3  ... S n . Process to the end of file.",
+    "Output": "Output the maximal summation described above in one line.",
+    "SampleInput": "1 3 1 2 3\r\n2 6 -1 4 -2 3 -2 3",
+    "SampleOutput": "6\r\n8\r\n\r\n Hint \r\nHuge input, scanf and dynamic programming is recommended.",
+    "Author": "JGShining\uff08\u6781\u5149\u70ab\u5f71\uff09"
+  },
+  {
+    "Title": "Constructing Roads In JGShining's Kingdom",
+    "ProblemDescription": "JGShining's kingdom consists of 2n(n is no more than 500,000) small cities which are located in two parallel lines.   Half of these cities are rich in resource (we call them rich cities) while the others are short of resource (we call them poor cities). Each poor city is short of exactly one kind of resource and also each rich city is rich in exactly one kind of resource. You may assume no two poor cities are short of one same kind of resource and no two rich cities are rich in one same kind of resource.  With the development of industry, poor cities wanna import resource from rich ones. The roads existed are so small that they're unable to ensure the heavy trucks, so new roads should be built. The poor cities strongly BS each other, so are the rich ones. Poor cities don't wanna build a road with other poor ones, and rich ones also can't abide sharing an end of road with other rich ones. Because of economic benefit, any rich city will be willing to export resource to any poor one. Rich citis marked from 1 to n are located in Line I and poor ones marked from 1 to n are located in Line II.  The location of Rich City 1 is on the left of all other cities, Rich City 2 is on the left of all other cities excluding Rich City 1,  Rich City 3 is on the right of Rich City 1 and Rich City 2 but on the left of all other cities ... And so as the poor ones.  But as you know, two crossed roads may cause a lot of traffic accident so JGShining has established a law to forbid constructing crossed roads. For example, the roads in Figure I are forbidden. In order to build as many roads as possible, the young and handsome king of the kingdom - JGShining needs your help, please help him. ^_^",
+    "Input": "Each test case will begin with a line containing an integer n(1 \u2264 n \u2264 500,000). Then n lines follow. Each line contains two integers p and r which represents that Poor City p needs to import resources from Rich City r. Process to the end of file.",
+    "Output": "For each test case, output the result in the form of sample.  You should tell JGShining what's the maximal number of road(s) can be built.",
+    "SampleInput": "2\r\n1 2\r\n2 1\r\n3\r\n1 2\r\n2 3\r\n3 1",
+    "SampleOutput": "Case 1:\r\nMy king, at most 1 road can be built.\r\n\r\nCase 2:\r\nMy king, at most 2 roads can be built.\r\n\r\n Hint \r\nHuge input, scanf is recommended.",
+    "Author": "JGShining\uff08\u6781\u5149\u70ab\u5f71\uff09"
+  },
+  {
+    "Title": "Ignatius and the Princess I",
+    "ProblemDescription": "The Princess has been abducted by the BEelzebub feng5166, our hero Ignatius has to rescue our pretty Princess. Now he gets into feng5166's castle. The castle is a large labyrinth. To make the problem simply, we assume the labyrinth is a N*M two-dimensional array which left-top corner is (0,0) and right-bottom corner is (N-1,M-1). Ignatius enters at (0,0), and the door to feng5166's room is at (N-1,M-1), that is our target. There are some monsters in the castle, if Ignatius meet them, he has to kill them. Here is some rules: 1.Ignatius can only move in four directions(up, down, left, right), one step per second. A step is defined as follow: if current position is (x,y), after a step, Ignatius can only stand on (x-1,y), (x+1,y), (x,y-1) or (x,y+1). 2.The array is marked with some characters and numbers. We define them like this:  . : The place where Ignatius can walk on.  X : The place is a trap, Ignatius should not walk on it.  n : Here is a monster with n HP(1<=n<=9), if Ignatius walk on it, it takes him n seconds to kill the monster. Your task is to give out the path which costs minimum seconds for Ignatius to reach target position. You may assume that the start position and the target position will never be a trap, and there will never be a monster at the start position.",
+    "Input": "The input contains several test cases. Each test case starts with a line contains two numbers N and M(2<=N<=100,2<=M<=100) which indicate the size of the labyrinth. Then a N*M two-dimensional array follows, which describe the whole labyrinth. The input is terminated by the end of file. More details in the Sample Input.",
+    "Output": "For each test case, you should output \"God please help our poor hero.\" if Ignatius can't reach the target position, or you should output \"It takes n seconds to reach the target position, let me show you the way.\"(n is the minimum seconds), and tell our hero the whole path. Output a line contains \"FINISH\" after each test case. If there are more than one path, any one is OK in this problem. More details in the Sample Output.",
+    "SampleInput": "5 6\r\n.XX.1.\r\n..X.2.\r\n2...X.\r\n...XX.\r\nXXXXX.\r\n5 6\r\n.XX.1.\r\n..X.2.\r\n2...X.\r\n...XX.\r\nXXXXX1\r\n5 6\r\n.XX...\r\n..XX1.\r\n2...X.\r\n...XX.\r\nXXXXX.",
+    "SampleOutput": "It takes 13 seconds to reach the target position, let me show you the way.\r\n1s:(0,0)->(1,0)\r\n2s:(1,0)->(1,1)\r\n3s:(1,1)->(2,1)\r\n4s:(2,1)->(2,2)\r\n5s:(2,2)->(2,3)\r\n6s:(2,3)->(1,3)\r\n7s:(1,3)->(1,4)\r\n8s:FIGHT AT (1,4)\r\n9s:FIGHT AT (1,4)\r\n10s:(1,4)->(1,5)\r\n11s:(1,5)->(2,5)\r\n12s:(2,5)->(3,5)\r\n13s:(3,5)->(4,5)\r\nFINISH\r\nIt takes 14 seconds to reach the target position, let me show you the way.\r\n1s:(0,0)->(1,0)\r\n2s:(1,0)->(1,1)\r\n3s:(1,1)->(2,1)\r\n4s:(2,1)->(2,2)\r\n5s:(2,2)->(2,3)\r\n6s:(2,3)->(1,3)\r\n7s:(1,3)->(1,4)\r\n8s:FIGHT AT (1,4)\r\n9s:FIGHT AT (1,4)\r\n10s:(1,4)->(1,5)\r\n11s:(1,5)->(2,5)\r\n12s:(2,5)->(3,5)\r\n13s:(3,5)->(4,5)\r\n14s:FIGHT AT (4,5)\r\nFINISH\r\nGod please help our poor hero.\r\nFINISH",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Ignatius and the Princess II",
+    "ProblemDescription": "Now our hero finds the door to the BEelzebub feng5166. He opens the door and finds feng5166 is about to kill our pretty Princess. But now the BEelzebub has to beat our hero first. feng5166 says, \"I have three question for you, if you can work them out, I will release the Princess, or you will be my dinner, too.\" Ignatius says confidently, \"OK, at last, I will save the Princess.\" \"Now I will show you the first problem.\" feng5166 says, \"Given a sequence of number 1 to N, we define that 1,2,3...N-1,N is the smallest sequence among all the sequence which can be composed with number 1 to N(each number can be and should be use only once in this problem). So it's easy to see the second smallest sequence is 1,2,3...N,N-1. Now I will give you two numbers, N and M. You should tell me the Mth smallest sequence which is composed with number 1 to N. It's easy, isn't is? Hahahahaha......\" Can you help Ignatius to solve this problem?",
+    "Input": "The input contains several test cases. Each test case consists of two numbers, N and M(1<=N<=1000, 1<=M<=10000). You may assume that there is always a sequence satisfied the BEelzebub's demand. The input is terminated by the end of file.",
+    "Output": "For each test case, you only have to output the sequence satisfied the BEelzebub's demand. When output a sequence, you should print a space between two numbers, but do not output any spaces after the last number.",
+    "SampleInput": "6 4\r\n11 8",
+    "SampleOutput": "1 2 3 5 6 4\r\n1 2 3 4 5 6 7 9 8 11 10",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Ignatius and the Princess III",
+    "ProblemDescription": "\"Well, it seems the first problem is too easy. I will let you know how foolish you are later.\" feng5166 says. \"The second problem is, given an positive integer N, we define an equation like this: \u00a0\u00a0N=a[1]+a[2]+a[3]+...+a[m]; \u00a0\u00a0a[i]>0,1<=m<=N; My question is how many different equations you can find for a given N. For example, assume N is 4, we can find: \u00a0\u00a04 = 4; \u00a0\u00a04 = 3 + 1; \u00a0\u00a04 = 2 + 2; \u00a0\u00a04 = 2 + 1 + 1; \u00a0\u00a04 = 1 + 1 + 1 + 1; so the result is 5 when N is 4. Note that \"4 = 3 + 1\" and \"4 = 1 + 3\" is the same in this problem. Now, you do it!\"",
+    "Input": "The input contains several test cases. Each test case contains a positive integer N(1<=N<=120) which is mentioned above. The input is terminated by the end of file.",
+    "Output": "For each test case, you have to output a line contains an integer P which indicate the different equations you have found.",
+    "SampleInput": "4\r\n10\r\n20",
+    "SampleOutput": "5\r\n42\r\n627",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Ignatius and the Princess IV",
+    "ProblemDescription": "\"OK, you are not too bad, em... But you can never pass the next test.\" feng5166 says. \"I will tell you an odd number N, and then N integers. There will be a special integer among them, you have to tell me which integer is the special one after I tell you all the integers.\" feng5166 says. \"But what is the characteristic of the special integer?\" Ignatius asks. \"The integer will appear at least (N+1)/2 times. If you can't find the right integer, I will kill the Princess, and you will be my dinner, too. Hahahaha.....\" feng5166 says. Can you find the special integer for Ignatius?",
+    "Input": "The input contains several test cases. Each test case contains two lines. The first line consists of an odd integer N(1<=N<=999999) which indicate the number of the integers feng5166 will tell our hero. The second line contains the N integers. The input is terminated by the end of file.",
+    "Output": "For each test case, you have to output only one line which contains the special number you have found.",
+    "SampleInput": "5\r\n1 3 2 3 3\r\n11\r\n1 1 1 1 1 5 5 5 5 5 5\r\n7\r\n1 1 1 1 1 1 1",
+    "SampleOutput": "3\r\n5\r\n1",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Delta-wave ",
+    "ProblemDescription": "A triangle field is numbered with successive integers in the way shown on the picture below.  The traveller needs to go from the cell with number M to the cell with number N. The traveller is able to enter the cell through cell edges only, he can not travel from cell to cell through vertices. The number of edges the traveller passes makes the length of the traveller's route.  Write the program to determine the length of the shortest route connecting cells with numbers N and M.",
+    "Input": "Input contains two integer numbers M and N in the range from 1 to 1000000000 separated with space(s).",
+    "Output": "Output should contain the length of the shortest route.",
+    "SampleInput": "6 12",
+    "SampleOutput": "3"
+  },
+  {
+    "Title": "Design T-Shirt",
+    "ProblemDescription": "Soon after he decided to design a T-shirt for our Algorithm Board on Free-City BBS, XKA found that he was trapped by all kinds of suggestions from everyone on the board. It is indeed a mission-impossible to have everybody perfectly satisfied. So he took a poll to collect people's opinions. Here are what he obtained: N people voted for M design elements (such as the ACM-ICPC logo, big names in computer science, well-known graphs, etc.). Everyone assigned each element a number of satisfaction. However, XKA can only put K (<=M) elements into his design. He needs you to pick for him the K elements such that the total number of satisfaction is maximized.",
+    "Input": "The input consists of multiple test cases. For each case, the first line contains three positive integers N, M and K where N is the number of people, M is the number of design elements, and K is the number of elements XKA will put into his design. Then N lines follow, each contains M numbers. The j-th number in the i-th line represents the i-th person's satisfaction on the j-th element.",
+    "Output": "For each test case, print in one line the indices of the K elements you would suggest XKA to take into consideration so that the total number of satisfaction is maximized. If there are more than one solutions, you must output the one with minimal indices. The indices start from 1 and must be printed in non-increasing order. There must be exactly one space between two adjacent indices, and no extra space at the end of the line.",
+    "SampleInput": "3 6 4\r\n2 2.5 5 1 3 4\r\n5 1 3.5 2 2 2\r\n1 1 1 1 1 10\r\n3 3 2\r\n1 2 3\r\n2 3 1\r\n3 1 2",
+    "SampleOutput": "6 5 3 1\r\n2 1",
+    "Author": "CHEN, Yue"
+  },
+  {
+    "Title": "The 3n + 1 problem",
+    "ProblemDescription": "Problems in Computer Science are often classified as belonging to a certain class of problems (e.g., NP, Unsolvable, Recursive). In this problem you will be analyzing a property of an algorithm whose classification is not known for all possible inputs. Consider the following algorithm:    \u00a0\u00a0\u00a0\u00a01. \u00a0\u00a0\u00a0\u00a0 input n \u00a0\u00a0\u00a0\u00a02. \u00a0\u00a0\u00a0\u00a0 print n \u00a0\u00a0\u00a0\u00a03. \u00a0\u00a0\u00a0\u00a0 if n = 1 then STOP \u00a0\u00a0\u00a0\u00a04. \u00a0\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0\u00a0 if n is odd then   n <- 3n + 1 \u00a0\u00a0\u00a0\u00a05. \u00a0\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0\u00a0 else   n <- n / 2 \u00a0\u00a0\u00a0\u00a06. \u00a0\u00a0\u00a0\u00a0 GOTO 2 Given the input 22, the following sequence of numbers will be printed 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1  It is conjectured that the algorithm above will terminate (when a 1 is printed) for any integral input value. Despite the simplicity of the algorithm, it is unknown whether this conjecture is true. It has been verified, however, for all integers n such that 0 < n < 1,000,000 (and, in fact, for many more numbers than this.)  Given an input n, it is possible to determine the number of numbers printed (including the 1). For a given n this is called the cycle-length of n. In the example above, the cycle length of 22 is 16.  For any two numbers i and j you are to determine the maximum cycle length over all numbers between i and j.",
+    "Input": "The input will consist of a series of pairs of integers i and j, one pair of integers per line. All integers will be less than 1,000,000 and greater than 0.  You should process all pairs of integers and for each pair determine the maximum cycle length over all integers between and including i and j.  You can assume that no opperation overflows a 32-bit integer.",
+    "Output": "For each pair of input integers i and j you should output i, j, and the maximum cycle length for integers between and including i and j. These three numbers should be separated by at least one space with all three numbers on one line and with one line of output for each line of input. The integers i and j must appear in the output in the same order in which they appeared in the input and should be followed by the maximum cycle length (on the same line).",
+    "SampleInput": "1 10\r\n100 200\r\n201 210\r\n900 1000",
+    "SampleOutput": "1 10 20\r\n100 200 125\r\n201 210 89\r\n900 1000 174"
+  },
+  {
+    "Title": "Edge",
+    "ProblemDescription": "For products that are wrapped in small packings it is necessary that the sheet of paper containing the directions for use is folded until its size becomes small enough. We assume that a sheet of paper is rectangular and only folded along lines parallel to its initially shorter edge. The act of folding along such a line, however, can be performed in two directions: either the surface on the top of the sheet is brought together, or the surface on its bottom. In both cases the two parts of the rectangle that are separated by the folding line are laid together neatly and we ignore any differences in thickness of the resulting folded sheet.  After several such folding steps have been performed we may unfold the sheet again and take a look at its longer edge holding the sheet so that it appears as a one-dimensional curve, actually a concatenation of line segments. If we move along this curve in a fixed direction we can classify every place where the sheet was folded as either type A meaning a clockwise turn or type V meaning a counter-clockwise turn. Given such a sequence of classifications, produce a drawing of the longer edge of the sheet assuming 90 degree turns at equidistant places.",
+    "Input": "The input contains several test cases, each on a separate line. Each line contains a nonempty string of characters A and V describing the longer edge of the sheet. You may assume that the length of the string is less than 200. The input file terminates immediately after the last test case.",
+    "Output": "For each test case generate a PostScript drawing of the edge with commands placed on separate lines. Start every drawing at the coordinates (300, 420) with the command \"300 420 moveto\". The first turn occurs at (310, 420) using the command \"310 420 lineto\". Continue with clockwise or counter-clockwise turns according to the input string, using a sequence of \"x y lineto\" commands with the appropriate coordinates. The turning points are separated at a distance of 10 units. Do not forget the end point of the edge and finish each test case by the commands stroke and showpage.  You may display such drawings with the gv PostScript interpreter, optionally after a conversion using the ps2ps utility.",
+    "SampleInput": "V\r\nAVV",
+    "SampleOutput": "300 420 moveto\r\n310 420 lineto\r\n310 430 lineto\r\nstroke\r\nshowpage\r\n300 420 moveto\r\n310 420 lineto\r\n310 410 lineto\r\n320 410 lineto\r\n320 420 lineto\r\nstroke\r\nshowpage"
+  },
+  {
+    "Title": "Candy Sharing Game",
+    "ProblemDescription": "A number of students sit in a circle facing their teacher in the center. Each student initially has an even number of pieces of candy. When the teacher blows a whistle, each student simultaneously gives half of his or her candy to the neighbor on the right. Any student, who ends up with an odd number of pieces of candy, is given another piece by the teacher. The game ends when all students have the same number of pieces of candy.  Write a program which determines the number of times the teacher blows the whistle and the final number of pieces of candy for each student from the amount of candy each child starts with.",
+    "Input": "The input may describe more than one game. For each game, the input begins with the number N of students, followed by N (even) candy counts for the children counter-clockwise around the circle. The input ends with a student count of 0. Each input number is on a line by itself.",
+    "Output": "For each game, output the number of rounds of the game followed by the amount of candy each child ends up with, both on one line.",
+    "SampleInput": "6\r\n36\r\n2\r\n2\r\n2\r\n2\r\n2\r\n11\r\n22\r\n20\r\n18\r\n16\r\n14\r\n12\r\n10\r\n8\r\n6\r\n4\r\n2\r\n4\r\n2\r\n4\r\n6\r\n8\r\n0",
+    "SampleOutput": "15 14\r\n17 22\r\n4 8\r\n\r\n Hint \r\nThe game ends in a finite number of steps because:\r\n1. The maximum candy count can never increase.\r\n2. The minimum candy count can never decrease.\r\n3. No one with more than the minimum amount will ever decrease to the minimum.\r\n4. If the maximum and minimum candy count are not the same, at least one student with the minimum amount must have their count increase."
+  },
+  {
+    "Title": "Robot Motion",
+    "ProblemDescription": "A robot has been programmed to follow the instructions in its path. Instructions for the next direction the robot is to move are laid down in a grid. The possible instructions are  N north (up the page) S south (down the page) E east (to the right on the page) W west (to the left on the page) For example, suppose the robot starts on the north (top) side of Grid 1 and starts south (down). The path the robot follows is shown. The robot goes through 10 instructions in the grid before leaving the grid. Compare what happens in Grid 2: the robot goes through 3 instructions only once, and then starts a loop through 8 instructions, and never exits. You are to write a program that determines how long it takes a robot to get out of the grid or how the robot loops around.",
+    "Input": "There will be one or more grids for robots to navigate. The data for each is in the following form. On the first line are three integers separated by blanks: the number of rows in the grid, the number of columns in the grid, and the number of the column in which the robot enters from the north. The possible entry columns are numbered starting with one at the left. Then come the rows of the direction instructions. Each grid will have at least one and at most 10 rows and columns of instructions. The lines of instructions contain only the characters N, S, E, or W with no blanks. The end of input is indicated by a row containing 0 0 0.",
+    "Output": "For each grid in the input there is one line of output. Either the robot follows a certain number of instructions and exits the grid on any one the four sides or else the robot follows the instructions on a certain number of locations once, and then the instructions on some number of locations repeatedly. The sample input below corresponds to the two grids above and illustrates the two forms of output. The word \"step\" is always immediately followed by \"(s)\" whether or not the number before it is 1.",
+    "SampleInput": "3 6 5\r\nNEESWE\r\nWWWESS\r\nSNWWWW\r\n4 5 1\r\nSESWE\r\nEESNW\r\nNWEEN\r\nEWSEN\r\n0 0",
+    "SampleOutput": "10 step(s) to exit\r\n3 step(s) before a loop of 8 step(s)"
+  },
+  {
+    "Title": "Average is not Fast Enough!",
+    "ProblemDescription": "A relay is a race for two or more teams of runners. Each member of a team runs one section of the race. Your task is to help to evaluate the results of a relay race.  You have to process several teams. For each team you are given a list with the running times for every section of the race. You are to compute the average time per kilometer over the whole distance. That's easy, isn't it?  So if you like the fun and challenge competing at this contest, perhaps you like a relay race, too. Students from Ulm participated e.g. at the \"SOLA\" relay in Zurich, Switzerland. For more information visit http://www.sola.asvz.ethz.ch/ after the contest is over.",
+    "Input": "The first line of the input specifies the number of sections n followed by the total distance of the relay d in kilometers. You may safely assume that 1 <= n <= 20 and 0.0 < d < 200.0. Every following line gives information about one team: the team number t (an integer, right-justified in a field of width 3) is followed by the n results for each section, separated by a single space. These running times are given in the format \"h:mm:ss\" with integer numbers for the hours, minutes and seconds, respectively. In the special case of a runner being disqualified, the running time will be denoted by \"-:--:--\". Finally, the data on every line is terminated by a newline character. Input is terminated by EOF.",
+    "Output": "For each team output exactly one line giving the team's number t right aligned in a field of width 3, and the average time for this team rounded to whole seconds in the format \"m:ss\". If at least one of the team's runners has been disqualified, output \"-\" instead. Adhere to the sample output for the exact format of presentation.",
+    "SampleInput": "2 12.5\r\n  5 0:23:21 0:25:01\r\n 42 0:23:32 -:--:--\r\n  7 0:33:20 0:41:35",
+    "SampleOutput": "5: 3:52 min/km\r\n 42: -\r\n  7: 6:00 min/km"
+  },
+  {
+    "Title": "Keep on Truckin'",
+    "ProblemDescription": "Boudreaux and Thibodeaux are on the road again . . . \"Boudreaux, we have to get this shipment of mudbugs to Baton Rouge by tonight!\" \"Don't worry, Thibodeaux, I already checked ahead. There are three underpasses and our 18-wheeler will fit through all of them, so just keep that motor running!\" \"We're not going to make it, I say!\" So, which is it: will there be a very messy accident on Interstate 10, or is Thibodeaux just letting the sound of his own wheels drive him crazy?",
+    "Input": "Input to this problem will consist of a single data set. The data set will be formatted according to the following description. The data set will consist of a single line containing 3 numbers, separated by single spaces. Each number represents the height of a single underpass in inches. Each number will be between 0 and 300 inclusive.",
+    "Output": "There will be exactly one line of output. This line will be: \u00a0\u00a0\u00a0NO CRASH if the height of the 18-wheeler is less than the height of each of the underpasses, or: \u00a0\u00a0\u00a0CRASH X otherwise, where X is the height of the first underpass in the data set that the 18-wheeler is unable to go under (which means its height is less than or equal to the height of the 18-wheeler).  The height of the 18-wheeler is 168 inches.",
+    "SampleInput": "180 160 170",
+    "SampleOutput": "CRASH 160"
+  },
+  {
+    "Title": "Biker's Trip Odometer",
+    "ProblemDescription": "Most bicycle speedometers work by using a Hall Effect sensor fastened to the front fork of the bicycle. A magnet is attached to one of the spokes on the front wheel so that it will line up with the Hall Effect switch once per revolution of the wheel. The speedometer monitors the sensor to count wheel revolutions. If the diameter of the wheel is known, the distance traveled can be easily be calculated if you know how many revolutions the wheel has made. In addition, if the time it takes to complete the revolutions is known, the average speed can also be calculated.  For this problem, you will write a program to determine the total distance traveled (in miles) and the average speed (in Miles Per Hour) given the wheel diameter, the number of revolutions and the total time of the trip. You can assume that the front wheel never leaves the ground, and there is no slipping or skidding.",
+    "Input": "Input consists of multiple datasets, one per line, of the form: diameter revolutions time The diameter is expressed in inches as a floating point value. The revolutions is an integer value. The time is expressed in seconds as a floating point value. Input ends when the value of revolutions is 0 (zero).",
+    "Output": "For each data set, print: Trip #N: distance MPH Of course N should be replaced by the data set number, distance by the total distance in miles (accurate to 2 decimal places) and MPH by the speed in miles per hour (accurate to 2 decimal places). Your program should not generate any output for the ending case when revolutions is 0. Constants For p use the value: 3.1415927. There are 5280 feet in a mile. There are 12 inches in a foot. There are 60 minutes in an hour. There are 60 seconds in a minute. There are 201.168 meters in a furlong.",
+    "SampleInput": "26 1000 5\r\n27.25 873234 3000\r\n26 0 1000",
+    "SampleOutput": "Trip #1: 1.29 928.20\r\nTrip #2: 1179.86 1415.84"
+  },
+  {
+    "Title": "Easier Done Than Said?",
+    "ProblemDescription": "Password security is a tricky thing. Users prefer simple passwords that are easy to remember (like buddy), but such passwords are often insecure. Some sites use random computer-generated passwords (like xvtpzyo), but users have a hard time remembering them and sometimes leave them written on notes stuck to their computer. One potential solution is to generate \"pronounceable\" passwords that are relatively secure but still easy to remember. FnordCom is developing such a password generator. You work in the quality control department, and it's your job to test the generator and make sure that the passwords are acceptable. To be acceptable, a password must satisfy these three rules: It must contain at least one vowel. It cannot contain three consecutive vowels or three consecutive consonants. It cannot contain two consecutive occurrences of the same letter, except for 'ee' or 'oo'. (For the purposes of this problem, the vowels are 'a', 'e', 'i', 'o', and 'u'; all other letters are consonants.) Note that these rules are not perfect; there are many common/pronounceable words that are not acceptable.",
+    "Input": "The input consists of one or more potential passwords, one per line, followed by a line containing only the word 'end' that signals the end of the file. Each password is at least one and at most twenty letters long and consists only of lowercase letters.",
+    "Output": "For each password, output whether or not it is acceptable, using the precise format shown in the example.",
+    "SampleInput": "a\r\ntv\r\nptoui\r\nbontres\r\nzoggax\r\nwiinq\r\neep\r\nhouctuh\r\nend",
+    "SampleOutput": "<a> is acceptable.\r\n<tv> is not acceptable.\r\n<ptoui> is not acceptable.\r\n<bontres> is not acceptable.\r\n<zoggax> is not acceptable.\r\n<wiinq> is not acceptable.\r\n<eep> is acceptable.\r\n<houctuh> is acceptable."
+  },
+  {
+    "Title": "As Easy As A+B",
+    "ProblemDescription": "These days, I am thinking about a question, how can I get a problem as easy as A+B? It is fairly difficulty to do such a thing. Of course, I got it after many waking nights. Give you some integers, your task is to sort these number ascending (\u5347\u5e8f). You should know how easy the problem is now! Good luck!",
+    "Input": "Input contains multiple test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case contains an integer N (1<=N<=1000 the number of integers to be sorted) and then N integers follow in the same line.  It is guarantied that all integers are in the range of 32-int.",
+    "Output": "For each case, print the sorting result, and one line one case.",
+    "SampleInput": "2\r\n3 2 1 3\r\n9 1 4 7 2 5 8 3 6 9",
+    "SampleOutput": "1 2 3\r\n1 2 3 4 5 6 7 8 9",
+    "Author": "lcy"
+  },
+  {
+    "Title": "Computer Transformation",
+    "ProblemDescription": "A sequence consisting of one digit, the number 1 is initially written into a computer. At each successive time step, the computer simultaneously tranforms each digit 0 into the sequence 1 0 and each digit 1 into the sequence 0 1. So, after the first time step, the sequence 0 1 is obtained; after the second, the sequence 1 0 0 1, after the third, the sequence 0 1 1 0 1 0 0 1 and so on.  How many pairs of consequitive zeroes will appear in the sequence after n steps?",
+    "Input": "Every input line contains one natural number n (0 < n \u22641000).",
+    "Output": "For each input n print the number of consecutive zeroes pairs that will appear in the sequence after n steps.",
+    "SampleInput": "2\r\n3",
+    "SampleOutput": "1\r\n1"
+  },
+  {
+    "Title": "N!",
+    "ProblemDescription": "Given an integer N(0 \u2264 N \u2264 10000), your task is to calculate N!",
+    "Input": "One N in one line, process to the end of file.",
+    "Output": "For each N, output N! in one line.",
+    "SampleInput": "1\r\n2\r\n3",
+    "SampleOutput": "1\r\n2\r\n6",
+    "Author": "JGShining\uff08\u6781\u5149\u70ab\u5f71\uff09"
+  },
+  {
+    "Title": "Eight",
+    "ProblemDescription": "The 15-puzzle has been around for over 100 years; even if you don't know it by that name, you've seen it. It is constructed with 15 sliding tiles, each with a number from 1 to 15 on it, and all packed into a 4 by 4 frame with one tile missing. Let's call the missing tile 'x'; the object of the puzzle is to arrange the tiles so that they are ordered as:   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15  x where the only legal operation is to exchange 'x' with one of the tiles with which it shares an edge. As an example, the following sequence of moves solves a slightly scrambled puzzle:   1  2  3  4     1  2  3  4     1  2  3  4     1  2  3  4  5  6  7  8     5  6  7  8     5  6  7  8     5  6  7  8  9  x 10 12     9 10  x 12     9 10 11 12     9 10 11 12 13 14 11 15    13 14 11 15    13 14  x 15    13 14 15  x             r->            d->            r-> The letters in the previous row indicate which neighbor of the 'x' tile is swapped with the 'x' tile at each step; legal values are 'r','l','u' and 'd', for right, left, up, and down, respectively.  Not all puzzles can be solved; in 1870, a man named Sam Loyd was famous for distributing an unsolvable version of the puzzle, and  frustrating many people. In fact, all you have to do to make a regular puzzle into an unsolvable one is to swap two tiles (not counting the missing 'x' tile, of course).  In this problem, you will write a program for solving the less well-known 8-puzzle, composed of tiles on a three by three  arrangement.",
+    "Input": "You will receive, several descriptions of configuration of the 8 puzzle. One description is just a list of the tiles in their initial positions, with the rows listed from top to bottom, and the tiles listed from left to right within a row, where the tiles are represented by numbers 1 to 8, plus 'x'. For example, this puzzle   1  2  3   x  4  6   7  5  8  is described by this list:  1 2 3 x 4 6 7 5 8",
+    "Output": "You will print to standard output either the word ``unsolvable'', if the puzzle has no solution, or a string consisting entirely of the letters 'r', 'l', 'u' and 'd' that describes a series of moves that produce a solution. The string should include no spaces and start at the beginning of the line. Do not print a blank line between cases.",
+    "SampleInput": "2  3  4  1  5  x  7  6  8",
+    "SampleOutput": "ullddrurdllurdruldr"
+  },
+  {
+    "Title": "Collect More Jewels",
+    "ProblemDescription": "It is written in the Book of The Lady: After the Creation, the cruel god Moloch rebelled against the authority of Marduk the Creator.Moloch stole from Marduk the most powerful of all the artifacts of the gods, the Amulet of Yendor, and he hid it in the dark cavities of Gehennom, the Under World, where he now lurks, and bides his time. Your goddess The Lady seeks to possess the Amulet, and with it to gain deserved ascendance over the other gods. You, a newly trained Rambler, have been heralded from birth as the instrument of The Lady. You are destined to recover the Amulet for your deity, or die in the attempt. Your hour of destiny has come. For the sake of us all: Go bravely with The Lady! If you have ever played the computer game NETHACK, you must be familiar with the quotes above. If you have never heard of it, do not worry. You will learn it (and love it) soon. In this problem, you, the adventurer, are in a dangerous dungeon. You are informed that the dungeon is going to collapse. You must find the exit stairs within given time. However, you do not want to leave the dungeon empty handed. There are lots of rare jewels in the dungeon. Try collecting some of them before you leave. Some of the jewels are cheaper and some are more expensive. So you will try your best to maximize your collection, more importantly, leave the dungeon in time.",
+    "Input": "Standard input will contain multiple test cases. The first line of the input is a single integer T (1 <= T <= 10) which is the number of test cases. T test cases follow, each preceded by a single blank line. The first line of each test case contains four integers W (1 <= W <= 50), H (1 <= H <= 50), L (1 <= L <= 1,000,000) and M (1 <= M <= 10). The dungeon is a rectangle area W block wide and H block high. L is the time limit, by which you need to reach the exit. You can move to one of the adjacent blocks up, down, left and right in each time unit, as long as the target block is inside the dungeon and is not a wall. Time starts at 1 when the game begins. M is the number of jewels in the dungeon. Jewels will be collected once the adventurer is in that block. This does not cost extra time. The next line contains M integers\uff0cwhich are the values of the jewels. The next H lines will contain W characters each. They represent the dungeon map in the following notation: > [*] marks a wall, into which you can not move; > [.] marks an empty space, into which you can move; > [@] marks the initial position of the adventurer; > [<] marks the exit stairs; > [A] - [J] marks the jewels.",
+    "Output": "Results should be directed to standard output. Start each case with \"Case #:\" on a single line, where # is the case number starting from 1. Two consecutive cases should be separated by a single blank line. No blank line should be produced after the last test case. If the adventurer can make it to the exit stairs in the time limit, print the sentence \"The best score is S.\", where S is the maximum value of the jewels he can collect along the way; otherwise print the word \"Impossible\" on a single line.",
+    "SampleInput": "3\r\n\r\n4 4 2 2\r\n100 200\r\n****\r\n*@A*\r\n*B<*\r\n****\r\n\r\n4 4 1 2\r\n100 200\r\n****\r\n*@A*\r\n*B<*\r\n****\r\n\r\n12 5 13 2\r\n100 200\r\n************\r\n*B.........*\r\n*.********.*\r\n*@...A....<*\r\n************",
+    "SampleOutput": "Case 1:\r\nThe best score is 200.\r\n\r\nCase 2:\r\nImpossible\r\n\r\nCase 3:\r\nThe best score is 300."
+  },
+  {
+    "Title": "Fire Net",
+    "ProblemDescription": "Suppose that we have a square city with straight streets. A map of a city is a square board with n rows and n columns, each representing a street or a piece of wall.  A blockhouse is a small castle that has four openings through which to shoot. The four openings are facing North, East, South, and West, respectively. There will be one machine gun shooting through each opening.  Here we assume that a bullet is so powerful that it can run across any distance and destroy a blockhouse on its way. On the other hand, a wall is so strongly built that can stop the bullets.  The goal is to place as many blockhouses in a city as possible so that no two can destroy each other. A configuration of blockhouses is legal provided that no two blockhouses are on the same horizontal row or vertical column in a map unless there is at least one wall separating them. In this problem we will consider small square cities (at most 4x4) that contain walls through which bullets cannot run through.  The following image shows five pictures of the same board. The first picture is the empty board, the second and third pictures show legal configurations, and the fourth and fifth pictures show illegal configurations. For this board, the maximum number of blockhouses in a legal configuration is 5; the second picture shows one way to do it, but there are several other ways.  Your task is to write a program that, given a description of a map, calculates the maximum number of blockhouses that can be placed in the city in a legal configuration.",
+    "Input": "The input file contains one or more map descriptions, followed by a line containing the number 0 that signals the end of the file. Each map description begins with a line containing a positive integer n that is the size of the city; n will be at most 4. The next n lines each describe one row of the map, with a '.' indicating an open space and an uppercase 'X' indicating a wall. There are no spaces in the input file.",
+    "Output": "For each test case, output one line containing the maximum number of blockhouses that can be placed in the city in a legal configuration.",
+    "SampleInput": "4\r\n.X..\r\n....\r\nXX..\r\n....\r\n2\r\nXX\r\n.X\r\n3\r\n.X.\r\nX.X\r\n.X.\r\n3\r\n...\r\n.XX\r\n.XX\r\n4\r\n....\r\n....\r\n....\r\n....\r\n0",
+    "SampleOutput": "5\r\n1\r\n5\r\n2\r\n4"
+  },
+  {
+    "Title": "Gridland",
+    "ProblemDescription": "For years, computer scientists have been trying to find efficient solutions to different computing problems. For some of them efficient algorithms are already available, these are the \u201ceasy\u201d problems like sorting, evaluating a polynomial or finding the shortest path in a graph. For the \u201chard\u201d ones only exponential-time algorithms are known. The traveling-salesman problem belongs to this latter group. Given a set of N towns and roads between these towns, the problem is to compute the shortest path allowing a salesman to visit each of the towns once and only once and return to the starting point."
+  },
+  {
+    "Title": "Integer Inquiry",
+    "ProblemDescription": "One of the first users of BIT's new supercomputer was Chip Diller. He extended his exploration of powers of 3 to go from 0 to 333 and he explored taking various sums of those numbers.  ``This supercomputer is great,'' remarked Chip. ``I only wish Timothy were here to see these results.'' (Chip moved to a new apartment, once one became available on the third floor of the Lemon Sky apartments on Third Street.)",
+    "Input": "The input will consist of at most 100 lines of text, each of which contains a single VeryLongInteger. Each VeryLongInteger will be 100 or fewer characters in length, and will only contain digits (no VeryLongInteger will be negative).  The final input line will contain a single zero on a line by itself.",
+    "Output": "Your program should output the sum of the VeryLongIntegers given in the input.  This problem contains multiple test cases! The first line of a multiple input is an integer N, then a blank line followed by N input blocks. Each input block is in the format indicated in the problem description. There is a blank line between input blocks. The output format consists of N output blocks. There is a blank line between output blocks.",
+    "SampleInput": "1\r\n\r\n\r\n123456789012345678901234567890\r\n123456789012345678901234567890\r\n123456789012345678901234567890\r\n0",
+    "SampleOutput": "370370367037037036703703703670"
+  },
+  {
+    "Title": "The Hardest Problem Ever",
+    "ProblemDescription": "Julius Caesar lived in a time of danger and intrigue. The hardest situation Caesar ever faced was keeping himself alive. In order for him to survive, he decided to create one of the first ciphers. This cipher was so incredibly sound, that no one could figure it out without knowing how it worked.  You are a sub captain of Caesar's army. It is your job to decipher the messages sent by Caesar and provide to your general. The code is simple. For each letter in a plaintext message, you shift it five places to the right to create the secure message (i.e., if the letter is 'A', the cipher text would be 'F'). Since you are creating plain text out of Caesar's messages, you will do the opposite:  Cipher text A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Plain text V W X Y Z A B C D E F G H I J K L M N O P Q R S T U  Only letters are shifted in this cipher. Any non-alphabetical character should remain the same, and all alphabetical characters will be upper case.",
+    "Input": "Input to this problem will consist of a (non-empty) series of up to 100 data sets. Each data set will be formatted according to the following description, and there will be no blank lines separating data sets. All characters will be uppercase.  A single data set has 3 components:  Start line - A single line, \"START\"  Cipher message - A single line containing from one to two hundred characters, inclusive, comprising a single message from Caesar  End line - A single line, \"END\"  Following the final data set will be a single line, \"ENDOFINPUT\".",
+    "Output": "For each data set, there will be exactly one line of output. This is the original message by Caesar.",
+    "SampleInput": "START\r\nNS BFW, JAJSYX TK NRUTWYFSHJ FWJ YMJ WJXZQY TK YWNANFQ HFZXJX\r\nEND\r\nSTART\r\nN BTZQI WFYMJW GJ KNWXY NS F QNYYQJ NGJWNFS ANQQFLJ YMFS XJHTSI NS WTRJ\r\nEND\r\nSTART\r\nIFSLJW PSTBX KZQQ BJQQ YMFY HFJXFW NX RTWJ IFSLJWTZX YMFS MJ\r\nEND\r\nENDOFINPUT",
+    "SampleOutput": "IN WAR, EVENTS OF IMPORTANCE ARE THE RESULT OF TRIVIAL CAUSES\r\nI WOULD RATHER BE FIRST IN A LITTLE IBERIAN VILLAGE THAN SECOND IN ROME\r\nDANGER KNOWS FULL WELL THAT CAESAR IS MORE DANGEROUS THAN HE"
+  },
+  {
+    "Title": "Climbing Worm",
+    "ProblemDescription": "An inch worm is at the bottom of a well n inches deep. It has enough energy to climb u inches every minute, but then has to rest a minute before climbing again. During the rest, it slips down d inches. The process of climbing and resting then repeats. How long before the worm climbs out of the well? We'll always count a portion of a minute as a whole minute and if the worm just reaches the top of the well at the end of its climbing, we'll assume the worm makes it out.",
+    "Input": "There will be multiple problem instances. Each line will contain 3 positive integers n, u and d. These give the values mentioned in the paragraph above. Furthermore, you may assume d < u and n < 100. A value of n = 0 indicates end of output.",
+    "Output": "Each input instance should generate a single integer on a line, indicating the number of minutes it takes for the worm to climb out of the well.",
+    "SampleInput": "10 2 1\r\n20 3 1\r\n0 0 0",
+    "SampleOutput": "17\r\n19"
+  },
+  {
+    "Title": "Moving Tables",
+    "ProblemDescription": "The famous ACM (Advanced Computer Maker) Company has rented a floor of a building whose shape is in the following figure.  The floor has 200 rooms each on the north side and south side along the corridor. Recently the Company made a plan to reform its system. The reform includes moving a lot of tables between rooms. Because the corridor is narrow and all the tables are big, only one table can pass through the corridor. Some plan is needed to make the moving efficient. The manager figured out the following plan: Moving a table from a room to another room can be done within 10 minutes. When moving a table from room i to room j, the part of the corridor between the front of room i and the front of room j is used. So, during each 10 minutes, several moving between two rooms not sharing the same part of the corridor will be done simultaneously. To make it clear the manager illustrated the possible cases and impossible cases of simultaneous moving.  For each room, at most one table will be either moved in or moved out. Now, the manager seeks out a method to minimize the time to move all the tables. Your job is to write a program to solve the manager\u2019s problem.",
+    "Input": "The input consists of T test cases. The number of test cases ) (T is given in the first line of the input. Each test case begins with a line containing an integer N , 1<=N<=200 , that represents the number of tables to move. Each of the following N lines contains two positive integers s and t, representing that a table is to move from room number s to room number t (each room number appears at most once in the N lines). From the N+3-rd line, the remaining test cases are listed in the same manner as above.",
+    "Output": "The output should contain the minimum time in minutes to complete the moving, one per line.",
+    "SampleInput": "3 \r\n4 \r\n10 20 \r\n30 40 \r\n50 60 \r\n70 80 \r\n2 \r\n1 3 \r\n2 200 \r\n3 \r\n10 100 \r\n20 80 \r\n30 50",
+    "SampleOutput": "10\r\n20\r\n30"
+  },
+  {
+    "Title": "Wooden Sticks",
+    "ProblemDescription": "There is a pile of n wooden sticks. The length and weight of each stick are known in advance. The sticks are to be processed by a woodworking machine in one by one fashion. It needs some time, called setup time, for the machine to prepare processing a stick. The setup times are associated with cleaning operations and changing tools and shapes in the machine. The setup times of the woodworking machine are given as follows:  (a) The setup time for the first wooden stick is 1 minute.  (b) Right after processing a stick of length l and weight w , the machine will need no setup time for a stick of length l' and weight w' if l<=l' and w<=w'. Otherwise, it will need 1 minute for setup.  You are to find the minimum setup time to process a given pile of n wooden sticks. For example, if you have five sticks whose pairs of length and weight are (4,9), (5,2), (2,1), (3,5), and (1,4), then the minimum setup time should be 2 minutes since there is a sequence of pairs (1,4), (3,5), (4,9), (2,1), (5,2).",
+    "Input": "The input consists of T test cases. The number of test cases (T) is given in the first line of the input file. Each test case consists of two lines: The first line has an integer n , 1<=n<=5000, that represents the number of wooden sticks in the test case, and the second line contains n 2 positive integers l1, w1, l2, w2, ..., ln, wn, each of magnitude at most 10000 , where li and wi are the length and weight of the i th wooden stick, respectively. The 2n integers are delimited by one or more spaces.",
+    "Output": "The output should contain the minimum setup time in minutes, one per line.",
+    "SampleInput": "3 \r\n5 \r\n4 9 5 2 2 1 3 5 1 4 \r\n3 \r\n2 2 1 1 2 2 \r\n3 \r\n1 3 2 2 3 1",
+    "SampleOutput": "2\r\n1\r\n3"
+  },
+  {
+    "Title": "Tian Ji -- The Horse Racing",
+    "ProblemDescription": "Here is a famous story in Chinese history. \"That was about 2300 years ago. General Tian Ji was a high official in the country Qi. He likes to play horse racing with the king and others.\" \"Both of Tian and the king have three horses in different classes, namely, regular, plus, and super. The rule is to have three rounds in a match; each of the horses must be used in one round. The winner of a single round takes two hundred silver dollars from the loser.\" \"Being the most powerful man in the country, the king has so nice horses that in each class his horse is better than Tian's. As a result, each time the king takes six hundred silver dollars from Tian.\" \"Tian Ji was not happy about that, until he met Sun Bin, one of the most famous generals in Chinese history. Using a little trick due to Sun, Tian Ji brought home two hundred silver dollars and such a grace in the next match.\" \"It was a rather simple trick. Using his regular class horse race against the super class from the king, they will certainly lose that round. But then his plus beat the king's regular, and his super beat the king's plus. What a simple trick. And how do you think of Tian Ji, the high ranked official in China?\" Were Tian Ji lives in nowadays, he will certainly laugh at himself. Even more, were he sitting in the ACM contest right now, he may discover that the horse racing problem can be simply viewed as finding the maximum matching in a bipartite graph. Draw Tian's horses on one side, and the king's horses on the other. Whenever one of Tian's horses can beat one from the king, we draw an edge between them, meaning we wish to establish this pair. Then, the problem of winning as many rounds as possible is just to find the maximum matching in this graph. If there are ties, the problem becomes more complicated, he needs to assign weights 0, 1, or -1 to all the possible edges, and find a maximum weighted perfect matching... However, the horse racing problem is a very special case of bipartite matching. The graph is decided by the speed of the horses --- a vertex of higher speed always beat a vertex of lower speed. In this case, the weighted bipartite matching algorithm is a too advanced tool to deal with the problem. In this problem, you are asked to write a program to solve this special case of matching problem.",
+    "Input": "The input consists of up to 50 test cases. Each case starts with a positive integer n (n <= 1000) on the first line, which is the number of horses on each side. The next n integers on the second line are the speeds of Tian\u2019s horses. Then the next n integers on the third line are the speeds of the king\u2019s horses. The input ends with a line that has a single 0 after the last test case.",
+    "Output": "For each input case, output a line containing a single number, which is the maximum money Tian Ji will get, in silver dollars.",
+    "SampleInput": "3\r\n92 83 71\r\n95 87 74\r\n2\r\n20 20\r\n20 20\r\n2\r\n20 19\r\n22 18\r\n0",
+    "SampleOutput": "200\r\n0\r\n0"
+  },
+  {
+    "Title": "Entropy",
+    "ProblemDescription": "An entropy encoder is a data encoding method that achieves lossless data compression by encoding a message with \u201cwasted\u201d or \u201cextra\u201d information removed. In other words, entropy encoding removes information that was not necessary in the first place to accurately encode the message. A high degree of entropy implies a message with a great deal of wasted information; english text encoded in ASCII is an example of a message type that has very high entropy. Already compressed messages, such as JPEG graphics or ZIP archives, have very little entropy and do not benefit from further attempts at entropy encoding. English text encoded in ASCII has a high degree of entropy because all characters are encoded using the same number of bits, eight. It is a known fact that the letters E, L, N, R, S and T occur at a considerably higher frequency than do most other letters in english text. If a way could be found to encode just these letters with four bits, then the new encoding would be smaller, would contain all the original information, and would have less entropy. ASCII uses a fixed number of bits for a reason, however: it\u2019s easy, since one is always dealing with a fixed number of bits to represent each possible glyph or character. How would an encoding scheme that used four bits for the above letters be able to distinguish between the four-bit codes and eight-bit codes? This seemingly difficult problem is solved using what is known as a \u201cprefix-free variable-length\u201d encoding. In such an encoding, any number of bits can be used to represent any glyph, and glyphs not present in the message are simply not encoded. However, in order to be able to recover the information, no bit pattern that encodes a glyph is allowed to be the prefix of any other encoding bit pattern. This allows the encoded bitstream to be read bit by bit, and whenever a set of bits is encountered that represents a glyph, that glyph can be decoded. If the prefix-free constraint was not enforced, then such a decoding would be impossible. Consider the text \u201cAAAAABCD\u201d. Using ASCII, encoding this would require 64 bits. If, instead, we encode \u201cA\u201d with the bit pattern \u201c00\u201d, \u201cB\u201d with \u201c01\u201d, \u201cC\u201d with \u201c10\u201d, and \u201cD\u201d with \u201c11\u201d then we can encode this text in only 16 bits; the resulting bit pattern would be \u201c0000000000011011\u201d. This is still a fixed-length encoding, however; we\u2019re using two bits per glyph instead of eight. Since the glyph \u201cA\u201d occurs with greater frequency, could we do better by encoding it with fewer bits? In fact we can, but in order to maintain a prefix-free encoding, some of the other bit patterns will become longer than two bits. An optimal encoding is to encode \u201cA\u201d with \u201c0\u201d, \u201cB\u201d with \u201c10\u201d, \u201cC\u201d with \u201c110\u201d, and \u201cD\u201d with \u201c111\u201d. (This is clearly not the only optimal encoding, as it is obvious that the encodings for B, C and D could be interchanged freely for any given encoding without increasing the size of the final encoded message.) Using this encoding, the message encodes in only 13 bits to \u201c0000010110111\u201d, a compression ratio of 4.9 to 1 (that is, each bit in the final encoded message represents as much information as did 4.9 bits in the original encoding). Read through this bit pattern from left to right and you\u2019ll see that the prefix-free encoding makes it simple to decode this into the original text even though the codes have varying bit lengths. As a second example, consider the text \u201cTHE CAT IN THE HAT\u201d. In this text, the letter \u201cT\u201d and the space character both occur with the highest frequency, so they will clearly have the shortest encoding bit patterns in an optimal encoding. The letters \u201cC\u201d, \u201cI\u2019 and \u201cN\u201d only occur once, however, so they will have the longest codes. There are many possible sets of prefix-free variable-length bit patterns that would yield the optimal encoding, that is, that would allow the text to be encoded in the fewest number of bits. One such optimal encoding is to encode spaces with \u201c00\u201d, \u201cA\u201d with \u201c100\u201d, \u201cC\u201d with \u201c1110\u201d, \u201cE\u201d with \u201c1111\u201d, \u201cH\u201d with \u201c110\u201d, \u201cI\u201d with \u201c1010\u201d, \u201cN\u201d with \u201c1011\u201d and \u201cT\u201d with \u201c01\u201d. The optimal encoding therefore requires only 51 bits compared to the 144 that would be necessary to encode the message with 8-bit ASCII encoding, a compression ratio of 2.8 to 1.",
+    "Input": "The input file will contain a list of text strings, one per line. The text strings will consist only of uppercase alphanumeric characters and underscores (which are used in place of spaces). The end of the input will be signalled by a line containing only the word \u201cEND\u201d as the text string. This line should not be processed.",
+    "Output": "For each text string in the input, output the length in bits of the 8-bit ASCII encoding, the length in bits of an optimal prefix-free variable-length encoding, and the compression ratio accurate to one decimal point.",
+    "SampleInput": "AAAAABCD\r\nTHE_CAT_IN_THE_HAT\r\nEND",
+    "SampleOutput": "64 13 4.9\r\n144 51 2.8"
+  },
+  {
+    "Title": "Strategic Game",
+    "ProblemDescription": "Bob enjoys playing computer games, especially strategic games, but sometimes he cannot find the solution fast enough and then he is very sad. Now he has the following problem. He must defend a medieval city, the roads of which form a tree. He has to put the minimum number of soldiers on the nodes so that they can observe all the edges. Can you help him? Your program should find the minimum number of soldiers that Bob has to put for a given tree. The input file contains several data sets in text format. Each data set represents a tree with the following description: the number of nodes the description of each node in the following format node_identifier:(number_of_roads) node_identifier1 node_identifier2 ... node_identifier or node_identifier:(0) The node identifiers are integer numbers between 0 and n-1, for n nodes (0 < n <= 1500). Every edge appears only once in the input data. For example for the tree:    the solution is one soldier ( at the node 1). The output should be printed on the standard output. For each given input data set, print one integer number in a single line that gives the result (the minimum number of soldiers). An example is given in the following table:",
+    "SampleInput": "4\r\n0:(1) 1\r\n1:(2) 2 3\r\n2:(0)\r\n3:(0)\r\n5\r\n3:(3) 1 4 2\r\n1:(1) 0\r\n2:(0)\r\n0:(0)\r\n4:(0)",
+    "SampleOutput": "1\r\n2"
+  },
+  {
+    "Title": "Color a Tree",
+    "ProblemDescription": "Bob is very interested in the data structure of a tree. A tree is a directed graph in which a special node is singled out, called the \"root\" of the tree, and there is a unique path from the root to each of the other nodes.  Bob intends to color all the nodes of a tree with a pen. A tree has N nodes, these nodes are numbered 1, 2, ..., N. Suppose coloring a node takes 1 unit of time, and after finishing coloring one node, he is allowed to color another. Additionally, he is allowed to color a node only when its father node has been colored. Obviously, Bob is only allowed to color the root in the first try.  Each node has a \u201ccoloring cost factor\u201d, Ci. The coloring cost of each node depends both on Ci and the time at which Bob finishes the coloring of this node. At the beginning, the time is set to 0. If the finishing time of coloring node i is Fi, then the coloring cost of node i is Ci * Fi.  For example, a tree with five nodes is shown in Figure-1. The coloring cost factors of each node are 1, 2, 1, 2 and 4. Bob can color the tree in the order 1, 3, 5, 2, 4, with the minimum total coloring cost of 33. Given a tree and the coloring cost factor of each node, please help Bob to find the minimum possible total coloring cost for coloring all the nodes.",
+    "Input": "The input consists of several test cases. The first line of each case contains two integers N and R (1 <= N <= 1000, 1 <= R <= N), where N is the number of nodes in the tree and R is the node number of the root node. The second line contains N integers, the i-th of which is Ci (1 <= Ci <= 500), the coloring cost factor of node i. Each of the next N-1 lines contains two space-separated node numbers V1 and V2, which are the endpoints of an edge in the tree, denoting that V1 is the father node of V2. No edge will be listed twice, and all edges will be listed.  A test case of N = 0 and R = 0 indicates the end of input, and should not be processed.",
+    "Output": "For each test case, output a line containing the minimum total coloring cost required for Bob to color all the nodes.",
+    "SampleInput": "5 1\r\n1 2 1 2 4\r\n1 2\r\n1 3\r\n2 4\r\n3 5\r\n0 0",
+    "SampleOutput": "33"
+  },
+  {
+    "Title": "HangOver",
+    "ProblemDescription": "How far can you make a stack of cards overhang a table? If you have one card, you can create a maximum overhang of half a card length. (We're assuming that the cards must be perpendicular to the table.) With two cards you can make the top card overhang the bottom one by half a card length, and the bottom one overhang the table by a third of a card length, for a total maximum overhang of 1/2 + 1/3 = 5/6 card lengths. In general you can make n cards overhang by 1/2 + 1/3 + 1/4 + ... + 1/(n + 1) card lengths, where the top card overhangs the second by 1/2, the second overhangs tha third by 1/3, the third overhangs the fourth by 1/4, etc., and the bottom card overhangs the table by 1/(n + 1). This is illustrated in the figure below.   The input consists of one or more test cases, followed by a line containing the number 0.00 that signals the end of the input. Each test case is a single line containing a positive floating-point number c whose value is at least 0.01 and at most 5.20; c will contain exactly three digits. For each test case, output the minimum number of cards necessary to achieve an overhang of at least c card lengths. Use the exact output format shown in the examples.",
+    "SampleInput": "1.00\r\n3.71\r\n0.04\r\n5.19\r\n0.00",
+    "SampleOutput": "3 card(s)\r\n61 card(s)\r\n1 card(s)\r\n273 card(s)"
+  },
+  {
+    "Title": "A New Growth Industry",
+    "ProblemDescription": "A biologist experimenting with DNA modification of bacteria has found a way to make bacterial colonies sensitive to the  surrounding population density. By changing the DNA, he is able to \u201cprogram\u201d the bacteria to respond to the varying densities in their immediate neighborhood.  The culture dish is a square, divided into 400 smaller squares (20x20). Population in each small square is measured on a four point scale (from 0 to 3). The DNA information is represented as an array D, indexed from 0 to 15, of integer values and is interpreted as follows:  In any given culture dish square, let K be the sum of that square's density and the densities of the four squares immediately to the left, right, above and below that square (squares outside the dish are considered to have density 0). Then, by the next day, that dish square's density will change by D[K] (which may be a positive, negative, or zero value). The total density cannot, however, exceed 3 nor drop below 0.  Now, clearly, some DNA programs cause all the bacteria to die off (e.g., [-3, -3, \u2026, -3]). Others result in immediate population explosions (e.g., [3,3,3, \u2026, 3]), and others are just plain boring (e.g., [0, 0, \u2026 0]). The biologist is interested in how some of the less obvious DNA programs might behave.  Write a program to simulate the culture growth, reading in the number of days to be simulated, the DNA rules, and the initial population densities of the dish.",
+    "Input": "Input to this program consists of three parts:  1. The first line will contain a single integer denoting the number of days to be simulated.  2. The second line will contain the DNA rule D as 16 integer values, ordered from D[0] to D[15], separated from one another by one or more blanks. Each integer will be in the range -3\u20263, inclusive.  3. The remaining twenty lines of input will describe the initial population density in the culture dish. Each line describes one row of squares in the culture dish, and will contain 20 integers in the range 0\u20263, separated from one another by 1 or more blanks.",
+    "Output": "The program will produce exactly 20 lines of output, describing the population densities in the culture dish at the end of the simulation. Each line represents a row of squares in the culture dish, and will consist of 20 characters, plus the usual end-of-line terminator.  Each character will represent the population density at a single dish square, as follows:  No other characters may appear in the output.",
+    "SampleInput": "1\r\n\r\n2 \r\n0 1 1 1 2 1 0 -1 -1 -1 -2 -2 -3 -3 -3 -3 \r\n3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \r\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+    "SampleOutput": "##!................. \r\n#!.................. \r\n!................... \r\n.................... \r\n.................... \r\n.................... \r\n.................... \r\n.........!.......... \r\n........!#!......... \r\n.......!#X#!........ \r\n........!#!......... \r\n.........!.......... \r\n.................... \r\n.................... \r\n.................... \r\n.................... \r\n.................... \r\n.................... \r\n.................... \r\n...................."
+  },
+  {
+    "Title": "Humble Numbers",
+    "ProblemDescription": "A number whose only prime factors are 2,3,5 or 7 is called a humble number. The sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21, 24, 25, 27, ... shows the first 20 humble numbers.  Write a program to find and print the nth element in this sequence",
+    "Input": "The input consists of one or more test cases. Each test case consists of one integer n with 1 <= n <= 5842. Input is terminated by a value of zero (0) for n.",
+    "Output": "For each test case, print one line saying \"The nth humble number is number.\". Depending on the value of n, the correct suffix \"st\", \"nd\", \"rd\", or \"th\" for the ordinal number nth has to be used like it is shown in the sample output.",
+    "SampleInput": "1\r\n2\r\n3\r\n4\r\n11\r\n12\r\n13\r\n21\r\n22\r\n23\r\n100\r\n1000\r\n5842\r\n0",
+    "SampleOutput": "The 1st humble number is 1.\r\nThe 2nd humble number is 2.\r\nThe 3rd humble number is 3.\r\nThe 4th humble number is 4.\r\nThe 11th humble number is 12.\r\nThe 12th humble number is 14.\r\nThe 13th humble number is 15.\r\nThe 21st humble number is 28.\r\nThe 22nd humble number is 30.\r\nThe 23rd humble number is 32.\r\nThe 100th humble number is 450.\r\nThe 1000th humble number is 385875.\r\nThe 5842nd humble number is 2000000000."
+  },
+  {
+    "Title": "Dividing",
+    "ProblemDescription": "Marsha and Bill own a collection of marbles. They want to split the collection among themselves so that both receive an equal share of the marbles. This would be easy if all the marbles had the same value, because then they could just split the collection in half. But unfortunately, some of the marbles are larger, or more beautiful than others. So, Marsha and Bill start by assigning a value, a natural number between one and six, to each marble. Now they want to divide the marbles so that each of them gets the same total value.  Unfortunately, they realize that it might be impossible to divide the marbles in this way (even if the total value of all marbles is even). For example, if there are one marble of value 1, one of value 3 and two of value 4, then they cannot be split into sets of equal value. So, they ask you to write a program that checks whether there is a fair partition of the marbles.",
+    "Input": "Each line in the input describes one collection of marbles to be divided. The lines consist of six non-negative integers n1, n2, ..., n6, where ni is the number of marbles of value i. So, the example from above would be described by the input-line ``1 0 1 2 0 0''. The maximum total number of marbles will be 20000.  The last line of the input file will be ``0 0 0 0 0 0''; do not process this line.",
+    "Output": "For each colletcion, output ``Collection #k:'', where k is the number of the test case, and then either ``Can be divided.'' or ``Can't be divided.''.  Output a blank line after each test case.",
+    "SampleInput": "1 0 1 2 0 0\r\n1 0 0 0 1 1\r\n0 0 0 0 0 0",
+    "SampleOutput": "Collection #1:\r\nCan't be divided.\r\n\r\nCollection #2:\r\nCan be divided."
+  },
+  {
+    "Title": "Leftmost Digit",
+    "ProblemDescription": "Given a positive integer N, you should output the leftmost digit of N^N.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case contains a single positive integer N(1<=N<=1,000,000,000).",
+    "Output": "For each test case, you should output the leftmost digit of N^N.",
+    "SampleInput": "2\r\n3\r\n4",
+    "SampleOutput": "2\r\n2\r\n\r\n Hint \r\nIn the first case, 3 * 3 * 3 = 27, so the leftmost digit is 2.\r\nIn the second case, 4 * 4 * 4 * 4 = 256, so the leftmost digit is 2.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Rightmost Digit",
+    "ProblemDescription": "Given a positive integer N, you should output the most right digit of N^N.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case contains a single positive integer N(1<=N<=1,000,000,000).",
+    "Output": "For each test case, you should output the rightmost digit of N^N.",
+    "SampleInput": "2\r\n3\r\n4",
+    "SampleOutput": "7\r\n6\r\n\r\n Hint \r\nIn the first case, 3 * 3 * 3 = 27, so the rightmost digit is 7.\r\nIn the second case, 4 * 4 * 4 * 4 = 256, so the rightmost digit is 6.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Text Reverse",
+    "ProblemDescription": "Ignatius likes to write words in reverse way. Given a single line of text which is written by Ignatius, you should reverse all the words and then output them.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case contains a single line with several words. There will be at most 1000 characters in a line.",
+    "Output": "For each test case, you should output the text which is processed.",
+    "SampleInput": "3\r\nolleh !dlrow\r\nm'I morf .udh\r\nI ekil .mca",
+    "SampleOutput": "hello world!\r\nI'm from hdu.\r\nI like acm.\r\n\r\n Hint \r\nRemember to use getchar() to read '\\n' after the interger T, then you may use gets() to read a line and process it.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Exponentiation",
+    "ProblemDescription": "Problems involving the computation of exact values of very large magnitude and precision are common. For example, the computation of the national debt is a taxing experience for many computer systems.  This problem requires that you write a program to compute the exact value of R n  where R is a real number ( 0.0 < R < 99.999 ) and n is an integer such that 0 < n <= 25.",
+    "Input": "The input will consist of a set of pairs of values for R and n. The R value will occupy columns 1 through 6, and the n value will be in columns 8 and 9.",
+    "Output": "The output will consist of one line for each line of input giving the exact value of R^n. Leading zeros should be suppressed in the output. Insignificant trailing zeros must not be printed. Don't print the decimal point if the result is an integer.",
+    "SampleInput": "95.123 12\r\n0.4321 20\r\n5.1234 15\r\n6.7592  9\r\n98.999 10\r\n1.0100 12",
+    "SampleOutput": "548815620517731830194541.899025343415715973535967221869852721\r\n.00000005148554641076956121994511276767154838481760200726351203835429763013462401\r\n43992025569.928573701266488041146654993318703707511666295476720493953024\r\n29448126.764121021618164430206909037173276672\r\n90429072743629540498.107596019456651774561044010001\r\n1.126825030131969720661201"
+  },
+  {
+    "Title": "Financial Management",
+    "ProblemDescription": "Larry graduated this year and finally has a job. He\u2019s making a lot of money, but somehow never seems to have enough. Larry has decided that he needs to grab hold of his financial portfolio and solve his financing problems. The first step is to figure out what\u2019s been going on with his money. Larry has his bank account statements and wants to see how much money he has. Help Larry by writing a program to take his closing balance from each of the past twelve months and calculate his average account balance.",
+    "Input": "The input will be twelve lines. Each line will contain the closing balance of his bank account for a particular month. Each number will be positive and displayed to the penny. No dollar sign will be included.",
+    "Output": "The output will be a single number, the average (mean) of the closing balances for the twelve months. It will be rounded to the nearest penny, preceded immediately by a dollar sign, and followed by the end-of-line. There will be no other spaces or characters in the output.",
+    "SampleInput": "100.00 \r\n489.12 \r\n12454.12 \r\n1234.10 \r\n823.05 \r\n109.20 \r\n5.27 \r\n1542.25 \r\n839.18 \r\n83.99 \r\n1295.01 \r\n1.75",
+    "SampleOutput": "$1581.42"
+  },
+  {
+    "Title": "I Think I Need a Houseboat",
+    "ProblemDescription": "Fred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating the land, he learned that the state of Louisiana is actually shrinking by 50 square miles each year, due to erosion caused by the Mississippi River. Since Fred is hoping to live in this house the rest of his life, he needs to know if his land is going to be lost to erosion.  After doing more research, Fred has learned that the land that is being lost forms a semicircle. This semicircle is part of a circle centered at (0,0), with the line that bisects the circle being the X axis. Locations below the X axis are in the water. The semicircle has an area of 0 at the beginning of year 1. (Semicircle illustrated in the Figure.)",
+    "Input": "The first line of input will be a positive integer indicating how many data sets will be included (N).  Each of the next N lines will contain the X and Y Cartesian coordinates of the land Fred is considering. These will be floating point numbers measured in miles. The Y coordinate will be non-negative. (0,0) will not be given.",
+    "Output": "For each data set, a single line of output should appear. This line should take the form of:  \u201cProperty N: This property will begin eroding in year Z.\u201d  Where N is the data set (counting from 1), and Z is the first year (start from 1) this property will be within the semicircle AT THE END OF YEAR Z. Z must be an integer.  After the last data set, this should print out \u201cEND OF OUTPUT.\u201d  Notes:  1. No property will appear exactly on the semicircle boundary: it will either be inside or outside.  2. This problem will be judged automatically. Your answer must match exactly, including the capitalization, punctuation, and white-space. This includes the periods at the ends of the lines.  3. All locations are given in miles.",
+    "SampleInput": "2 \r\n1.0 1.0 \r\n25.0 0.0",
+    "SampleOutput": "Property 1: This property will begin eroding in year 1. \r\nProperty 2: This property will begin eroding in year 20. \r\nEND OF OUTPUT."
+  },
+  {
+    "Title": "Last non-zero Digit in N!",
+    "ProblemDescription": "The expression N!, read as \"N factorial,\" denotes the product of the first N positive integers, where N is nonnegative. So, for example,  N N!  0 1  1 1  2 2  3 6  4 24  5 120  10 3628800  For this problem, you are to write a program that can compute the last non-zero digit of the factorial for N. For example, if your program is asked to compute the last nonzero digit of 5!, your program should produce \"2\" because 5! = 120, and 2 is the last nonzero digit of 120.",
+    "Input": "Input to the program is a series of nonnegative integers, each on its own line with no other letters, digits or spaces. For each integer N, you should read the value and compute the last nonzero digit of N!.",
+    "Output": "For each integer input, the program should print exactly one line of output containing the single last non-zero digit of N!.",
+    "SampleInput": "1 \r\n2 \r\n26 \r\n125 \r\n3125 \r\n9999",
+    "SampleOutput": "1\r\n2\r\n4\r\n8\r\n2\r\n8"
+  },
+  {
+    "Title": "Gap",
+    "ProblemDescription": "Let's play a card game called Gap.  You have 28 cards labeled with two-digit numbers. The first digit (from 1 to 4) represents the suit of the card, and the second digit (from 1 to 7) represents the value of the card. First, you shu2e the cards and lay them face up on the table in four rows of seven cards, leaving a space of one card at the extreme left of each row. The following shows an example of initial layout. Next, you remove all cards of value 1, and put them in the open space at the left end of the rows: \"11\" to the top row, \"21\" to the next, and so on. Now you have 28 cards and four spaces, called gaps, in four rows and eight columns. You start moving cards from this layout. At each move, you choose one of the four gaps and fill it with the successor of the left neighbor of the gap. The successor of a card is the next card in the same suit, when it exists. For instance the successor of \"42\" is \"43\", and \"27\" has no successor. In the above layout, you can move \"43\" to the gap at the right of \"42\", or \"36\" to the gap at the right of \"35\". If you move \"43\", a new gap is generated to the right of \"16\". You cannot move any card to the right of a card of value 7, nor to the right of a gap. The goal of the game is, by choosing clever moves, to make four ascending sequences of the same suit, as follows. Your task is to find the minimum number of moves to reach the goal layout.",
+    "Input": "The input starts with a line containing the number of initial layouts that follow. Each layout consists of five lines - a blank line and four lines which represent initial layouts of four rows. Each row has seven two-digit numbers which correspond to the cards.",
+    "Output": "For each initial layout, produce a line with the minimum number of moves to reach the goal layout. Note that this number should not include the initial four moves of the cards of value 1. If there is no move sequence from the initial layout to the goal layout, produce \"-1\".",
+    "SampleInput": "4\r\n\r\n12 13 14 15 16 17 21\r\n22 23 24 25 26 27 31\r\n32 33 34 35 36 37 41\r\n42 43 44 45 46 47 11\r\n\r\n26 31 13 44 21 24 42\r\n17 45 23 25 41 36 11\r\n46 34 14 12 37 32 47\r\n16 43 27 35 22 33 15\r\n\r\n17 12 16 13 15 14 11\r\n27 22 26 23 25 24 21\r\n37 32 36 33 35 34 31\r\n47 42 46 43 45 44 41\r\n\r\n27 14 22 35 32 46 33\r\n13 17 36 24 44 21 15\r\n43 16 45 47 23 11 26\r\n25 37 41 34 42 12 31",
+    "SampleOutput": "0\r\n33\r\n60\r\n-1"
+  },
+  {
+    "Title": "Girls and Boys",
+    "ProblemDescription": "the second year of the university somebody started a study on the romantic relations between the students. The relation \u201cromantically involved\u201d is defined between one girl and one boy. For the study reasons it is necessary to find out the maximum set satisfying the condition: there are no two students in the set who have been \u201cromantically involved\u201d. The result of the program is the number of students in such a set. The input contains several data sets in text format. Each data set represents one set of subjects of the study, with the following description: the number of students the description of each student, in the following format student_identifier:(number_of_romantic_relations) student_identifier1 student_identifier2 student_identifier3 ... or student_identifier:(0) The student_identifier is an integer number between 0 and n-1, for n subjects. For each given data set, the program should write to standard output a line containing the result.",
+    "SampleInput": "7\r\n0: (3) 4 5 6\r\n1: (2) 4 6\r\n2: (0)\r\n3: (0)\r\n4: (2) 0 1\r\n5: (1) 0\r\n6: (2) 0 1\r\n3\r\n0: (2) 1 2\r\n1: (1) 0\r\n2: (1) 0",
+    "SampleOutput": "5\r\n2"
+  },
+  {
+    "Title": "Monkey and Banana",
+    "ProblemDescription": "A group of researchers are designing an experiment to test the IQ of a monkey. They will hang a banana at the roof of a building, and at the mean time, provide the monkey with some blocks. If the monkey is clever enough, it shall be able to reach the banana by placing one block on the top another to build a tower and climb up to get its favorite food. The researchers have n types of blocks, and an unlimited supply of blocks of each type. Each type-i block was a rectangular solid with linear dimensions (xi, yi, zi). A block could be reoriented so that any two of its three dimensions determined the dimensions of the base and the other dimension was the height.  They want to make sure that the tallest tower possible by stacking blocks can reach the roof. The problem is that, in building a tower, one block could only be placed on top of another block as long as the two base dimensions of the upper block were both strictly smaller than the corresponding base dimensions of the lower block because there has to be some space for the monkey to step on. This meant, for example, that blocks oriented to have equal-sized bases couldn't be stacked.  Your job is to write a program that determines the height of the tallest tower the monkey can build with a given set of blocks.",
+    "Input": "The input file will contain one or more test cases. The first line of each test case contains an integer n, representing the number of different blocks in the following data set. The maximum value for n is 30. Each of the next n lines contains three integers representing the values xi, yi and zi. Input is terminated by a value of zero (0) for n.",
+    "Output": "For each test case, print one line containing the case number (they are numbered sequentially starting from 1) and the height of the tallest possible tower in the format \"Case case: maximum height = height\".",
+    "SampleInput": "1\r\n10 20 30\r\n2\r\n6 8 10\r\n5 5 5\r\n7\r\n1 1 1\r\n2 2 2\r\n3 3 3\r\n4 4 4\r\n5 5 5\r\n6 6 6\r\n7 7 7\r\n5\r\n31 41 59\r\n26 53 58\r\n97 93 23\r\n84 62 64\r\n33 83 27\r\n0",
+    "SampleOutput": "Case 1: maximum height = 40\r\nCase 2: maximum height = 21\r\nCase 3: maximum height = 28\r\nCase 4: maximum height = 342"
+  },
+  {
+    "Title": "Milk",
+    "ProblemDescription": "Ignatius drinks milk everyday, now he is in the supermarket and he wants to choose a bottle of milk. There are many kinds of milk in the supermarket, so Ignatius wants to know which kind of milk is the cheapest. Here are some rules: 1. Ignatius will never drink the milk which is produced 6 days ago or earlier. That means if the milk is produced 2005-1-1, Ignatius will never drink this bottle after 2005-1-6(inclusive). 2. Ignatius drinks 200mL milk everyday. 3. If the milk left in the bottle is less than 200mL, Ignatius will throw it away. 4. All the milk in the supermarket is just produced today. Note that Ignatius only wants to buy one bottle of milk, so if the volumn of a bottle is smaller than 200mL, you should ignore it. Given some information of milk, your task is to tell Ignatius which milk is the cheapest.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case starts with a single integer N(1<=N<=100) which is the number of kinds of milk. Then N lines follow, each line contains a string S(the length will at most 100 characters) which indicate the brand of milk, then two integers for the brand: P(Yuan) which is the price of a bottle, V(mL) which is the volume of a bottle.",
+    "Output": "For each test case, you should output the brand of the milk which is the cheapest. If there are more than one cheapest brand, you should output the one which has the largest volume.",
+    "SampleInput": "2\r\n2\r\nYili 10 500\r\nMengniu 20 1000\r\n4\r\nYili 10 500\r\nMengniu 20 1000\r\nGuangming 1 199\r\nYanpai 40 10000",
+    "SampleOutput": "Mengniu\r\nMengniu\r\n\r\n Hint In the first case, milk Yili can be drunk for 2 days, it costs 10 Yuan. Milk Mengniu can be drunk for 5 days, it costs 20 Yuan. So Mengniu is the cheapest.In the second case,\r\nmilk Guangming should be ignored. Milk Yanpai can be drunk for 5 days, but it costs 40 Yuan. So Mengniu is the cheapest.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "The area",
+    "ProblemDescription": "Ignatius bought a land last week, but he didn't know the area of the land because the land is enclosed by a parabola and a straight line. The picture below shows the area. Now given all the intersectant points shows in the picture, can you tell Ignatius the area of the land? Note: The point P1 in the picture is the vertex of the parabola.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case contains three intersectant points which shows in the picture, they are given in the order of P1, P2, P3. Each point is described by two floating-point numbers X and Y(0.0<=X,Y<=1000.0).",
+    "Output": "For each test case, you should output the area of the land, the result should be rounded to 2 decimal places.",
+    "SampleInput": "2\r\n5.000000 5.000000\r\n0.000000 0.000000\r\n10.000000 0.000000\r\n10.000000 10.000000\r\n1.000000 1.000000\r\n14.000000 8.222222",
+    "SampleOutput": "33.33\r\n40.69\r\n\r\n Hint \r\nFor float may be not accurate enough, please use double instead of float.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Nightmare",
+    "ProblemDescription": "Ignatius had a nightmare last night. He found himself in a labyrinth with a time bomb on him. The labyrinth has an exit, Ignatius should get out of the labyrinth before the bomb explodes. The initial exploding time of the bomb is set to 6 minutes. To prevent the bomb from exploding by shake, Ignatius had to move slowly, that is to move from one area to the nearest area(that is, if Ignatius stands on (x,y) now, he could only on (x+1,y), (x-1,y), (x,y+1), or (x,y-1) in the next minute) takes him 1 minute. Some area in the labyrinth contains a Bomb-Reset-Equipment. They could reset the exploding time to 6 minutes. Given the layout of the labyrinth and Ignatius' start position, please tell Ignatius whether he could get out of the labyrinth, if he could, output the minimum time that he has to use to find the exit of the labyrinth, else output -1. Here are some rules: 1. We can assume the labyrinth is a 2 array. 2. Each minute, Ignatius could only get to one of the nearest area, and he should not walk out of the border, of course he could not walk on a wall, too. 3. If Ignatius get to the exit when the exploding time turns to 0, he can't get out of the labyrinth. 4. If Ignatius get to the area which contains Bomb-Rest-Equipment when the exploding time turns to 0, he can't use the equipment to reset the bomb. 5. A Bomb-Reset-Equipment can be used as many times as you wish, if it is needed, Ignatius can get to any areas in the labyrinth as many times as you wish. 6. The time to reset the exploding time can be ignore, in other words, if Ignatius get to an area which contain Bomb-Rest-Equipment, and the exploding time is larger than 0, the exploding time would be reset to 6.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case starts with two integers N and M(1<=N,Mm=8) which indicate the size of the labyrinth. Then N lines follow, each line contains M integers. The array indicates the layout of the labyrinth. There are five integers which indicate the different type of area in the labyrinth: 0: The area is a wall, Ignatius should not walk on it. 1: The area contains nothing, Ignatius can walk on it. 2: Ignatius' start position, Ignatius starts his escape from this position. 3: The exit of the labyrinth, Ignatius' target position. 4: The area contains a Bomb-Reset-Equipment, Ignatius can delay the exploding time by walking to these areas.",
+    "Output": "For each test case, if Ignatius can get out of the labyrinth, you should output the minimum time he needs, else you should just output -1.",
+    "SampleInput": "3\r\n3 3\r\n2 1 1\r\n1 1 0\r\n1 1 3\r\n4 8\r\n2 1 1 0 1 1 1 0\r\n1 0 4 1 1 0 4 1\r\n1 0 0 0 0 0 0 1\r\n1 1 1 4 1 1 1 3\r\n5 8\r\n1 2 1 1 1 1 1 4 \r\n1 0 0 0 1 0 0 1 \r\n1 4 1 0 1 1 0 1 \r\n1 0 0 0 0 3 0 1 \r\n1 1 4 1 1 1 1 1",
+    "SampleOutput": "4\r\n-1\r\n13",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Online Judge",
+    "ProblemDescription": "Ignatius is building an Online Judge, now he has worked out all the problems except the Judge System. The system has to read data from correct output file and user's result file, then the system compare the two files. If the two files are absolutly same, then the Judge System return \"Accepted\", else if the only differences between the two files are spaces(' '), tabs('\\t'), or enters('\\n'), the Judge System should return \"Presentation Error\", else the system will return \"Wrong Answer\". Given the data of correct output file and the data of user's result file, your task is to determine which result the Judge System will return.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case has two parts, the data of correct output file and the data of the user's result file. Both of them are starts with a single line contains a string \"START\" and end with a single line contains a string \"END\", these two strings are not the data. In other words, the data is between the two strings. The data will at most 5000 characters.",
+    "Output": "For each test cases, you should output the the result Judge System should return.",
+    "SampleInput": "4\r\nSTART\r\n1 + 2 = 3\r\nEND\r\nSTART\r\n1+2=3\r\nEND\r\nSTART\r\n1 + 2 = 3\r\nEND\r\nSTART\r\n1 + 2 = 3\r\n\r\nEND\r\nSTART\r\n1 + 2 = 3\r\nEND\r\nSTART\r\n1 + 2 = 4\r\nEND\r\nSTART\r\n1 + 2 = 3\r\nEND\r\nSTART\r\n1\t+\t2\t=\t3\r\nEND",
+    "SampleOutput": "Presentation Error\r\nPresentation Error\r\nWrong Answer\r\nPresentation Error",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Doing Homework",
+    "ProblemDescription": "Ignatius has just come back school from the 30th ACM/ICPC. Now he has a lot of homework to do. Every teacher gives him a deadline of handing in the homework. If Ignatius hands in the homework after the deadline, the teacher will reduce his score of the final test, 1 day for 1 point. And as you know, doing homework always takes a long time. So Ignatius wants you to help him to arrange the order of doing homework to minimize the reduced score.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case start with a positive integer N(1<=N<=15) which indicate the number of homework. Then N lines follow. Each line contains a string S(the subject's name, each string will at most has 100 characters) and two integers D(the deadline of the subject), C(how many days will it take Ignatius to finish this subject's homework).  Note: All the subject names are given in the alphabet increasing order. So you may process the problem much easier.",
+    "Output": "For each test case, you should output the smallest total reduced score, then give out the order of the subjects, one subject in a line. If there are more than one orders, you should output the alphabet smallest one.",
+    "SampleInput": "2\r\n3\r\nComputer 3 3\r\nEnglish 20 1\r\nMath 3 2\r\n3\r\nComputer 3 3\r\nEnglish 6 3\r\nMath 6 3",
+    "SampleOutput": "2\r\nComputer\r\nMath\r\nEnglish\r\n3\r\nComputer\r\nEnglish\r\nMath\r\n\r\n Hint \r\nIn the second test case, both Computer->English->Math and Computer->Math->English leads to reduce 3 points, but the \r\nword \"English\" appears earlier than the word \"Math\", so we choose the first order. That is so-called alphabet order.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "What Are You Talking About",
+    "ProblemDescription": "Ignatius is so lucky that he met a Martian yesterday. But he didn't know the language the Martians use. The Martian gives him a history book of Mars and a dictionary when it leaves. Now Ignatius want to translate the history book into English. Can you help him?",
+    "Input": "The problem has only one test case, the test case consists of two parts, the dictionary part and the book part. The dictionary part starts with a single line contains a string \"START\", this string should be ignored, then some lines follow, each line contains two strings, the first one is a word in English, the second one is the corresponding word in Martian's language. A line with a single string \"END\" indicates the end of the directory part, and this string should be ignored. The book part starts with a single line contains a string \"START\", this string should be ignored, then an article written in Martian's language. You should translate the article into English with the dictionary. If you find the word in the dictionary you should translate it and write the new word into your translation, if you can't find the word in the dictionary you do not have to translate it, and just copy the old word to your translation. Space(' '), tab('\\t'), enter('\\n') and all the punctuation should not be translated. A line with a single string \"END\" indicates the end of the book part, and that's also the end of the input. All the words are in the lowercase, and each word will contain at most 10 characters, and each line will contain at most 3000 characters.",
+    "Output": "In this problem, you have to output the translation of the history book.",
+    "SampleInput": "START\r\nfrom fiwo\r\nhello difh\r\nmars riwosf\r\nearth fnnvk\r\nlike fiiwj\r\nEND\r\nSTART\r\ndifh, i'm fiwo riwosf.\r\ni fiiwj fnnvk!\r\nEND",
+    "SampleOutput": "hello, i'm from mars.\r\ni like earth!\r\n\r\n Hint \r\nHuge input, scanf is recommended.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "An Easy Task",
+    "ProblemDescription": "Ignatius was born in a leap year, so he want to know when he could hold his birthday party. Can you tell him? Given a positive integers Y which indicate the start year, and a positive integer N, your task is to tell the Nth leap year from year Y. Note: if year Y is a leap year, then the 1st leap year is year Y.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case contains two positive integers Y and N(1<=N<=10000).",
+    "Output": "For each test case, you should output the Nth leap year from year Y.",
+    "SampleInput": "3\r\n2005 25\r\n1855 12\r\n2004 10000",
+    "SampleOutput": "2108\r\n1904\r\n43236\r\n\r\n Hint \r\nWe call year Y a leap year only if (Y%4==0 && Y%100!=0) or Y%400==0.",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "Catching Fish",
+    "ProblemDescription": "Ignatius likes catching fish very much. He has a fishnet whose shape is a circle of radius one. Now he is about to use his fishnet to catch fish. All the fish are in the lake, and we assume all the fish will not move when Ignatius catching them. Now Ignatius wants to know how many fish he can catch by using his fishnet once. We assume that the fish can be regard as a point. So now the problem is how many points can be enclosed by a circle of radius one. Note: If a fish is just on the border of the fishnet, it is also caught by Ignatius.",
+    "Input": "The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case starts with a positive integer N(1<=N<=300) which indicate the number of fish in the lake. Then N lines follow. Each line contains two floating-point number X and Y (0.0<=X,Y<=10.0). You may assume no two fish will at the same point, and no two fish are closer than 0.0001, no two fish in a test case are approximately at a distance of 2.0. In other words, if the distance between the fish and the centre of the fishnet is smaller 1.0001, we say the fish is also caught.",
+    "Output": "For each test case, you should output the maximum number of fish Ignatius can catch by using his fishnet once.",
+    "SampleInput": "4\r\n3\r\n6.47634 7.69628\r\n5.16828 4.79915\r\n6.69533 6.20378\r\n6\r\n7.15296 4.08328\r\n6.50827 2.69466\r\n5.91219 3.86661\r\n5.29853 4.16097\r\n6.10838 3.46039\r\n6.34060 2.41599\r\n8\r\n7.90650 4.01746\r\n4.10998 4.18354\r\n4.67289 4.01887\r\n6.33885 4.28388\r\n4.98106 3.82728\r\n5.12379 5.16473\r\n7.84664 4.67693\r\n4.02776 3.87990\r\n20\r\n6.65128 5.47490\r\n6.42743 6.26189\r\n6.35864 4.61611\r\n6.59020 4.54228\r\n4.43967 5.70059\r\n4.38226 5.70536\r\n5.50755 6.18163\r\n7.41971 6.13668\r\n6.71936 3.04496\r\n5.61832 4.23857\r\n5.99424 4.29328\r\n5.60961 4.32998\r\n6.82242 5.79683\r\n5.44693 3.82724\r\n6.70906 3.65736\r\n7.89087 5.68000\r\n6.23300 4.59530\r\n5.92401 4.92329\r\n6.24168 3.81389\r\n6.22671 3.62210",
+    "SampleOutput": "2\r\n5\r\n5\r\n11",
+    "Author": "Ignatius.L"
+  },
+  {
+    "Title": "FatMouse and Cheese",
+    "ProblemDescription": "FatMouse has stored some cheese in a city. The city can be considered as a square grid of dimension n: each grid location is labelled (p,q) where 0 <= p < n and 0 <= q < n. At each grid location Fatmouse has hid between 0 and 100 blocks of cheese in a hole. Now he's going to enjoy his favorite food. FatMouse begins by standing at location (0,0). He eats up the cheese where he stands and then runs either horizontally or vertically to another location. The problem is that there is a super Cat named Top Killer sitting near his hole, so each time he can run at most k locations to get into the hole before being caught by Top Killer. What is worse -- after eating up the cheese at one location, FatMouse gets fatter. So in order to gain enough energy for his next run, he has to run to a location which have more blocks of cheese than those that were at the current hole. Given n, k, and the number of blocks of cheese at each grid location, compute the maximum amount of cheese FatMouse can eat before being unable to move.",
+    "Input": "There are several test cases. Each test case consists of  a line containing two integers between 1 and 100: n and k  n lines, each with n numbers: the first line contains the number of blocks of cheese at locations (0,0) (0,1) ... (0,n-1); the next line contains the number of blocks of cheese at locations (1,0), (1,1), ... (1,n-1), and so on.  The input ends with a pair of -1's.",
+    "Output": "For each test case output in a line the single integer giving the number of blocks of cheese collected.",
+    "SampleInput": "3 1\r\n1 2 5\r\n10 11 6\r\n12 12 7\r\n-1 -1",
+    "SampleOutput": "37"
+  },
+  {
+    "Title": "Calendar Game",
+    "ProblemDescription": "Adam and Eve enter this year\u2019s ACM International Collegiate Programming Contest. Last night, they played the Calendar Game, in celebration of this contest. This game consists of the dates from January 1, 1900 to November 4, 2001, the contest day. The game starts by randomly choosing a date from this interval. Then, the players, Adam and Eve, make moves in their turn with Adam moving first: Adam, Eve, Adam, Eve, etc. There is only one rule for moves and it is simple: from a current date, a player in his/her turn can move either to the next calendar date or the same day of the next month. When the next month does not have the same day, the player moves only to the next calendar date. For example, from December 19, 1924, you can move either to December 20, 1924, the next calendar date, or January 19, 1925, the same day of the next month. From January 31 2001, however, you can move only to February 1, 2001, because February 31, 2001 is invalid.  A player wins the game when he/she exactly reaches the date of November 4, 2001. If a player moves to a date after November 4, 2001, he/she looses the game.  Write a program that decides whether, given an initial date, Adam, the first mover, has a winning strategy.  For this game, you need to identify leap years, where February has 29 days. In the Gregorian calendar, leap years occur in years exactly divisible by four. So, 1993, 1994, and 1995 are not leap years, while 1992 and 1996 are leap years. Additionally, the years ending with 00 are leap years only if they are divisible by 400. So, 1700, 1800, 1900, 2100, and 2200 are not leap years, while 1600, 2000, and 2400 are leap years.",
+    "Input": "The input consists of T test cases. The number of test cases (T) is given in the first line of the input. Each test case is written in a line and corresponds to an initial date. The three integers in a line, YYYY MM DD, represent the date of the DD-th day of MM-th month in the year of YYYY. Remember that initial dates are randomly chosen from the interval between January 1, 1900 and November 4, 2001.",
+    "Output": "Print exactly one line for each test case. The line should contain the answer \"YES\" or \"NO\" to the question of whether Adam has a winning strategy against Eve. Since we have T test cases, your program should output totally T lines of \"YES\" or \"NO\".",
+    "SampleInput": "3 \r\n2001 11 3 \r\n2001 11 2 \r\n2001 10 3",
+    "SampleOutput": "YES \r\nNO \r\nNO"
+  },
+  {
+    "Title": "Human Gene Functions",
+    "ProblemDescription": "It is well known that a human gene can be considered as a sequence, consisting of four nucleotides, which are simply denoted by four letters, A, C, G, and T. Biologists have been interested in identifying human genes and determining their functions, because these can be used to diagnose human diseases and to design new drugs for them."
+  },
+  {
+    "Title": "To The Max",
+    "ProblemDescription": "Given a two-dimensional array of positive and negative integers, a sub-rectangle is any contiguous sub-array of size 1 x 1 or greater located within the whole array. The sum of a rectangle is the sum of all the elements in that rectangle. In this problem the sub-rectangle with the largest sum is referred to as the maximal sub-rectangle. As an example, the maximal sub-rectangle of the array: 0 -2 -7 0 9 2 -6 2 -4 1 -4 1 -1 8 0 -2 is in the lower left corner: 9 2 -4 1 -1 8 and has a sum of 15.",
+    "Input": "The input consists of an N x N array of integers. The input begins with a single positive integer N on a line by itself, indicating the size of the square two-dimensional array. This is followed by N 2 integers separated by whitespace (spaces and newlines). These are the N 2 integers of the array, presented in row-major order. That is, all numbers in the first row, left to right, then all numbers in the second row, left to right, etc. N may be as large as 100. The numbers in the array will be in the range [-127,127].",
+    "Output": "Output the sum of the maximal sub-rectangle.",
+    "SampleInput": "4\r\n0 -2 -7 0 9 2 -6 2\r\n-4 1 -4 1 -1\r\n8 0 -2",
+    "SampleOutput": "15"
+  },
+  {
+    "Title": "Matrix Chain Multiplication",
+    "ProblemDescription": "Matrix multiplication problem is a typical example of dynamical programming.  Suppose you have to evaluate an expression like A*B*C*D*E where A,B,C,D and E are matrices. Since matrix multiplication is associative, the order in which multiplications are performed is arbitrary. However, the number of elementary multiplications needed strongly depends on the evaluation order you choose. For example, let A be a 50*10 matrix, B a 10*20 matrix and C a 20*5 matrix. There are two different strategies to compute A*B*C, namely (A*B)*C and A*(B*C). The first one takes 15000 elementary multiplications, but the second one only 3500.  Your job is to write a program that determines the number of elementary multiplications needed for a given evaluation strategy.",
+    "Input": "Input consists of two parts: a list of matrices and a list of expressions. The first line of the input file contains one integer n (1 <= n <= 26), representing the number of matrices in the first part. The next n lines each contain one capital letter, specifying the name of the matrix, and two integers, specifying the number of rows and columns of the matrix.  The second part of the input file strictly adheres to the following syntax (given in EBNF):  SecondPart = Line { Line } <EOF> Line       = Expression <CR> Expression = Matrix | \"(\" Expression Expression \")\" Matrix     = \"A\" | \"B\" | \"C\" | ... | \"X\" | \"Y\" | \"Z\"",
+    "Output": "For each expression found in the second part of the input file, print one line containing the word \"error\" if evaluation of the expression leads to an error due to non-matching matrices. Otherwise print one line containing the number of elementary multiplications needed to evaluate the expression in the way specified by the parentheses.",
+    "SampleInput": "9\r\nA 50 10\r\nB 10 20\r\nC 20 5\r\nD 30 35\r\nE 35 15\r\nF 15 5\r\nG 5 10\r\nH 10 20\r\nI 20 25\r\nA\r\nB\r\nC\r\n(AA)\r\n(AB)\r\n(AC)\r\n(A(BC))\r\n((AB)C)\r\n(((((DE)F)G)H)I)\r\n(D(E(F(G(HI)))))\r\n((D(EF))((GH)I))",
+    "SampleOutput": "0\r\n0\r\n0\r\nerror\r\n10000\r\nerror\r\n3500\r\n15000\r\n40500\r\n47500\r\n15125"
+  },
+  {
+    "Title": "Courses",
+    "ProblemDescription": "Consider a group of N students and P courses. Each student visits zero, one or more than one courses. Your task is to determine whether it is possible to form a committee of exactly P students that satisfies simultaneously the conditions: . every student in the committee represents a different course (a student can represent a course if he/she visits that course) . each course has a representative in the committee Your program should read sets of data from a text file. The first line of the input file contains the number of the data sets. Each data set is presented in the following format: P N Count1 Student1 1 Student1 2 ... Student1 Count1 Count2 Student2 1 Student2 2 ... Student2 Count2 ......  CountP StudentP 1 StudentP 2 ... StudentP CountP The first line in each data set contains two positive integers separated by one blank: P (1 <= P <= 100) - the number of courses and N (1 <= N <= 300) - the number of students. The next P lines describe in sequence of the courses . from course 1 to course P, each line describing a course. The description of course i is a line that starts with an integer Count i (0 <= Count i <= N) representing the number of students visiting course i. Next, after a blank, you'll find the Count i students, visiting the course, each two consecutive separated by one blank. Students are numbered with the positive integers from 1 to N. There are no blank lines between consecutive sets of data. Input data are correct. The result of the program is on the standard output. For each input data set the program prints on a single line \"YES\" if it is possible to form a committee and \"NO\" otherwise. There should not be any leading blanks at the start of the line. An example of program input and output:",
+    "SampleInput": "2\r\n3 3\r\n3 1 2 3\r\n2 1 2\r\n1 1\r\n3 3\r\n2 1 3\r\n2 1 3\r\n1 1",
+    "SampleOutput": "YES\r\nNO"
+  },
+  {
+    "Title": "What Is Your Grade?",
+    "ProblemDescription": "\u201cPoint, point, life of student!\u201d This is a ballad\uff08\u6b4c\u8c23\uff09well known in colleges, and you must care about your score in this exam too. How many points can you get? Now, I told you the rules which are used in this course. There are 5 problems in this final exam. And I will give you 100 points if you can solve all 5 problems; of course, it is fairly difficulty for many of you. If you can solve 4 problems, you can also get a high score 95 or 90 (you can get the former(\u524d\u8005) only when your rank is in the first half of all students who solve 4 problems). Analogically\uff08\u4ee5\u6b64\u7c7b\u63a8\uff09, you can get 85\u300180\u300175\u300170\u300165\u300160. But you will not pass this exam if you solve nothing problem, and I will mark your score with 50. Note, only 1 student will get the score 95 when 3 students have solved 4 problems. I wish you all can pass the exam!  Come on!",
+    "Input": "Input contains multiple test cases. Each test case contains an integer N (1<=N<=100, the number of students) in a line first, and then N lines follow. Each line contains P (0<=P<=5 number of problems that have been solved) and T\uff08consumed time\uff09. You can assume that all data are different when 0<p. A test case starting with a negative integer terminates the input and this test case should not to be processed.",
+    "Output": "Output the scores of N students in N lines for each case, and there is a blank line after each case.",
+    "SampleInput": "4\r\n5 06:30:17\r\n4 07:31:27\r\n4 08:12:12\r\n4 05:23:13\r\n1\r\n5 06:30:17\r\n-1",
+    "SampleOutput": "100\r\n90\r\n90\r\n95\r\n\r\n100",
+    "Author": "lcy"
+  },
+  {
+    "Title": "Holding Bin-Laden Captive!",
+    "ProblemDescription": "We all know that Bin-Laden is a notorious terrorist, and he has disappeared for a long time. But recently, it is reported that he hides in Hang Zhou of China!  \u201cOh, God! How terrible! \u201d Don\u2019t be so afraid, guys. Although he hides in a cave of Hang Zhou, he dares not to go out. Laden is so bored recent years that he fling himself into some math problems, and he said that if anyone can solve his problem, he will give himself up!  Ha-ha! Obviously, Laden is too proud of his intelligence! But, what is his problem? \u201cGiven some Chinese Coins (\u786c\u5e01) (three kinds-- 1, 2, 5), and their number is num_1, num_2 and num_5 respectively, please output the minimum value that you cannot pay with given coins.\u201d You, super ACMer, should solve the problem easily, and don\u2019t forget to take $25000000 from Bush!",
+    "Input": "Input contains multiple test cases. Each test case contains 3 positive integers num_1, num_2 and num_5 (0<=num_i<=1000). A test case containing 0 0 0 terminates the input and this test case is not to be processed.",
+    "Output": "Output the minimum positive value that one cannot pay with given coins, one line for one case.",
+    "SampleInput": "1 1 3\r\n0 0 0",
+    "SampleOutput": "4",
+    "Author": "lcy"
+  },
+  {
+    "Title": "You can Solve a Geometry Problem too",
+    "ProblemDescription": "Many geometry\uff08\u51e0\u4f55\uff09problems were designed in the ACM/ICPC. And now, I also prepare a geometry problem for this final exam. According to the experience of many ACMers, geometry problems are always much trouble, but this problem is very easy, after all we are now attending an exam, not a contest :) Give you N (1<=N<=100) segments\uff08\u7ebf\u6bb5\uff09, please output the number of all intersections\uff08\u4ea4\u70b9\uff09. You should count repeatedly if M (M>2) segments intersect at the same point. Note: You can assume that two segments would not intersect at more than one point.",
+    "Input": "Input contains multiple test cases. Each test case contains a integer N (1=N<=100) in a line first, and then N lines follow. Each line describes one segment with four float values x1, y1, x2, y2 which are coordinates of the segment\u2019s ending.  A test case starting with 0 terminates the input and this test case is not to be processed.",
+    "Output": "For each case, print the number of intersections, and one line one case.",
+    "SampleInput": "2\r\n0.00 0.00 1.00 1.00\r\n0.00 1.00 1.00 0.00\r\n3\r\n0.00 0.00 1.00 1.00\r\n0.00 1.00 1.00 0.000\r\n0.00 0.00 1.00 0.00\r\n0",
+    "SampleOutput": "1\r\n3",
+    "Author": "lcy"
+  },
+  {
+    "Title": "Super Jumping! Jumping! Jumping!",
+    "ProblemDescription": "Nowadays, a kind of chess game called \u201cSuper Jumping! Jumping! Jumping!\u201d is very popular in HDU. Maybe you are a good boy, and know little about this game, so I introduce it to you now. The game can be played by two or more than two players. It consists of a chessboard\uff08\u68cb\u76d8\uff09and some chessmen\uff08\u68cb\u5b50\uff09, and all chessmen are marked by a positive integer or \u201cstart\u201d or \u201cend\u201d. The player starts from start-point and must jumps into end-point finally. In the course of jumping, the player will visit the chessmen in the path, but everyone must jumps from one chessman to another absolutely bigger (you can assume start-point is a minimum and end-point is a maximum.). And all players cannot go backwards. One jumping can go from a chessman to next, also can go across many chessmen, and even you can straightly get to end-point from start-point. Of course you get zero point in this situation. A player is a winner if and only if he can get a bigger score according to his jumping solution. Note that your score comes from the sum of value on the chessmen in you jumping path. Your task is to output the maximum value according to the given chessmen list.",
+    "Input": "Input contains multiple test cases. Each test case is described in a line as follow: N value_1 value_2 \u2026value_N  It is guarantied that N is not more than 1000 and all value_i are in the range of 32-int. A test case starting with 0 terminates the input and this test case is not to be processed.",
+    "Output": "For each case, print the maximum according to rules, and one line one case.",
+    "SampleInput": "3 1 3 2\r\n4 1 2 3 4\r\n4 3 3 2 1\r\n0",
+    "SampleOutput": "4\r\n10\r\n3",
+    "Author": "lcy"
+  },
+  {
+    "Title": "Write a simple HTML Browser",
+    "ProblemDescription": "If you ever tried to read a html document on a Macintosh, you know how hard it is if no Netscape is installed.  Now, who can forget to install a HTML browser? This is very easy because most of the times you don't need one on a MAC because there is a Acrobate Reader which is native to MAC. But if you ever need one, what do you do?  Your task is to write a small html-browser. It should only display the content of the input-file and knows only the html commands (tags) <br> which is a linebreak and <hr> which is a horizontal ruler. Then you should treat all tabulators, spaces and newlines as one space and display the resulting text with no more than 80 characters on a line.",
+    "Input": "The input consists of a text you should display. This text consists of words and HTML tags separated by one or more spaces, tabulators or newlines.  A word is a sequence of letters, numbers and punctuation. For example, \"abc,123\" is one word, but \"abc, 123\" are two words, namely \"abc,\" and \"123\". A word is always shorter than 81 characters and does not contain any '<' or '>'. All HTML tags are either <br> or <hr>.",
+    "Output": "You should display the the resulting text using this rules:  \u00a0\u00a0. If you read a word in the input and the resulting line does not get longer than 80 chars, print it, else print it on a new line.  \u00a0\u00a0. If you read a <br> in the input, start a new line.  \u00a0\u00a0. If you read a <hr> in the input, start a new line unless you already are at the beginning of a line, display 80 characters of '-' and start a new line (again).  The last line is ended by a newline character.",
+    "SampleInput": "Hallo, dies ist eine \r\nziemlich lange Zeile, die in Html\r\naber nicht umgebrochen wird.\r\n<br>\r\nZwei <br> <br> produzieren zwei Newlines. \r\nEs gibt auch noch das tag <hr> was einen Trenner darstellt.\r\nZwei <hr> <hr> produzieren zwei Horizontal Rulers.\r\nAchtung       mehrere Leerzeichen irritieren\r\n\r\nHtml genauso wenig wie\r\n\r\n\r\nmehrere Leerzeilen.",
+    "SampleOutput": "Hallo, dies ist eine ziemlich lange Zeile, die in Html aber nicht umgebrochen\r\nwird.\r\nZwei\r\n\r\nproduzieren zwei Newlines. Es gibt auch noch das tag\r\n--------------------------------------------------------------------------------\r\nwas einen Trenner darstellt. Zwei\r\n--------------------------------------------------------------------------------\r\n--------------------------------------------------------------------------------\r\nproduzieren zwei Horizontal Rulers. Achtung mehrere Leerzeichen irritieren Html\r\ngenauso wenig wie mehrere Leerzeilen."
+  },
+  {
+    "Title": "A+B for Input-Output Practice (I)",
+    "ProblemDescription": "Your task is to Calculate a + b. Too easy?! Of course! I specially designed the problem for acm beginners.   You must have found that some problems have the same titles with this one, yes, all these problems were designed for the same aim.",
+    "Input": "The input will consist of a series of pairs of integers a and b, separated by a space, one pair of integers per line.",
+    "Output": "For each pair of input integers a and b you should output the sum of a and b in one line, and with one line of output for each line in input.",
+    "SampleInput": "1 5\r\n10 20",
+    "SampleOutput": "6\r\n30",
+    "Author": "lcy"
+  },
+  {
+    "Title": "A+B for Input-Output Practice (II)",
+    "ProblemDescription": "Your task is to Calculate a + b.",
+    "Input": "Input contains an integer N in the first line, and then N lines follow. Each line consists of a pair of integers a and b, separated by a space, one pair of integers per line.",
+    "Output": "For each pair of input integers a and b you should output the sum of a and b in one line, and with one line of output for each line in input.",
+    "SampleInput": "2\r\n1 5\r\n10 20",
+    "SampleOutput": "6\r\n30",
+    "Author": "lcy"
+  },
+  {
+    "Title": "A+B for Input-Output Practice (III)",
+    "ProblemDescription": "Your task is to Calculate a + b.",
+    "Input": "Input contains multiple test cases. Each test case contains a pair of integers a and b, one pair of integers per line. A test case containing 0 0 terminates the input and this test case is not to be processed.",
+    "Output": "For each pair of input integers a and b you should output the sum of a and b in one line, and with one line of output for each line in input.",
+    "SampleInput": "1 5\r\n10 20\r\n0 0",
+    "SampleOutput": "6\r\n30",
+    "Author": "lcy"
+  },
+  {
+    "Title": "A+B for Input-Output Practice (IV)",
+    "ProblemDescription": "Your task is to Calculate the sum of some integers.",
+    "Input": "Input contains multiple test cases. Each test case contains a integer N, and then N integers follow in the same line. A test case starting with 0 terminates the input and this test case is not to be processed.",
+    "Output": "For each group of input integers you should output their sum in one line, and with one line of output for each line in input.",
+    "SampleInput": "4 1 2 3 4\r\n5 1 2 3 4 5\r\n0",
+    "SampleOutput": "10\r\n15",
+    "Author": "lcy"
+  },
+  {
+    "Title": "A+B for Input-Output Practice (V)",
+    "ProblemDescription": "Your task is to calculate the sum of some integers.",
+    "Input": "Input contains an integer N in the first line, and then N lines follow. Each line starts with a integer M, and then M integers follow in the same line.",
+    "Output": "For each group of input integers you should output their sum in one line, and with one line of output for each line in input.",
+    "SampleInput": "2\r\n4 1 2 3 4\r\n5 1 2 3 4 5",
+    "SampleOutput": "10\r\n15",
+    "Author": "lcy"
+  },
+  {
+    "Title": "A+B for Input-Output Practice (VI)",
+    "ProblemDescription": "Your task is to calculate the sum of some integers.",
+    "Input": "Input contains multiple test cases, and one case one line. Each case starts with an integer N, and then N integers follow in the same line.",
+    "Output": "For each test case you should output the sum of N integers in one line, and with one line of output for each line in input.",
+    "SampleInput": "4 1 2 3 4\r\n5 1 2 3 4 5",
+    "SampleOutput": "10\r\n15",
+    "Author": "lcy"
+  },
+  {
+    "Title": "A+B for Input-Output Practice (VII)",
+    "ProblemDescription": "Your task is to Calculate a + b.",
+    "Input": "The input will consist of a series of pairs of integers a and b, separated by a space, one pair of integers per line.",
+    "Output": "For each pair of input integers a and b you should output the sum of a and b, and followed by a blank line.",
+    "SampleInput": "1 5\r\n10 20",
+    "SampleOutput": "6\r\n\r\n30",
+    "Author": "lcy"
+  },
+  {
+    "Title": "A+B for Input-Output Practice (VIII)",
+    "ProblemDescription": "Your task is to calculate the sum of some integers.",
+    "Input": "Input contains an integer N in the first line, and then N lines follow. Each line starts with a integer M, and then M integers follow in the same line.",
+    "Output": "For each group of input integers you should output their sum in one line, and you must note that there is a blank line between outputs.",
+    "SampleInput": "3\r\n4 1 2 3 4\r\n5 1 2 3 4 5\r\n3 1 2 3",
+    "SampleOutput": "10\r\n\r\n15\r\n\r\n6",
+    "Author": "lcy"
+  },
+  {
+    "Title": "A hard puzzle",
+    "ProblemDescription": "lcy gives a hard puzzle to feng5166,lwg,JGShining and Ignatius:  gave a and b,how to know the a^b.everybody objects to this BT problem,so lcy makes the problem easier than begin. this puzzle describes that: gave a and b,how to know the a^b's the last digit number.But everybody is too lazy to slove this problem,so they remit to you who is wise.",
+    "Input": "There are mutiple test cases. Each test cases consists of two numbers a and b(0<a,b<=2^30)",
+    "Output": "For each test case, you should output the a^b's  last digit number.",
+    "SampleInput": "7 66\r\n8 800",
+    "SampleOutput": "9\r\n6",
+    "Author": "eddy"
+  },
+  {
+    "Title": "Ignatius's puzzle",
+    "ProblemDescription": "Ignatius is poor at math,he falls across a puzzle problem,so he has no choice but to appeal to Eddy. this problem describes that:f(x)=5*x^13+13*x^5+k*a*x,input a nonegative integer k(k<10000),to find the minimal nonegative integer a,make the arbitrary integer x ,65|f(x)if no exists that a,then print \"no\".",
+    "Input": "The input contains several test cases. Each test case consists of a nonegative integer k, More details in the Sample Input.",
+    "Output": "The output contains a string \"no\",if you can't find a,or you should output a line contains the a.More details in the Sample Output.",
+    "SampleInput": "11\r\n100\r\n9999",
+    "SampleOutput": "22\r\nno\r\n43",
+    "Author": "eddy"
+  },
+  {
+    "Title": "Lottery ",
+    "ProblemDescription": "Eddy's company publishes a kind of lottery.This set of lottery which are numbered 1 to n, and a set of one of each is required for a prize .With one number per lottery, how many lottery on average are required to make a complete set of n coupons?",
+    "Input": "Input consists of a sequence of lines each containing a single positive integer n, 1<=n<=22, giving the size of the set of coupons.",
+    "Output": "For each input line, output the average number of lottery required to collect the complete set of n coupons. If the answer is an integer number, output the number. If the answer is not integer, then output the integer part of the answer followed by a space and then by the proper fraction in the format shown below. The fractional part should be irreducible. There should be no trailing spaces in any line of ouput.",
+    "SampleInput": "2\r\n5\r\n17",
+    "SampleOutput": "3 \r\n   5\r\n11 --\r\n   12\r\n   340463\r\n58 ------\r\n   720720",
+    "Author": "eddy"
+  }
+]

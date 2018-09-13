@@ -8,7 +8,7 @@ class Problem(models.Model):
     '''
     基本题目对象
     '''
-    i_d = models.CharField(max_length=20, unique=True, verbose_name='题目编号')
+    id = models.CharField(max_length=20, unique=True, primary_key=True, verbose_name='题目编号')
 
     time_limit_C = models.IntegerField(default=1000, verbose_name='时间限制')
 
@@ -18,17 +18,17 @@ class Problem(models.Model):
 
     memory_limit_other = models.IntegerField(default=32768, verbose_name='其他语言内存限制')
 
-    title = models.CharField(max_length=1000, verbose_name='题目标题')
+    title = models.CharField(max_length=1000, verbose_name='题目标题',blank=True)
 
-    description = models.TextField(verbose_name='题目描述')
+    description = models.TextField(verbose_name='题目描述',blank=True)
 
-    input_decscription = models.TextField(verbose_name='输入描述')
+    input_decscription = models.TextField(verbose_name='输入描述',blank=True)
 
-    output_decscription = models.TextField(verbose_name='输出描述')
+    output_decscription = models.TextField(verbose_name='输出描述',blank=True)
 
-    sample_input = models.TextField(verbose_name='样例输入')
+    sample_input = models.TextField(verbose_name='样例输入',blank=True)
 
-    sample_output = models.TextField(verbose_name='样例输出')
+    sample_output = models.TextField(verbose_name='样例输出',blank=True)
 
     hint = models.TextField(blank=True, verbose_name='题目提示')
 
@@ -41,4 +41,4 @@ class Problem(models.Model):
     submitted = models.IntegerField(default=0, verbose_name='提交人数')
 
     def __str__(self):
-        return self._id
+        return self.id

@@ -1,11 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Problem {{ problem.idd }}</title>
-</head>
-<body>
- <p> {{ problem.description }} </p>
- <p> {{ problem.input_decscription }}</P>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    Problem {{ problem.i_d }}
+{% endblock %}
+
+{% block private_work %}
+    <div class="container">
+        <h2 style="text-align: center">{{ problem.title }}</h2>
+        <table class="table table-sm " style="margin-top: 20px">
+            <thead>
+            <tr>
+                <th scope="col">Time Limit</th>
+                <th scope="col">Language</th>
+                <th scope="col">Memory Limit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><h5><span class="badge badge-primary">{{ problem.time_limit_C }}</span></h5></td>
+                <td><h5><span class="badge badge-success">C/Java</span></h5></td>
+                <td><h5><span class="badge badge-info">{{ problem.memory_limit }}</span></h5></td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <h4>Description</h4>
+            <p>
+                {{ problem.description }}
+            </p>
+            <h4>Input</h4>
+            <p>
+                {{ problem.input_decscription }}
+            </p>
+            <h4>Output</h4>
+            <p>
+                {{ problem.output_decscription }}
+            </p>
+            <h4>Sample Input</h4>
+            <pre>{{ problem.sample_input }}</pre>
+            <h4>Sample Output</h4>
+            <pre>{{ problem.sample_output }}</pre>
+            <h4>Source</h4>
+            <p>
+                {{ problem.source }}
+            </p>
+        </div>
+    </div>
+{% endblock %}

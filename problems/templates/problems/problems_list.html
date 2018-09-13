@@ -19,8 +19,8 @@
                 <tbody>
                 {% for problem in problem_list %}
                     <tr>
-                        <th scope="row">{{ problem.i_d }}</th>
-                        <td><a href="{% url 'problems:problem' problem.i_d %}">{{ problem.title }}</a></td>
+                        <th scope="row">{{ problem.id }}</th>
+                        <td><a href="{% url 'problems:problem' problem.id %}">{{ problem.title }}</a></td>
                         <td>{% widthratio problem.accepted problem.submitted 100 %}%</td>
                     </tr>
                 {% endfor %}
