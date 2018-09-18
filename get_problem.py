@@ -19,6 +19,7 @@ with open("./item.json", 'r') as f:
         p.output_decscription = item.get('Output','')
         p.sample_input = item.get('SampleInput','')
         p.sample_output = item.get('SampleOutput','')
+        p.hint =item.get('Hint','')
         p.source = item.get('Author','')
         p.save()
 

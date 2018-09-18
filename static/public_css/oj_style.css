@@ -1,7 +1,7 @@
-/*.all_things {*/
-    /*margin: 0 auto;*/
-    /*width: 1120px;*/
-/*}*/
+.all_things {
+    width: 1120px;
+    margin-top:70px;
+}
 
 /* Nav links */
 .nav-link {

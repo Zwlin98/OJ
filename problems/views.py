@@ -14,7 +14,8 @@ class ProblemListView(View):
         limit = 20
         paginator = Paginator(problems, limit)
         problem_list = paginator.page(page)
-        return render(request, 'problems/problems_list.html', {'problem_list': problem_list})
+        return render(request, 'problems/problems_list.html',
+                      {'problem_list': problem_list, 'all': range(1, problems.count() // limit + 1)})
 
 
 # TODO:编写题目详情

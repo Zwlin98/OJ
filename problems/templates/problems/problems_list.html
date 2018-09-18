@@ -43,7 +43,19 @@
                 <div>
                     <input class="form-control" type="text" name="key">
                     <button class="btn btn-primary" type="submit" style="margin-top: 10px">Search</button>
+                </div>
             </form>
+            <div>
+
+            </div>
+        </div>
+        <div class="col-12">
+            <ul class="pagination justify-content-center">
+                {% for i in all %}
+                    <li class="page-item"><a class="page-link" href="{% url 'problems:problem_list' i %}">{{ i }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 {% endblock %}
