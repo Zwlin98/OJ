@@ -22,5 +22,3 @@ with open("./item.json", 'r') as f:
         p.hint =item.get('Hint','')
         p.source = item.get('Author','')
         p.save()
-
-
