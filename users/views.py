@@ -146,14 +146,11 @@ class LogoutView(View):
 
 # TODO:完成个人中心页面
 class ProfileView(View):
-    pass
-
-
-def profile(request):
-    if request.user.is_authenticated:
-        return render(request, 'users/profile.html', {'user': request.user})
-    else:
-        return redirect('users:login')
+    def get(self, request):
+        if request.user.is_authenticated:
+            return render(request, 'users/profile.html', {'user': request.user})
+        else:
+            return redirect('users:login')
 
 
 # 发送邮件

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    比赛列表
+{% endblock %}
+
+{% block private_work %}
+    <div class="container row">
+        <div class="col-9">
+            <h3>比赛总览</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Raito(Accept/Submit)</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for race in races_list %}
+                    <tr>
+                        <th scope="row">{{ race.id }}</th>
+                        <td><a href="{% url 'problems:problem' problem.id %}">{{ problem.title }}</a></td>
+                        <td>{% widthratio problem.accepted problem.submitted 100 %}%</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-3">
+            <h4>
+                搜索比赛
+            </h4>
+            <form class="form-group" method="get">
+                {% csrf_token %}
+                <div style="margin-bottom: 10px; margin-top: 10px">
+                    <select class="c-select form-control">
+                        <option selected>Search in</option>
+                        <option value="1">ID</option>
+                        <option value="2">Title</option>
+                    </select>
+                </div>
+                <div>
+                    <input class="form-control" type="text" name="key">
+                    <button class="btn btn-primary" type="submit" style="margin-top: 10px">Search</button>
+                </div>
+            </form>
+            <div>
+
+            </div>
+        </div>
+        <div class="col-12">
+            <ul class="pagination justify-content-center">
+                {% for i in all %}
+                    <li class="page-item"><a class="page-link" href="{% url 'problems:problem_list' i %}">{{ i }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
