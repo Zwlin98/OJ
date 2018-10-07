@@ -11,7 +11,7 @@ from django.core.mail import send_mail
 from .forms import RegisterForm, LoginForm, FindForm, ResetForm
 from .models import User
 from users.models import Verifycode
-#from OJ.private_settings import DEFAULT_FROM_EMAIL
+from OJ.private_settings import DEFAULT_FROM_EMAIL
 
 
 # 重定向
