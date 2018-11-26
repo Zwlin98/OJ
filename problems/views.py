@@ -8,6 +8,12 @@ from .models import Problem
 
 # Create your views here.
 
+
+
+
+
+
+
 class ProblemListView(View):
     def get(self, request, page=1):
         problems = Problem.objects.all()
@@ -22,7 +28,7 @@ class ProblemListView(View):
 class ProblemView(View):
     def get(self, request, problemid):
         try:
-            problem = Problem.objects.get(id=problemid)
+            problem = Problem.objects.get(problem_id=problemid)
             return render(request, 'problems/problem.html', {'problem': problem})
         except Exception:
             raise Http404
