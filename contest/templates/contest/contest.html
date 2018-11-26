@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    contest {{ contest.id }}
+{% endblock %}
+
+{% block private_work %}
+    <div class="container">
+        <h2 style="text-align: center">{{ contest.title }}</h2>
+        <table class="table table-sm " style="margin-top: 20px">
+            <thead>
+            <tr>
+                <th scope="col">开始时间</th>
+                <th scope="col">描述</th>
+                <th scope="col">参加人数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><h5><span class="badge badge-primary">{{ contest.add_time }}</span></h5></td>
+                <td><h5><span class="badge badge-success">{{ contest.description }}</span></h5></td>
+                <td><h5><span class="badge badge-info">{{ contest.people}}</span></h5></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="col-12">
+{#            <h4>Description</h4>#}
+{#            <p>{{ contest.description }}</p>#}
+{#            <h4>Input</h4>#}
+{#            <p>{{ contest.input_decscription }}</p>#}
+{#            <h4>Output</h4>#}
+{#            <p>{{ contest.output_decscription }}</p>#}
+{#            <h4>Sample Input</h4>#}
+{#            <pre>{{ contest.sample_input }}</pre>#}
+{#            <h4>Sample Output</h4>#}
+{#            <pre>{{ contest.sample_output }}</pre>#}
+{#            <h4>Source</h4>#}
+{#            <p>{{ contest.source }}</p>#}
+        </div>
+        <div>
+            <form class="form-group" method="get">
+                {% csrf_token %}
+                <div style="margin-bottom: 10px; margin-top: 10px;width: 200px" >
+                    <select class="c-select form-control">
+                        <option selected>Choose Language</option>
+                        <option value="1">C</option>
+                        <option value="2">C++</option>
+                        <option value="2">Java</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea class="form-control" style="height: 300px"></textarea>
+                </div>
+            </form>
+        </div>
+        <div style="text-align: center;margin-top:20px;">
+            <div class="btn-group" role="group">
+                <a class="btn btn-info active" href="#" role="button">Submit</a>
+                <a class="btn btn-primary active" href="#" role="button">Top</a>
+                <a class="btn btn-secondary active" href="#" role="button">Back</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

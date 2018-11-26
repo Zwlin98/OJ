@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.db import models
-
+from contest.models import Contest
 
 # Create your models here.
 
@@ -8,7 +8,7 @@ class Problem(models.Model):
     '''
     基本题目对象
     '''
-    id = models.CharField(max_length=20, unique=True, primary_key=True, verbose_name='题目编号')
+    problem_id = models.CharField(max_length=20, unique=True, primary_key=True, verbose_name='题目编号')
 
     time_limit_C = models.IntegerField(default=1000, verbose_name='时间限制')
 
@@ -39,6 +39,8 @@ class Problem(models.Model):
     accepted = models.IntegerField(default=0, verbose_name='通过人数')
 
     submitted = models.IntegerField(default=0, verbose_name='提交人数')
+
+    contest = models.ForeignKey(Contest,null=True,on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.id
