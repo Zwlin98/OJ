@@ -20,7 +20,15 @@ class ProblemListView(View):
 
 # TODO:编写题目详情
 class ProblemView(View):
-    def get(self, request):
+    def get(self, request, problemid):
+        try:
+            problem = Problem.objects.get(id=problemid)
+            return render(request, 'problems/problem.html', {'problem': problem})
+        except Exception:
+            raise Http404
+
+    # TODO:Complete  submit problem
+    def post(self, request, problemid):
         pass
 
 
@@ -30,8 +38,4 @@ class SearchProblemView(View):
 
 
 def get_problem(request, id):
-    try:
-        problem = Problem.objects.get(id=id)
-        return render(request, 'problems/problem.html', {'problem': problem})
-    except Exception:
-        raise Http404
+    pass

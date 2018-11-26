@@ -38,9 +38,9 @@
             <p>{{ problem.source }}</p>
         </div>
         <div>
-            <form class="form-group" method="get">
+            <form class="form-group" method="post">
                 {% csrf_token %}
-                <div style="margin-bottom: 10px; margin-top: 10px;width: 200px" >
+                <div style="margin-bottom: 10px; margin-top: 10px;width: 200px">
                     <select class="c-select form-control">
                         <option selected>Choose Language</option>
                         <option value="1">C</option>
@@ -51,14 +51,14 @@
                 <div>
                     <textarea class="form-control" style="height: 300px"></textarea>
                 </div>
+                <div style="text-align: center;margin-top:20px;">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-info active" type="submit">Submit</button>
+                        <a class="btn btn-primary active" href="#" role="button">Top</a>
+                        <a class="btn btn-secondary active" href="#" role="button">Back</a>
+                    </div>
+                </div>
             </form>
-        </div>
-        <div style="text-align: center;margin-top:20px;">
-            <div class="btn-group" role="group">
-                <a class="btn btn-info active" href="#" role="button">Submit</a>
-                <a class="btn btn-primary active" href="#" role="button">Top</a>
-                <a class="btn btn-secondary active" href="#" role="button">Back</a>
-            </div>
         </div>
     </div>
 {% endblock %}
