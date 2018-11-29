@@ -1,6 +1,5 @@
 from datetime import datetime
 from django.db import models
-from contest.models import Contest
 
 # Create your models here.
 
@@ -40,7 +39,5 @@ class Problem(models.Model):
 
     submitted = models.IntegerField(default=0, verbose_name='提交人数')
 
-    contest = models.ForeignKey(Contest,null=True,on_delete=models.SET_NULL)
-
     def __str__(self):
-        return self.id
+        return self.problem_id

@@ -1,11 +1,14 @@
-from django.db import models
 from datetime import datetime
+
+from django.db import models
+
 from problems.models import Problem
+
+
 # Create your models here.
 # from problems.models import Problem
 
 class Contest(models.Model):
-
     '''
     基本比赛对象
     '''
@@ -24,17 +27,27 @@ class Contest(models.Model):
     # problem_list = models.ForeignKey(Problem)
 
     def __str__(self):
-        return self.id
+        return self.contest_id   # 增加代码
 
 
-
-
-class  Contest_problem(models.Model):
+class Contest_problem(models.Model):
     '''
     比赛与题目的连接
     '''
-    # problem_id = models.CharField(max_length=20,primary_key=True)
-    problem_id = models.ForeignKey(Problem)
-    contest_id = models.ForeignKey(Contest,primary_key=True)
 
+    contest_problem_id = models.CharField(max_length=5,primary_key=True)
 
+    # 能不能用外键？ 我试了半天有点蒙
+    #problem= models.ForeignKey(Problem,on_delete=models.DO_NOTHING,related_name='problem')
+    problem_id = models.CharField(max_length=20,default='1000')
+
+    contest_id = models.CharField(max_length=20,default='A001')
+
+    accepted_num = models.IntegerField()
+
+    submit_num = models.IntegerField()
+
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.contest_problem_id  # 增加代码
