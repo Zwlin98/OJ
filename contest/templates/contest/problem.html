@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Problem {{ contest_problem_list.problem_id }}
+{% endblock %}
+
+{% block private_work %}
+    <div class="container">
+        <h2 style="text-align: center">{{ contest_problem_list.title }}</h2>
+        <table class="table table-sm " style="margin-top: 20px">
+            <thead>
+            <tr>
+                <th scope="col">Time Limit</th>
+                <th scope="col">Language</th>
+                <th scope="col">Memory Limit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><h5><span class="badge badge-primary">{{ contest_problem_list.time_limit_C }}</span></h5></td>
+                <td><h5><span class="badge badge-success">C/Java</span></h5></td>
+                <td><h5><span class="badge badge-info">{{ contest_problem_list.memory_limit }}</span></h5></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="col-12">
+            <h4>Description</h4>
+            <p>{{ contest_problem_list.description }}</p>
+            <h4>Input</h4>
+            <p>{{ contest_problem_list.input_decscription }}</p>
+            <h4>Output</h4>
+            <p>{{ contest_problem_list.output_decscription }}</p>
+            <h4>Sample Input</h4>
+            <pre>{{ contest_problem_list.sample_input }}</pre>
+            <h4>Sample Output</h4>
+            <pre>{{ contest_problem_list.sample_output }}</pre>
+            <h4>Source</h4>
+            <p>{{ contest_problem_list.source }}</p>
+        </div>
+        <div>
+            <form class="form-group" method="post">
+                {% csrf_token %}
+                <div style="margin-bottom: 10px; margin-top: 10px;width: 200px">
+                    <select class="c-select form-control">
+                        <option selected>Choose Language</option>
+                        <option value="1">C</option>
+                        <option value="2">C++</option>
+                        <option value="2">Java</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea class="form-control" style="height: 300px"></textarea>
+                </div>
+                <div style="text-align: center;margin-top:20px;">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-info active" type="submit">Submit</button>
+                        <a class="btn btn-primary active" href="#" role="button">Top</a>
+                        <a class="btn btn-secondary active" href="#" role="button">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

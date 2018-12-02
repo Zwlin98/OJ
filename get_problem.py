@@ -47,7 +47,6 @@ with open("./item.json", 'r') as f:
     for item in problems:
         p = Problem()
         p.problem_id = str(id)
-        id += 1
         p.title = item.get('Title', '')
         p.description = item.get('ProblemDescription', '')
         p.input_decscription = item.get('Input', '')
@@ -56,22 +55,27 @@ with open("./item.json", 'r') as f:
         p.sample_output = item.get('SampleOutput', '')
         p.hint = item.get('Hint', '')
         p.source = item.get('Author', '')
-
-        # 加入比赛的题目可选选择性的不可视，这里选择都不可视
-        if id <= 1010:
-            p.is_visual = False
-            p.is_contested = True
         p.save()
+        # 插入1个题目 , 插入外键需要 两个contest 以及 problem 实例 不好改
+        if id <= 1010:
+            str_id = str(id + 2000)
+            CP = Contest_problem()
+            CP.contest_problem_id = str_id
+            CP.contest_id = 'A001'
+            CP.accepted_num = 0
+            CP.submit_num = 50* id / 14
 
-    # 插入1个题目 , 插入外键需要 两个contest 以及 problem 实例 不好改
-    for i in range(0, 10):
-        id = str(i + 2000)
-        CP = Contest_problem()
-        CP.contest_problem_id = id
-        CP.problem_id = str(i+1000)
-        CP.contest_id = 'A001'
-        CP.accepted_num = 0
-        CP.submit_num = 50* i
-        CP.title = '表打我，我是'+id+'啊'
-        CP.save()
+            CP.problem_id = p.problem_id
+            CP.title = p.title
+            CP.description = p.description
+            CP.input_decscription = p.input_decscription
+            CP.output_decscription = p.output_decscription
+            CP.sample_input = p.sample_input
+            CP.sample_output = p.sample_output
+            CP.hint = p.hint
+            CP.source = CP.source
+            print(CP)
+            CP.save()
+
+        id += 1
 

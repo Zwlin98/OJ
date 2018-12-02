@@ -39,9 +39,6 @@ class Problem(models.Model):
 
     submitted = models.IntegerField(default=0, verbose_name='提交人数')
 
-    is_contested = models.BooleanField(default=False,verbose_name='正在比赛')
-
-    is_visual = models.BooleanField(default=True,verbose_name= '可视')
 
     def __str__(self):
         return self.problem_id

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    contest {{ contest.contest_id1 }}
+    contest {{ contest.contest_id }}
 {% endblock %}
 
 {% block private_work %}
@@ -36,24 +36,16 @@
                     </tr>
                     </thead>
                     <tbody>
-
-                    {% for problem in problem_list %}
-                        {% for cp in contest_problem_list %}
-
-                            {% if forloop.counter == forloop.parentloop.counter %}
-                                <p>{{ ploblem }}</p>
-                                <p>{{ ploblem.problem_id }}</p>
-                                <tr>
-{#                                    <th scope="row"></th>#}
-                                    <td>{{ forloop.parentloop.counter }} </td>
-                                    <td><a href="{% url 'problems:problem' problem.problem_id %}">{{ problem.title }}</a></td>
-                                    <td>{% widthratio cp.accepted_num cp.submit_num 100 %}%({{ cp.accepted_num }}
-                                        / {{ cp.submit_num }})
-                                    </td>
-                                    <td> {{ cp.title }} </td>
-                                </tr>
-                            {% endif %}
-                        {% endfor %}
+                    {% for cp in contest_problem_list %}
+                        <tr>
+                            {#                                    <th scope="row"></th>#}
+                            <td>{{ forloop.counter }} </td>
+                            <td><a href="{% url 'contest:problem' cp.problem_id %}">{{ cp.title }}</a></td>
+                            <td>{% widthratio cp.accepted_num cp.submit_num 100 %}%({{ cp.accepted_num }}
+                                / {{ cp.submit_num }})
+                            </td>
+                            <td> {{ cp.title }} </td>
+                        </tr>
                     {% endfor %}
                     </tbody>
                 </table>
