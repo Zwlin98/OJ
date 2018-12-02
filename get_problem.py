@@ -56,6 +56,11 @@ with open("./item.json", 'r') as f:
         p.sample_output = item.get('SampleOutput', '')
         p.hint = item.get('Hint', '')
         p.source = item.get('Author', '')
+
+        # 加入比赛的题目可选选择性的不可视，这里选择都不可视
+        if id <= 1010:
+            p.is_visual = False
+            p.is_contested = True
         p.save()
 
     # 插入1个题目 , 插入外键需要 两个contest 以及 problem 实例 不好改

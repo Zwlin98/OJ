@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'problems.apps.ProblemsConfig',
     'contest.apps.ContestConfig',
 ]
+INSTALLED_APPS += ['django_extensions']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
