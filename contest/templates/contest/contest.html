@@ -41,8 +41,8 @@
                             {#                                    <th scope="row"></th>#}
                             <td>{{ forloop.counter }} </td>
                             <td><a href="{% url 'contest:problem' cp.problem_id %}">{{ cp.title }}</a></td>
-                            <td>{% widthratio cp.accepted_num cp.submit_num 100 %}%({{ cp.accepted_num }}
-                                / {{ cp.submit_num }})
+                            <td>{% widthratio cp.accepted cp.submitted 100 %}%({{ cp.accepted }}
+                                / {{ cp.submitted }})
                             </td>
                             <td> {{ cp.title }} </td>
                         </tr>

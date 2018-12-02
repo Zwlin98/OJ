@@ -62,8 +62,8 @@ with open("./item.json", 'r') as f:
             CP = Contest_problem()
             CP.contest_problem_id = str_id
             CP.contest_id = 'A001'
-            CP.accepted_num = 0
-            CP.submit_num = 50* id / 14
+            CP.accepted = id
+            CP.submitted =  (id)* id / 10
 
             CP.problem_id = p.problem_id
             CP.title = p.title
