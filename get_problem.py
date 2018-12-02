@@ -30,7 +30,6 @@ for line in result:
 C = Contest()
 
 C.contest_id = 'A001'
-date = datetime.now
 # 这个东西没法直接插入，？ 怎么写
 # C.add_time = date
 C.description = '写脚本真累'
