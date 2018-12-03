@@ -39,5 +39,6 @@ class Problem(models.Model):
 
     submitted = models.IntegerField(default=0, verbose_name='提交人数')
 
+
     def __str__(self):
         return self.problem_id

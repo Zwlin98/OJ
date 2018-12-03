@@ -12,20 +12,18 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Raito(Accept/Submit)</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">Number of Applicants</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for contest in contest_list%}
                     <tr>
-                        <th scope="row">{{ contest.contest_id}}</th>
                         <td><a href="{% url 'contest:contest' contest.contest_id %}">{{ contest.title}}</a></td>
-{#                        <td>{% widthratio contest.accepted problem.submitted 100 %}%</td>#}
-
                         <td> {{ contest.description}} </td>
-                        <td> {{ contest.add_time}} </td>
+                        <td> {{ contest.starttime}} </td>
                         <td> {{ contest.people}} </td>
                     </tr>
                 {% endfor %}
