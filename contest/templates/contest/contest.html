@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    contest {{ contest.id }}
+    contest {{ contest.contest_id }}
 {% endblock %}
 
 {% block private_work %}
@@ -19,46 +19,41 @@
             <tr>
                 <td><h5><span class="badge badge-primary">{{ contest.add_time }}</span></h5></td>
                 <td><h5><span class="badge badge-success">{{ contest.description }}</span></h5></td>
-                <td><h5><span class="badge badge-info">{{ contest.people}}</span></h5></td>
+                <td><h5><span class="badge badge-info">{{ contest.people }}</span></h5></td>
             </tr>
             </tbody>
-        </table>
-        <div class="col-12">
-{#            <h4>Description</h4>#}
-{#            <p>{{ contest.description }}</p>#}
-{#            <h4>Input</h4>#}
-{#            <p>{{ contest.input_decscription }}</p>#}
-{#            <h4>Output</h4>#}
-{#            <p>{{ contest.output_decscription }}</p>#}
-{#            <h4>Sample Input</h4>#}
-{#            <pre>{{ contest.sample_input }}</pre>#}
-{#            <h4>Sample Output</h4>#}
-{#            <pre>{{ contest.sample_output }}</pre>#}
-{#            <h4>Source</h4>#}
-{#            <p>{{ contest.source }}</p>#}
-        </div>
-        <div>
-            <form class="form-group" method="get">
-                {% csrf_token %}
-                <div style="margin-bottom: 10px; margin-top: 10px;width: 200px" >
-                    <select class="c-select form-control">
-                        <option selected>Choose Language</option>
-                        <option value="1">C</option>
-                        <option value="2">C++</option>
-                        <option value="2">Java</option>
-                    </select>
-                </div>
-                <div>
-                    <textarea class="form-control" style="height: 300px"></textarea>
-                </div>
-            </form>
-        </div>
-        <div style="text-align: center;margin-top:20px;">
-            <div class="btn-group" role="group">
-                <a class="btn btn-info active" href="#" role="button">Submit</a>
-                <a class="btn btn-primary active" href="#" role="button">Top</a>
-                <a class="btn btn-secondary active" href="#" role="button">Back</a>
+            <!--!你爸爸AK了 -->
+            <div class="col-9">
+                <h3>题目列表</h3>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Raito(Accept/Submit)</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for cp in contest_problem_list %}
+                        <tr>
+                            {#                                    <th scope="row"></th>#}
+                            <td>{{ forloop.counter }} </td>
+                            <td><a href="{% url 'contest:problem' cp.problem_id %}">{{ cp.title }}</a></td>
+                            <td>{% widthratio cp.accepted cp.submitted 100 %}%({{ cp.accepted }}
+                                / {{ cp.submitted }})
+                            </td>
+                            <td> {{ cp.title }} </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
-        </div>
+
+            <div style="text-align: center;margin-top:20px;">
+                <div class="btn-group" role="group">
+                    <a class="btn btn-primary active" href="#" role="button">Top</a>
+                </div>
+            </div>
     </div>
 {% endblock %}
