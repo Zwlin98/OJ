@@ -19,12 +19,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for contest in contest_list%}
+                {% for contest in contest_list %}
                     <tr>
-                        <td><a href="{% url 'contest:contest' contest.contest_id %}">{{ contest.title}}</a></td>
+                        <td><a href="{% url 'contest:contest' contest.id %}">{{ contest.title}}</a></td>
                         <td> {{ contest.description}} </td>
-                        <td> {{ contest.starttime}} </td>
-                        <td> {{ contest.people}} </td>
+                        <td> {{ contest.start_time}} </td>
+                        <td> {{ contest.participant }} </td>
                     </tr>
                 {% endfor %}
                 </tbody>

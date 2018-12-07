@@ -5,14 +5,7 @@ from django.core.paginator import Paginator
 
 from .models import Problem
 
-
 # Create your views here.
-
-
-
-
-
-
 
 class ProblemListView(View):
     def get(self, request, page=1):
