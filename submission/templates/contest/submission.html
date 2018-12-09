@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    contest {{ contest.contest_id }}
+{% endblock %}
+
+{% block private_work %}
+    <div class="container">
+        <h2 style="text-align: center">{{ contest.title }}</h2>
+        <table class="table table-sm " style="margin-top: 20px">
+            <thead>
+            <tr>
+                <th scope="col">开始时间</th>
+                <th scope="col">描述</th>
+                <th scope="col">参加人数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><h5><span class="badge badge-primary">{{ contest.add_time }}</span></h5></td>
+                <td><h5><span class="badge badge-success">{{ contest.description }}</span></h5></td>
+                <td><h5><span class="badge badge-info">{{ contest.people }}</span></h5></td>
+            </tr>
+            </tbody>
+            <!--!你爸爸AK了 -->
+            <div class="col-9">
+                <h3>题目列表</h3>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Raito(Accept/Submit)</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for cp in contest_problem_list %}
+                        <tr>
+                            {#                                    <th scope="row"></th>#}
+                            <td>{{ forloop.counter }} </td>
+                            <td><a href="{% url 'contest:problem' cp.problem_id %}">{{ cp.title }}</a></td>
+                            <td>{% widthratio cp.accepted cp.submitted 100 %}%({{ cp.accepted }}
+                                / {{ cp.submitted }})
+                            </td>
+                            <td> {{ cp.title }} </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center;margin-top:20px;">
+                <div class="btn-group" role="group">
+                    <a class="btn btn-primary active" href="#" role="button">Top</a>
+                </div>
+            </div>
+    </div>
+{% endblock %}
