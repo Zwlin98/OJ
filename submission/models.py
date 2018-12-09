@@ -4,6 +4,7 @@ from problems.models import Problem
 from users.models import User
 from datetime import datetime
 
+
 # Create your models here.
 class JudgeStatus:
     COMPILE_ERROR = 0
@@ -32,21 +33,26 @@ class JudgeStatus:
 
 
 class SubmissionLanguage:
-    C = 0
-    CPP = 1
-    JAVA = 2
-    Python = 3
+    GPP = 0  # G++
+    GCC = 1
+    CPP = 2
+    C = 3
+    PASCAL = 4
+    JAVA = 5
+    CSHARP = 6  # C#
 
     LANGUAGE = (
-        'C',
+        'G++',
+        'GCC',
         'C++',
+        'C',
+        'Pascal',
         'Java',
-        'Python'
+        'C#'
     )
 
 
 class Submission(models.Model):
-
     contest = models.ForeignKey(Contest, null=True, on_delete=models.SET_NULL)
     problem = models.ForeignKey(Problem, on_delete=models.CASCADE)
     create_time = models.DateTimeField(default=datetime.now)
@@ -64,4 +70,12 @@ class Submission(models.Model):
         return SubmissionLanguage.LANGUAGE[self.language]
 
     def __str__(self):
-        return self.id
+        return str(self.id)
+
+
+class HduSubmission(models.Model):
+    submission = models.ForeignKey(Submission, on_delete=models.CASCADE)
+    hdu_run_id = models.IntegerField()
+
+    def __str__(self):
+        return str(self.hdu_run_id)

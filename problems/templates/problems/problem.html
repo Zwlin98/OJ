@@ -38,22 +38,29 @@
             <p>{{ problem.source }}</p>
         </div>
         <div>
-            <form class="form-group" method="post">
+            <form class="form-group" method="post" action="{% url 'submission:submission_list' 1 %}">
                 {% csrf_token %}
+                <input type="hidden" class="form-control" name="problem" value="{{ problem.problem_id }}">
                 <div style="margin-bottom: 10px; margin-top: 10px;width: 200px">
-                    <select class="c-select form-control">
+                    <select name="language" class="c-select form-control">
                         <option selected>Choose Language</option>
-                        <option value="1">C</option>
+                        <option value="0">G++</option>
+                        <option value="1">GCC</option>
                         <option value="2">C++</option>
-                        <option value="2">Java</option>
+                        <option value="3">C</option>
+                        <option value="4">Pascal</option>
+                        <option value="5">Java</option>
+                        <option value="6">C#</option>
+
                     </select>
                 </div>
                 <div>
-                    <textarea class="form-control" style="height: 300px"></textarea>
+                    <textarea name="code" class="form-control" style="height: 300px"></textarea>
                 </div>
                 <div style="text-align: center;margin-top:20px;">
                     <div class="btn-group" role="group">
-                        <button class="btn btn-info active" type="submit">Submit</button>
+                        <button class="btn btn-info active">Submit
+                        </button>
                         <a class="btn btn-primary active" href="#" role="button">Top</a>
                         <a class="btn btn-secondary active" href="#" role="button">Back</a>
                     </div>

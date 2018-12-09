@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'problems.apps.ProblemsConfig',
     'contest.apps.ContestConfig',
     'submission.apps.SubmissionConfig',
-    'rest_framework'
+    'judge.apps.JudgeConfig',
+    'rest_framework',
+    'django_celery_beat',
+    'django_celery_results',
 ]
 
 # INSTALLED_APPS += ['django_extensions']
@@ -134,3 +137,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     'static',
 ]
+
+CELERY_RESULT_BACKEND = 'django-db'
+
+CELERY_RESULT_SERIALIZER = 'json'
