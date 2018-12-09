@@ -13,7 +13,7 @@ class SubmissionSerializer(serializers.ModelSerializer):
 
         # fields = "__all__"
 
-        exclude = ('contest',)
+        exclude = ('contest','code',)
 
         depth = 0
 
@@ -30,4 +30,4 @@ class SubmissionDeserializer(serializers.ModelSerializer):
     def save(self, user):
         self.instance = Submission()
         self.instance.user = user
-        super().save()
+        return super().save()

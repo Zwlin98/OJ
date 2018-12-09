@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.db import models
 from contest.models import Contest
-
+from judge.models import JudgePlatform
 
 # Create your models here.
 
@@ -43,5 +43,7 @@ class Problem(models.Model):
 
     contest = models.ForeignKey(Contest, null=True, on_delete=models.SET_NULL)
 
+    vjudge = models.IntegerField(default=JudgePlatform.HDU,blank=True)
+
     def __str__(self):
-        return self.problem_id
+        return str(self.problem_id)

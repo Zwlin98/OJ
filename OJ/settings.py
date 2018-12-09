@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'problems.apps.ProblemsConfig',
     'contest.apps.ContestConfig',
     'submission.apps.SubmissionConfig',
+    'judge.apps.JudgeConfig',
     'rest_framework',
     'django_celery_beat',
     'django_celery_results',

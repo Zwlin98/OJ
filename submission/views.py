@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from submission.models import Submission
 from .serializers import SubmissionSerializer, SubmissionDeserializer
 from users.authentication import NormalUserAuthentication
+from judge.tasks import submit
 
 
 # Create your views here.
@@ -21,7 +22,8 @@ class SubmissionListView(APIView):
             return Response("Please login first")
         ser = SubmissionDeserializer(data=request.data)
         if ser.is_valid():
-            ser.save(request.user)
+            instance = ser.save(request.user)
+            submit.delay(instance.id)
             return Response(ser.data)
         else:
             return Response(ser.errors)

@@ -60,7 +60,7 @@ class Contest(models.Model):
             return ContestStatus.CONTEST_UNDERWAY
 
     def __str__(self):
-        return self.id  # 增加代码
+        return str(self.id)  # 增加代码
 
 
 class AbstractContestRank(models.Model):
