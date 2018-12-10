@@ -8,10 +8,14 @@ from django.views.generic.base import View
 from django.db.models import Q
 from django.core.mail import send_mail
 
+from problems.models import Problem
+from submission.models import Submission
 from .forms import RegisterForm, LoginForm, FindForm, ResetForm
 from .models import User
 from users.models import Verifycode
-#from OJ.private_settings import DEFAULT_FROM_EMAIL
+
+
+# from OJ.private_settings import DEFAULT_FROM_EMAIL
 
 
 # 重定向
@@ -80,7 +84,7 @@ class RegisterView(View):
             return render(request, 'users/register.html', {'msg': "输入的用户名或密码非法", 'error': True})
 
 
-class resetpasswordView(View):
+class ResetPasswordView(View):
 
     def get(self, request, verify_code=''):
         if len(verify_code) == 48:
@@ -122,7 +126,7 @@ class resetpasswordView(View):
 
 
 # 激活账号模块
-class activeView(View):
+class ActiveView(View):
     def get(self, request, verify_code=''):
         if len(verify_code) == 48:
             if Verifycode.objects.filter(code=verify_code).exists():
@@ -146,14 +150,21 @@ class LogoutView(View):
 
 # TODO:完成个人中心页面
 class ProfileView(View):
-    pass
-
-
-def profile(request):
-    if request.user.is_authenticated:
-        return render(request, 'users/profile.html', {'user': request.user})
-    else:
-        return redirect('users:login')
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            submissions = Submission.objects.filter(user__username=request.user.username)
+            submissions_ac = submissions.filter(result="Accepted")
+            submissions_try = submissions.filter().exclude(result='Accepted')
+            return render(request,
+                          'users/profile.html',
+                          {
+                              'user': request.user,
+                              'submissions_ac': submissions_ac,
+                              'submissions_try': submissions_try
+                          }
+                          )
+        else:
+            return redirect('users:login')
 
 
 # 发送邮件

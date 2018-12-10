@@ -1,0 +1,82 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    提交列表
+{% endblock %}
+
+{#    problem = models.ForeignKey(Problem, on_delete=models.CASCADE)#}
+{#    user = models.ForeignKey(User, on_delete=models.CASCADE)#}
+{#    language = models.IntegerField(default=SubmissionLanguage.CPP)#}
+
+{#    result = models.CharField(default=JudgeStatus.STATUS[7], max_length=64)#}
+{#    exe_time = models.CharField(default='0MS', max_length=64)#}
+{#    exe_memory = models.CharField(default='0K', max_length=64)#}
+{#    code_len = models.CharField(default='0B', max_length=64)#}
+
+
+{% block private_work %}
+    <div class="container row">
+        <div class="col-9">
+            <h3></h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">题号</th>
+                    <th scope="col">用户</th>
+                    <th scope="col">提交时间</th>
+                    <th scope="col">语言</th>
+                    <th scope="col">结果</th>
+                    <th scope="col">执行时间</th>
+                    <th scope="col">内存大小</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for submission in submissions %}
+                    <tr>
+                        <td><a href="{% url 'submission:submission' submission.id %}">{{ submission.id }}</a></td>
+                        <td> {{ submission.problem}} </td>
+                        <td> {{ submission.user.username}} </td>
+                        <td> {{ submission.create_time }} </td>
+                        <td> {{ submission.language }} </td>
+                        <td> {{ submission.result }} </td>
+                        <td> {{ submission.exe_time}} </td>
+                        <td> {{ submission.exe_memory}} </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3">
+            <h4>
+                搜索比赛
+            </h4>
+            <form class="form-group" method="get">
+                {% csrf_token %}
+                <div style="margin-bottom: 10px; margin-top: 10px">
+                    <select class="c-select form-control">
+                        <option selected>Search in</option>
+                        <option value="1">ID</option>
+                        <option value="2">Title</option>
+                    </select>
+                </div>
+                <div>
+                    <input class="form-control" type="text" name="key">
+                    <button class="btn btn-primary" type="submit" style="margin-top: 10px">Search</button>
+                </div>
+            </form>
+            <div>
+
+            </div>
+        </div>
+        <div class="col-12">
+            <ul class="pagination justify-content-center">
+                {% for i in all %}
+{#                    <li class="page-item"><a class="page-link" href="{% url 'problems:problem_list' i %}">{{ i }}</a>#}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

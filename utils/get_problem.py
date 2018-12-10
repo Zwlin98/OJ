@@ -13,21 +13,22 @@ from contest.models import Contest
 from users.models import User
 
 # 这个脚本好像不能应对  models的外键修改
-# if os.path.exists('db.sqlite3'):
-#     os.remove('db.sqlite3')
-#
-# result = os.popen('python manage.py makemigrations')
-# for line in result:
-#     print(line)
-# result = os.popen('python manage.py migrate --run-syncdb').readlines()
-# for line in result:
-#     print(line)
-#
-# user = User()
-# user.username = 'zwlin'
-# user.set_password("123456")
-# user.email="zwl@zwl.com"
-# user.save()
+if os.path.exists('../db.sqlite3'):
+    os.remove('../db.sqlite3')
+
+result = os.popen('python ../manage.py makemigrations')
+for line in result:
+    print(line)
+result = os.popen('python ../manage.py migrate --run-syncdb').readlines()
+for line in result:
+    print(line)
+
+user = User()
+user.username = 'zwlin'
+user.set_password("123456")
+user.email="zwl@zwl.com"
+user.is_staff = True
+user.save()
 
 
 # 插入一个比赛
@@ -39,7 +40,7 @@ C.title = 'Testing_Contest'
 C.create_user = User.objects.get(username='zwlin')
 C.save()
 
-with open("utils/item.json", 'r') as f:
+with open("./item.json", 'r') as f:
     problems = json.load(f)
     id = 1000
     for item in problems:

@@ -2,6 +2,7 @@ import requests
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from submission.models import Submission, JudgeStatus
+from users.models import User
 
 
 class Spider(object):
@@ -57,4 +58,8 @@ class HduSpider(Spider):
                     exe_time=exe_time,
                     code_len=code_len)
                 cnt -= 1
+                if judge_status == "Accepted":
+                    user = User.objects.get(submission__hdusubmission__hdu_run_id=run_id)
+                    user.problem_solved += 1
+                    user.save()
         return cnt

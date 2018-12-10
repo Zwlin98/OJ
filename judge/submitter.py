@@ -1,9 +1,10 @@
-import requests
-from utils.exceptions import *
-from submission.models import SubmissionLanguage
 from urllib.request import urlopen
+
 from bs4 import BeautifulSoup
 
+from utils.exceptions import *
+
+import requests
 
 class Submitter(object):
     def __init__(self):
@@ -69,7 +70,7 @@ class HduSubmitter(Submitter):
         url = 'http://acm.hdu.edu.cn/status.php?user=' + username
         print(url)
         html = urlopen(url)
-        soup = BeautifulSoup(html,'lxml')
+        soup = BeautifulSoup(html, 'lxml')
         try:
             run_id = int(soup.findAll('table')[-2].findAll("tr")[1].td.string)
             return run_id
