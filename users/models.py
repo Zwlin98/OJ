@@ -1,10 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser,AnonymousUser
 from datetime import datetime
+
 
 # Create your models here.
 
 class User(AbstractUser):
+
     email = models.EmailField(unique=True, blank=False, verbose_name='邮箱地址')
 
     nickname = models.CharField(max_length=50, blank=True, verbose_name='昵称')
@@ -30,7 +32,7 @@ class Verifycode(models.Model):
     )
     code = models.CharField(max_length=50, verbose_name='验证码')
     email = models.EmailField(verbose_name='邮箱')
-    send_type = models.CharField(max_length=10,verbose_name='验证码类型', choices=type_choice)
+    send_type = models.CharField(max_length=10, verbose_name='验证码类型', choices=type_choice)
     send_time = models.DateTimeField(verbose_name='生成时间', default=datetime.now)
 
     class Meta:

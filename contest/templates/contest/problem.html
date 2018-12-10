@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Problem {{ problem.problem_id }}
+    Problem {{ contest_problem_list.problem_id }}
 {% endblock %}
 
 {% block private_work %}
     <div class="container">
-        <h2 style="text-align: center">{{ problem.title }}</h2>
+        <h2 style="text-align: center">{{ contest_problem_list.title }}</h2>
         <table class="table table-sm " style="margin-top: 20px">
             <thead>
             <tr>
@@ -17,30 +17,30 @@
             </thead>
             <tbody>
             <tr>
-                <td><h5><span class="badge badge-primary">{{ problem.time_limit_C }}</span></h5></td>
+                <td><h5><span class="badge badge-primary">{{ contest_problem_list.time_limit_C }}</span></h5></td>
                 <td><h5><span class="badge badge-success">C/Java</span></h5></td>
-                <td><h5><span class="badge badge-info">{{ problem.memory_limit }}</span></h5></td>
+                <td><h5><span class="badge badge-info">{{ contest_problem_list.memory_limit }}</span></h5></td>
             </tr>
             </tbody>
         </table>
         <div class="col-12">
             <h4>Description</h4>
-            <p>{{ problem.description }}</p>
+            <p>{{ contest_problem_list.description }}</p>
             <h4>Input</h4>
-            <p>{{ problem.input_decscription }}</p>
+            <p>{{ contest_problem_list.input_decscription }}</p>
             <h4>Output</h4>
-            <p>{{ problem.output_decscription }}</p>
+            <p>{{ contest_problem_list.output_decscription }}</p>
             <h4>Sample Input</h4>
-            <pre>{{ problem.sample_input }}</pre>
+            <pre>{{ contest_problem_list.sample_input }}</pre>
             <h4>Sample Output</h4>
-            <pre>{{ problem.sample_output }}</pre>
+            <pre>{{ contest_problem_list.sample_output }}</pre>
             <h4>Source</h4>
-            <p>{{ problem.source }}</p>
+            <p>{{ contest_problem_list.source }}</p>
         </div>
         <div>
             <form class="form-group" method="post" action="{% url 'submission:submission_list' 1 %}">
                 {% csrf_token %}
-                <input type="hidden" class="form-control" name="problem" value="{{ problem.problem_id }}">
+                <input type="hidden" class="form-control" name="problem" value="{{ contest_problem_list.problem_id }}">
                 <div style="margin-bottom: 10px; margin-top: 10px;width: 200px">
                     <select name="language" class="c-select form-control">
                         <option selected>Choose Language</option>
@@ -59,8 +59,7 @@
                 </div>
                 <div style="text-align: center;margin-top:20px;">
                     <div class="btn-group" role="group">
-                        <button class="btn btn-info active">Submit
-                        </button>
+                        <button class="btn btn-info active" type="submit">Submit</button>
                         <a class="btn btn-primary active" href="#" role="button">Top</a>
                         <a class="btn btn-secondary active" href="#" role="button">Back</a>
                     </div>
@@ -69,3 +68,6 @@
         </div>
     </div>
 {% endblock %}
+
+
+{#TODO : 也许徐可以加一点关有contest的东西，比如submit 和 Accepted #}

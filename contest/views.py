@@ -1,9 +1,10 @@
 from django.core.paginator import Paginator
+from django.http import Http404
 from django.shortcuts import render
 from django.views.generic.base import View
 from django.forms.models import model_to_dict
 
-from contest.models import Contest, Contest_problem
+from contest.models import Contest
 from problems.models import Problem
 
 
@@ -11,6 +12,7 @@ from problems.models import Problem
 
 
 class ContestListView(View):
+
     def get(self, request, page=1):
         contests = Contest.objects.all()
         limit = 20
@@ -23,36 +25,27 @@ class ContestListView(View):
 class ContestView(View):
     def get(self, request, id):
         # try:
-        # contest_problem = Contest_problem.objects.get(contest_problem_id=id)
-
-        contest = Contest.objects.filter(contest_id=id)
-        contest_problem_list = Contest_problem.objects.filter(contest_id=id)
-        test = contest_problem_list.values('problem_id')
-        # problem_list = Problem.objects.filter(problem_id__in=['1000','1001','1002'])
-        problem_list = Problem.objects.filter(problem_id__in=contest_problem_list.values('problem_id'))
-        # problem_list = Problem.objects.filter(problem_id=test[0].values('problem_id'))
-
-        # problem_list = []
-        # for tmp in contest_problem:
-        #     problem_list.append(Problem.objects.filter(problem_id__in=)))
-
-        # 加入题目信息
-        # qy_problem = Contest_problem.objects.filter(contest_id=id).values('problem_id')
-        # problem_list = Problem.objects.filter(problem_id=qy_problem).all()
-        # contest = {}
-        # context['contest'] = contest
-        # context['problem_list'] = problem_list
-        # context['contest_problem)lis']
-        problem_list = [problem for problem in problem_list]
-        contest_problem_list  = [ cp for cp  in contest_problem_list]
-        # 仍是一个查询
-        # contest_problem_list = contest_problem_list.values()
+        # print(id)
+        contest = Contest.objects.get(id=id)
+        contest_problem_list = Problem.objects.filter(contest=id)
+        contest_problem_list = [cp for cp in contest_problem_list]
         return render(request, 'contest/contest.html',
                       {
-                          'contest': contest[0],
-                          'problem_list': problem_list,
+                          'contest': contest,
                           'contest_problem_list': contest_problem_list
                       }
                       )
         # except Exception:
         #     raise Http404
+
+
+class ProblemView(View):
+
+    def get(self, request, id):
+        try:
+            problem = Problem.objects.get(problem_id=id)
+            # 因题目正在比赛或其他原因,不可视
+            return render(request, 'contest/problem.html',
+                          {'contest_problem_list': problem})
+        except Exception:
+            raise Http404
