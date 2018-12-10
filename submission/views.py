@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -19,31 +19,34 @@ class SubmissionListView(APIView):
         limit = 20
         paginator = Paginator(submissions, limit)
         submissions = paginator.page(page)
-        return render(request,'submissions/submission_list.html',
-                      {'submissions': submissions, 'all': range(1, len(submissions)// limit + 1),
+        return render(request, 'submissions/submission_list.html',
+                      {'submissions': submissions, 'all': range(1, len(submissions) // limit + 1),
                        'user': request.user})
-
 
     # 提交页面
     def post(self, request, *args, **kwargs):
         # print(request.user)
         # print((request.user.is_staff or request.user.is_superuser))
         if not (request.user.is_staff or request.user.is_superuser):
-            return Response("Please login first")
+            return render(request, 'submissions/error.html',
+                          {
+                              'err_message': 'Please login first'
+                          })
         ser = SubmissionDeserializer(data=request.data)
         if ser.is_valid():
             instance = ser.save(request.user)
             submit.delay(instance.id)
-            return HttpResponseRedirect(reverse('submission:submission_list'))  # 跳转到index界面
+            return redirect('submission:submission_list', page=1)
         else:
-            return HttpResponseRedirect(reverse('problems:problem_list submission_list'))  # 跳转到index界面
-            #
-            # return render('problems.html',
-            #               {'msg': ser.errors, 'errors': True})
+            return render(request, 'submissions/error.html',
+                          {
+                              'err_message': 'Please submit all the information, and the min length of code is 50'
+                          })
 
 
 class SubmissionView(APIView):
     # authentication_classes = [NormalUserAuthentication, ]
 
-    def get(self,request,id=1,*args,**kwargs):
+    def get(self, request, id=1, *args, **kwargs):
         return Response("nihia ")
+
