@@ -64,6 +64,11 @@
                         <a class="btn btn-secondary active" href="#" role="button">Back</a>
                     </div>
                 </div>
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endif %}
             </form>
         </div>
     </div>

@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    contest {{ contest.contest_id }}
+    contest {{ submissions.contest_id }}
 {% endblock %}
 
 {% block private_work %}
     <div class="container">
-        <h2 style="text-align: center">{{ contest.title }}</h2>
+        <h2 style="text-align: center">{{ submissions.title }}</h2>
         <table class="table table-sm " style="margin-top: 20px">
             <thead>
             <tr>
@@ -17,9 +17,9 @@
             </thead>
             <tbody>
             <tr>
-                <td><h5><span class="badge badge-primary">{{ contest.add_time }}</span></h5></td>
-                <td><h5><span class="badge badge-success">{{ contest.description }}</span></h5></td>
-                <td><h5><span class="badge badge-info">{{ contest.people }}</span></h5></td>
+                <td><h5><span class="badge badge-primary">{{ submissions.add_time }}</span></h5></td>
+                <td><h5><span class="badge badge-success">{{ submissions.description }}</span></h5></td>
+                <td><h5><span class="badge badge-info">{{ submissions.people }}</span></h5></td>
             </tr>
             </tbody>
             <!--!你爸爸AK了 -->
@@ -35,7 +35,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for cp in contest_problem_list %}
+                    {% for cp in submissions_problem_list %}
                         <tr>
                             {#                                    <th scope="row"></th>#}
                             <td>{{ forloop.counter }} </td>
