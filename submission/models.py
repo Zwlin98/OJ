@@ -11,12 +11,12 @@ class JudgeStatus:
     WRONG_ANSWER = 1
     ACCEPTED = 2
     TIME_LIMIT_EXCEEDED = 3
-    MEMORY_LIMIT_EXCEEDED = 5
-    RUNTIME_ERROR = 6
-    SYSTEM_ERROR = 7
-    PENDING = 8
-    JUDGING = 9
-    PARTIALLY_ACCEPTED = 10
+    MEMORY_LIMIT_EXCEEDED = 4
+    RUNTIME_ERROR = 5
+    SYSTEM_ERROR = 6
+    PENDING = 7
+    JUDGING = 8
+    PARTIALLY_ACCEPTED = 9
 
     STATUS = [
         'Compile Error',
@@ -59,7 +59,10 @@ class Submission(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     language = models.IntegerField(default=SubmissionLanguage.CPP)
     code = models.TextField()
-    result = models.IntegerField(default=JudgeStatus.PENDING)
+    result = models.CharField(default=JudgeStatus.STATUS[7], max_length=64)
+    exe_time = models.CharField(default='0MS', max_length=64)
+    exe_memory = models.CharField(default='0K', max_length=64)
+    code_len = models.CharField(default='0B', max_length=64)
 
     @property
     def get_result(self):

@@ -4,7 +4,7 @@ from celery import shared_task
 from judge.models import JudgePlatform
 from judge.submitter import HduSubmitter
 from submission.models import Submission, HduSubmission
-
+from judge.Spider import HduSpider
 
 @shared_task
 def submit(pid):
@@ -22,3 +22,9 @@ def submit(pid):
             return hdu_submit.id
         else:
             return -1
+
+@shared_task
+def spider():
+    sp = HduSpider(username='geektest')
+    return sp.check_database()
+
