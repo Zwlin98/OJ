@@ -8,6 +8,7 @@ from django import views
 from judge.tasks import submit
 from submission.models import Submission
 from users.authentication import NormalUserAuthentication
+from users.models import User
 from .serializers import SubmissionDeserializer
 
 
@@ -35,6 +36,9 @@ class SubmissionListView(APIView):
         ser = SubmissionDeserializer(data=request.data)
         if ser.is_valid():
             instance = ser.save(request.user)
+            user = User.objects.get(username=request.user.username)
+            user.problem_submit += 1
+            user.save()
             submit.delay(instance.id)
             return redirect('submission:submission_list', page=1)
         else:
@@ -49,4 +53,3 @@ class SubmissionView(APIView):
 
     def get(self, request, id=1, *args, **kwargs):
         return Response("nihia ")
-

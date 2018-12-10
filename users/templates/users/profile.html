@@ -3,7 +3,45 @@
 {% block title %}
     个人中心
 {% endblock %}
-
+{% load static %}
+{% block private_css %}
+{% endblock %}
 {% block private_work %}
-<h1>你是{{ request.user.username }}</h1>
+    <h3>你好! <strong>{{ request.user.username }}</strong></h3>
+    <table class="table table-striped">
+        <tbody>
+        <tr>
+            <th scope="row">邮箱地址</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th scope="row">提交次数</th>
+            <td>{{ user.problem_submit }}</td>
+        </tr>
+        <tr>
+            <th scope="row">通过次数</th>
+            <td>{{ user.problem_solved }}</td>
+        </tr>
+        <tr>
+            <th scope="row">注册时间</th>
+            <td>{{ user.add_time }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <h4>通过题目</h4>
+        {% for sub in submissions_ac %}
+            <a href="{% url 'problems:problem' sub.problem %}">
+                <span class="badge badge-success">{{ sub.problem }}</span>
+            </a>
+        {% endfor %}
+    </div>
+    <div style="margin-top: 20px">
+        <h4>有提交但未通过的题目</h4>
+        {% for sub in submissions_try %}
+            <a href="{% url 'problems:problem' sub.problem %}">
+                <span class="badge badge-primary">{{ sub.problem }}</span>
+            </a>
+        {% endfor %}
+    </div>
 {% endblock %}
