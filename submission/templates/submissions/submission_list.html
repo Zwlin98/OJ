@@ -5,15 +5,7 @@
     提交列表
 {% endblock %}
 
-{#    problem = models.ForeignKey(Problem, on_delete=models.CASCADE)#}
-{#    user = models.ForeignKey(User, on_delete=models.CASCADE)#}
-{#    language = models.IntegerField(default=SubmissionLanguage.CPP)#}
-
-{#    result = models.CharField(default=JudgeStatus.STATUS[7], max_length=64)#}
-{#    exe_time = models.CharField(default='0MS', max_length=64)#}
-{#    exe_memory = models.CharField(default='0K', max_length=64)#}
-{#    code_len = models.CharField(default='0B', max_length=64)#}
-
+{% load get_attr %}
 
 {% block private_work %}
     <div class="container row">
@@ -35,11 +27,15 @@
                 <tbody>
                 {% for submission in submissions %}
                     <tr>
+                        {% if  user_id == submission.user.id     %}
                         <td><a href="{% url 'submission:submission' submission.id %}">{{ submission.id }}</a></td>
+                        {% else  %}
+                        <td>{{ submission.id }}</td>
+                        {%  endif %}
                         <td> {{ submission.problem}} </td>
                         <td> {{ submission.user.username}} </td>
                         <td> {{ submission.create_time }} </td>
-                        <td> {{ submission.language }} </td>
+                        <th>{% get_language language submission %}</th>
                         <td> {{ submission.result }} </td>
                         <td> {{ submission.exe_time}} </td>
                         <td> {{ submission.exe_memory}} </td>

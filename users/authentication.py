@@ -7,5 +7,7 @@ class NormalUserAuthentication(BaseAuthentication):
         if not request.user.is_staff:
             raise exceptions.AuthenticationFailed
 
+        return (request.user,request.user.id)
+
     def authenticate_header(self, request):
         pass
