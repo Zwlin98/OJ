@@ -1,28 +1,39 @@
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
+
 from django.urls import reverse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django import views
+
+from contest.models import Contest
 from judge.tasks import submit
+from problems.models import Problem
 from submission.models import Submission
 from users.authentication import NormalUserAuthentication
 from users.models import User
 from .serializers import SubmissionDeserializer
+from submission.models import SubmissionLanguage
 
 
 # Create your views here.
 class SubmissionListView(APIView):
     #
     def get(self, request, page=1, *args, **kwargs):
+        # submissions 对象list
         submissions = Submission.objects.all().order_by('-create_time')
         limit = 20
         paginator = Paginator(submissions, limit)
         submissions = paginator.page(page)
+
         return render(request, 'submissions/submission_list.html',
                       {'submissions': submissions, 'all': range(1, len(submissions) // limit + 1),
-                       'user': request.user})
+                       'language': SubmissionLanguage.LANGUAGE,
+                       # 'submissions_lange'
+                       'user_id': request.user.id,
+
+                       })
 
     # 提交页面
     def post(self, request, *args, **kwargs):
@@ -50,6 +61,30 @@ class SubmissionListView(APIView):
 
 class SubmissionView(APIView):
     # authentication_classes = [NormalUserAuthentication, ]
+    def get(self, request, submission_id, *args, **kwargs):
+        submission = Submission.objects.get(id=submission_id)
 
-    def get(self, request, id=1, *args, **kwargs):
-        return Response("nihia ")
+        # 需要细粒度更高的认证
+        if request.user.id != submission.user.id:
+            return render(request, 'submissions/error.html',
+                          {
+                              'err_message': '这不是你的代码,无权查看.'
+                          })
+
+        problem = Problem.objects.get(problem_id=submission.problem.problem_id)
+        try:
+            contest = Contest.objects.get(id=submission.contes.id)
+        except Exception as e:
+            contest = None
+
+        print(problem)
+
+        return render(request, "submissions/submission.html",
+                      {
+                          'submission': submission,
+                          'problem': problem,
+                          'contest': contest,
+                          # 'language':SubmissionLanguage.LANGUAGE
+                          'language': SubmissionLanguage.LANGUAGE,
+                      }
+                      )

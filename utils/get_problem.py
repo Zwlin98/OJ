@@ -13,15 +13,25 @@ from contest.models import Contest
 from users.models import User
 
 # 这个脚本好像不能应对  models的外键修改
-if os.path.exists('../db.sqlite3'):
-    os.remove('../db.sqlite3')
+delete_sql = False
+if delete_sql:
+    if os.path.exists('../db.sqlite3'):
+        os.remove('../db.sqlite3')
+    result = os.popen('python ../manage.py makemigrations')
+    for line in result:
+        print(line)
+    result = os.popen('python ../manage.py migrate --run-syncdb').readlines()
+    for line in result:
+        print(line)
 
-result = os.popen('python ../manage.py makemigrations')
-for line in result:
-    print(line)
-result = os.popen('python ../manage.py migrate --run-syncdb').readlines()
-for line in result:
-    print(line)
+
+user = User()
+user.username = 'jj2'
+user.set_password("123456")
+user.email="df@zwl.com"
+user.is_staff = True
+user.save()
+
 
 user = User()
 user.username = 'zwlin'
