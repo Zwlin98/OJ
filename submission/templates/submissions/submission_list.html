@@ -5,6 +5,7 @@
     提交列表
 {% endblock %}
 
+<<<<<<< HEAD
 {#    problem = models.ForeignKey(Problem, on_delete=models.CASCADE)#}
 {#    user = models.ForeignKey(User, on_delete=models.CASCADE)#}
 {#    language = models.IntegerField(default=SubmissionLanguage.CPP)#}
@@ -14,6 +15,9 @@
 {#    exe_memory = models.CharField(default='0K', max_length=64)#}
 {#    code_len = models.CharField(default='0B', max_length=64)#}
 
+=======
+{% load get_attr %}
+>>>>>>> Zwlin
 
 {% block private_work %}
     <div class="container row">
@@ -35,11 +39,23 @@
                 <tbody>
                 {% for submission in submissions %}
                     <tr>
+<<<<<<< HEAD
                         <td><a href="{% url 'submission:submission' submission.id %}">{{ submission.id }}</a></td>
                         <td> {{ submission.problem}} </td>
                         <td> {{ submission.user.username}} </td>
                         <td> {{ submission.create_time }} </td>
                         <td> {{ submission.language }} </td>
+=======
+                        {% if  user_id == submission.user.id     %}
+                        <td><a href="{% url 'submission:submission' submission.id %}">{{ submission.id }}</a></td>
+                        {% else  %}
+                        <td>{{ submission.id }}</td>
+                        {%  endif %}
+                        <td> {{ submission.problem}} </td>
+                        <td> {{ submission.user.username}} </td>
+                        <td> {{ submission.create_time }} </td>
+                        <th>{% get_language language submission %}</th>
+>>>>>>> Zwlin
                         <td> {{ submission.result }} </td>
                         <td> {{ submission.exe_time}} </td>
                         <td> {{ submission.exe_memory}} </td>

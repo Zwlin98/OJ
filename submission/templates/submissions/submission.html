@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
+<<<<<<< HEAD
     contest {{ submissions.contest_id }}
 {% endblock %}
 
@@ -50,6 +51,79 @@
                 </table>
             </div>
 
+=======
+    submission :{{ problem.title }}
+{% endblock %}
+
+{% load get_attr %}
+
+{% block private_work %}
+    <div class="container">
+        <h2 style="text-align: center">{{ submission.title }}</h2>
+        <table class="table table-sm " style="margin-top: 20px">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                {% if  contest %}
+                    <td><h5><span class="badge badge-primary">contest</span></h5></td>
+                {% endif %}
+
+                <td><h5><span class="badge badge-success">Problme ID</span></h5></td>
+                <td><h5><span class="badge badge-info">Title</span></h5></td>
+                <td><h5><span class="badge badge-primary">判题结果</span></h5></td>
+                <td><h5><span class="badge badge-success">Language</span></h5></td>
+                <td><h5><span class="badge badge-info">运行时间</span></h5></td>
+                <td><h5><span class="badge badge-primary">代码长度</span></h5></td>
+                <td><h5><span class="badge badge-info">交题时间</span></h5></td>
+            </tr>
+            <tr>
+                {% if  contest %}
+                    <th scope="col">{{ contest.title }}</th>
+                {% endif %}
+                <th scope="col">{{ problem.problem_id }}</th>
+                <th scope="col">{{ problem.title }}</th>
+                <th scope="col">{{ submission.result }}</th>
+                <th scope="col">{% get_language language submission %}</th>
+                <th scope="col">{{ submission.exe_time }}</th>
+                <th scope="col">{{ submission.code_len }}</th>
+                <th scope="col">{{ submission.create_time }}</th>
+            </tr>
+            {#            <tr>#}
+            {#                <td><h5><span class="badge badge-primary">{{ submission.add_time }}</span></h5></td>#}
+            {#                <td><h5><span class="badge badge-success">{{ submission.description }}</span></h5></td>#}
+            {#                <td><h5><span class="badge badge-info">{{ submission.people }}</span></h5></td>#}
+            {#            </tr>#}
+            </tbody>
+            <!--!你爸爸AK了 -->
+            <div class="col-9">
+                <h3>交题详情</h3>
+                <table class="table table-striped">
+                    <thead>
+
+                </table>
+            </div>
+
+            <main role="main">
+                <div class="jumbotron">
+                    <div class="col-sm-8 mx-auto">
+                        {{ submission.code | linebreaks }}
+                        <pre>
+                            {{ submission.code }}
+                        </pre>
+                        {#                        {{submission.code|linebreaksbr}}#}
+
+                    </div>
+                </div>
+            </main>
+
+>>>>>>> Zwlin
             <div style="text-align: center;margin-top:20px;">
                 <div class="btn-group" role="group">
                     <a class="btn btn-primary active" href="#" role="button">Top</a>

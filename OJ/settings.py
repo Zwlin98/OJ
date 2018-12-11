@@ -40,11 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'problems.apps.ProblemsConfig',
     'contest.apps.ContestConfig',
-    'submission.apps.SubmissionConfig',
+    # 'submission.apps.SubmissionConfig',
     'judge.apps.JudgeConfig',
     'rest_framework',
     'django_celery_beat',
     'django_celery_results',
+    'submission',
 ]
 
 # INSTALLED_APPS += ['django_extensions']
