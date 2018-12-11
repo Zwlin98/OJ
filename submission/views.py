@@ -1,20 +1,12 @@
 from django.core.paginator import Paginator
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-
-from django.urls import reverse
-from rest_framework.response import Response
 from rest_framework.views import APIView
-from django import views
-
 from contest.models import Contest
 from judge.tasks import submit
 from problems.models import Problem
-from submission.models import Submission
-from users.authentication import NormalUserAuthentication
 from users.models import User
 from .serializers import SubmissionDeserializer
-from submission.models import SubmissionLanguage
+from submission.models import SubmissionLanguage, Submission
 
 
 # Create your views here.
@@ -62,8 +54,13 @@ class SubmissionListView(APIView):
 class SubmissionView(APIView):
     # authentication_classes = [NormalUserAuthentication, ]
     def get(self, request, submission_id, *args, **kwargs):
-        submission = Submission.objects.get(id=submission_id)
-
+        try:
+            submission = Submission.objects.get(id=submission_id)
+        except:
+            return render(request, 'submissions/error.html',
+                          {
+                              'err_message': '404 Not Found'
+                          })
         # 需要细粒度更高的认证
         if request.user.id != submission.user.id:
             return render(request, 'submissions/error.html',
@@ -76,9 +73,7 @@ class SubmissionView(APIView):
             contest = Contest.objects.get(id=submission.contes.id)
         except Exception as e:
             contest = None
-
-        print(problem)
-
+        #print(problem)
         return render(request, "submissions/submission.html",
                       {
                           'submission': submission,
