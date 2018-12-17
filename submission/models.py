@@ -14,9 +14,9 @@ class JudgeStatus:
     MEMORY_LIMIT_EXCEEDED = 4
     RUNTIME_ERROR = 5
     SYSTEM_ERROR = 6
-    PENDING = 7
-    JUDGING = 8
-    PARTIALLY_ACCEPTED = 9
+    QUEUING = 7
+    COMPILING = 8
+    RUNNING = 9
 
     STATUS = [
         'Compile Error',
@@ -26,9 +26,9 @@ class JudgeStatus:
         'Memory Limit Exceeded',
         'Runtime Error',
         'System Error',
-        'Pending',
-        'Judging',
-        'Partially Accepted'
+        'Queuing',
+        'Compiling',
+        'Running'
     ]
 
 

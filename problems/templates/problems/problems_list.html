@@ -21,7 +21,7 @@
                     <tr>
                         <th scope="row">{{ problem.problem_id }}</th>
                         <td><a href="{% url 'problems:problem' problem.problem_id %}">{{ problem.title }}</a></td>
-                        <td>{% widthratio problem.accepted problem.submitted 100 %}%</td>
+                        <td>{% widthratio problem.accepted problem.submitted 100 %}% ({{ problem.accepted}}/{{ problem.submitted }})</td>
                     </tr>
                 {% endfor %}
                 </tbody>

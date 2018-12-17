@@ -15,7 +15,7 @@ from .models import User
 from users.models import Verifycode
 
 
-# from OJ.private_settings import DEFAULT_FROM_EMAIL
+from OJ.private_settings import DEFAULT_FROM_EMAIL
 
 
 # 重定向

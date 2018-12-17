@@ -1,6 +1,8 @@
 import requests
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+
+from problems.models import Problem
 from submission.models import Submission, JudgeStatus
 from users.models import User
 
@@ -23,7 +25,13 @@ class Spider(object):
 class HduSpider(Spider):
 
     def check_database(self):
-        submissions = Submission.objects.filter(result=JudgeStatus.STATUS[JudgeStatus.PENDING])
+        submissions = Submission.objects.filter(
+            result__in=[
+                JudgeStatus.STATUS[JudgeStatus.QUEUING],
+                JudgeStatus.STATUS[JudgeStatus.COMPILING],
+                JudgeStatus.STATUS[JudgeStatus.RUNNING],
+            ]
+        )
         print(submissions)
         if submissions:
             return self.get_result(submissions)
@@ -51,15 +59,20 @@ class HduSpider(Spider):
             exe_memory = tds[i + 5].string
             code_len = tds[i + 6].string
             obj = dest.filter(hdusubmission__hdu_run_id=run_id)
-            if obj:
+            if obj.count():
+                print(obj)
+                problem = obj[0].problem
                 obj.update(
                     result=judge_status,
                     exe_memory=exe_memory,
                     exe_time=exe_time,
                     code_len=code_len)
                 cnt -= 1
+                problem.submitted += 1
                 if judge_status == "Accepted":
                     user = User.objects.get(submission__hdusubmission__hdu_run_id=run_id)
                     user.problem_solved += 1
                     user.save()
+                    problem.accepted += 1
+                problem.save()
         return cnt

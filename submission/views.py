@@ -31,7 +31,7 @@ class SubmissionListView(APIView):
     def post(self, request, *args, **kwargs):
         # print(request.user)
         # print((request.user.is_staff or request.user.is_superuser))
-        if not (request.user.is_staff or request.user.is_superuser):
+        if not request.user.is_active:
             return render(request, 'submissions/error.html',
                           {
                               'err_message': 'Please login first'
@@ -73,7 +73,7 @@ class SubmissionView(APIView):
             contest = Contest.objects.get(id=submission.contes.id)
         except Exception as e:
             contest = None
-        #print(problem)
+        # print(problem)
         return render(request, "submissions/submission.html",
                       {
                           'submission': submission,
