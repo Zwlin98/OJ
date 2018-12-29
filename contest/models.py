@@ -29,27 +29,16 @@ class Contest(models.Model):
     '''
     基本比赛对象
     '''
-
     title = models.CharField(max_length=1000, verbose_name='比赛标题', blank=True)
-
     description = models.TextField(verbose_name='比赛描述', blank=True)
-
     start_time = models.DateTimeField(default=datetime.now, verbose_name='比赛开始时间')
-
     end_time = models.DateTimeField(default=get_end_time)
-
     type = models.IntegerField(default=ContestType.ACM, verbose_name="Contest type")
-
     participant = models.IntegerField(default=0, verbose_name='报名人数')
-
     source = models.CharField(max_length=200, blank=True, verbose_name='出题人来源')
-
     create_user = models.ForeignKey(User, on_delete=models.CASCADE)
-
     create_time = models.DateTimeField(auto_now_add=True)
-
     visible = models.BooleanField(default=True)
-
     @property
     def status(self):
         if self.start_time > datetime.now():

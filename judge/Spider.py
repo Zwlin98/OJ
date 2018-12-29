@@ -39,11 +39,6 @@ class HduSpider(Spider):
             return 1000
 
     def get_result(self, dest):
-        """
-        update the database
-        :param dest:
-        :return:
-        """
         url = 'http://acm.hdu.edu.cn/status.php?user=' + self.username
         html = urlopen(url)
         soup = BeautifulSoup(html, 'lxml')

@@ -16,6 +16,7 @@ from users.models import Verifycode
 
 
 from OJ.private_settings import DEFAULT_FROM_EMAIL
+from OJ.private_settings import PRIVATE_LOCAL_HOST
 
 
 # 重定向
@@ -169,7 +170,7 @@ class ProfileView(View):
 
 # 发送邮件
 class Email:
-    HOST = 'http://127.0.0.1:8000/'
+    HOST = PRIVATE_LOCAL_HOST
 
     def __init__(self, email_address, send_type):
         self.email_addrss = email_address

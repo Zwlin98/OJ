@@ -6,6 +6,7 @@ from utils.exceptions import *
 
 import requests
 
+
 class Submitter(object):
     def __init__(self):
         pass
