@@ -113,12 +113,7 @@
             <main role="main">
                 <div class="jumbotron">
                     <div class="col-sm-8 mx-auto">
-                        {{ submission.code | linebreaks }}
-                        <pre>
-                            {{ submission.code }}
-                        </pre>
-                        {#                        {{submission.code|linebreaksbr}}#}
-
+                        <pre>{{ submission.code }}</pre>
                     </div>
                 </div>
             </main>
@@ -126,7 +121,8 @@
 >>>>>>> Zwlin
             <div style="text-align: center;margin-top:20px;">
                 <div class="btn-group" role="group">
-                    <a class="btn btn-primary active" href="#" role="button">Top</a>
+                    <a class="btn btn-primary active" href="{% url 'submission:submission_list' 1 %}"
+                       role="button">Back</a>
                 </div>
             </div>
     </div>

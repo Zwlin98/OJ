@@ -6,6 +6,7 @@ from judge.submitter import HduSubmitter
 from submission.models import Submission, HduSubmission
 from judge.Spider import HduSpider
 
+
 @shared_task
 def submit(pid):
     instance = Submission.objects.get(id=pid)
@@ -23,8 +24,8 @@ def submit(pid):
         else:
             return -1
 
+
 @shared_task
 def spider():
     sp = HduSpider(username='geektest')
     return sp.check_database()
-
